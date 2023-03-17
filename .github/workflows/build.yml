@@ -13,3 +13,25 @@ jobs:
         run: npm install
       - name: Build code
         run: npm run build
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with: 
+          ref: gh-pages
+          submodules: 'recursive'
+      - name: Copy built files to gh-pages branch
+        run: cp -r build/* .
+      - name: Commit changes
+        run: |
+          git config --global user.email "y.thanhthao@gmail.com"
+          git config --global user.name "ytanya"
+          git add .
+          git commit -m "Deploy built files"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with: 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
