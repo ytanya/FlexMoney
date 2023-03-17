@@ -1,0 +1,11 @@
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\bin\Debug\net5.0\FlexMoney.Shared.deps.json
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\bin\Debug\net5.0\FlexMoney.Shared.dll
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\bin\Debug\net5.0\FlexMoney.Shared.pdb
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\obj\Debug\net5.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\obj\Debug\net5.0\Shared.AssemblyInfoInputs.cache
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\obj\Debug\net5.0\Shared.AssemblyInfo.cs
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\obj\Debug\net5.0\Shared.csproj.CoreCompileInputs.cache
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\obj\Debug\net5.0\FlexMoney.Shared.dll
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\obj\Debug\net5.0\ref\FlexMoney.Shared.dll
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\obj\Debug\net5.0\FlexMoney.Shared.pdb
+E:\TienPhong\FlexMoney\FlexMoney\src\Shared\bin\Debug\net5.0\ref\FlexMoney.Shared.dll
