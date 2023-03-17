@@ -1,0 +1,138 @@
+2023-03-16 11:00:15.870 +07:00 [INF] Seeded Administrator Role.
+2023-03-16 11:00:16.121 +07:00 [INF] Seeded Default SuperAdmin User.
+2023-03-16 11:00:16.475 +07:00 [INF] Seeded Basic Role.
+2023-03-16 11:00:16.500 +07:00 [INF] Seeded User with Basic Role.
+2023-03-16 11:00:16.833 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 11:00:16.836 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 11:00:16.842 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 11:00:16.842 +07:00 [INF] Hosting environment: Development
+2023-03-16 11:00:16.843 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 11:06:42.448 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 11:06:42.497 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 11:06:42.499 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 11:06:42.500 +07:00 [INF] Hosting environment: Development
+2023-03-16 11:06:42.501 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 12:42:50.586 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 12:42:50.621 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 12:42:50.624 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:42:50.625 +07:00 [INF] Hosting environment: Development
+2023-03-16 12:42:50.625 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 12:44:59.679 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 12:44:59.716 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 12:44:59.719 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:44:59.719 +07:00 [INF] Hosting environment: Development
+2023-03-16 12:44:59.720 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 12:45:53.167 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 12:45:53.202 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 12:45:53.206 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:45:53.206 +07:00 [INF] Hosting environment: Development
+2023-03-16 12:45:53.207 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 12:48:21.077 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 12:48:21.114 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 12:48:21.117 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 12:48:21.117 +07:00 [INF] Hosting environment: Development
+2023-03-16 12:48:21.118 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:13:53.686 +07:00 [INF] Seeded Administrator Role.
+2023-03-16 13:13:53.916 +07:00 [INF] Seeded Default SuperAdmin User.
+2023-03-16 13:13:54.366 +07:00 [INF] Seeded Basic Role.
+2023-03-16 13:13:54.386 +07:00 [INF] Seeded User with Basic Role.
+2023-03-16 13:13:54.518 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:13:54.522 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:13:54.525 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:13:54.525 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:13:54.526 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:21:38.066 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:21:38.105 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:21:38.108 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:21:38.108 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:21:38.108 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:22:39.167 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:22:39.206 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:22:39.209 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:22:39.210 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:22:39.210 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:23:37.885 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:23:37.923 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:23:37.926 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:23:37.926 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:23:37.927 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:24:27.898 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:24:27.936 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:24:27.939 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:24:27.940 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:24:27.940 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:27:22.040 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:27:22.078 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:27:22.081 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:27:22.081 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:27:22.082 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:28:43.755 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:28:43.804 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:28:43.807 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:28:43.807 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:28:43.808 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:29:13.114 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:29:13.154 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:29:13.157 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:29:13.157 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:29:13.158 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:52:01.814 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:52:01.855 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:52:01.857 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:52:01.858 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:52:01.859 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 13:56:06.038 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 13:56:06.079 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 13:56:06.082 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 13:56:06.082 +07:00 [INF] Hosting environment: Development
+2023-03-16 13:56:06.083 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 14:01:04.784 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 14:01:04.826 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 14:01:04.829 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 14:01:04.830 +07:00 [INF] Hosting environment: Development
+2023-03-16 14:01:04.830 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 14:03:02.073 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 14:03:02.119 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 14:03:02.121 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 14:03:02.122 +07:00 [INF] Hosting environment: Development
+2023-03-16 14:03:02.122 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 14:11:00.497 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 14:11:00.541 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 14:11:00.544 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 14:11:00.545 +07:00 [INF] Hosting environment: Development
+2023-03-16 14:11:00.546 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 14:24:05.306 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 14:24:05.342 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 14:24:05.346 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 14:24:05.347 +07:00 [INF] Hosting environment: Development
+2023-03-16 14:24:05.347 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 14:27:09.120 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 14:27:09.157 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 14:27:09.160 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 14:27:09.161 +07:00 [INF] Hosting environment: Development
+2023-03-16 14:27:09.162 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 14:27:23.952 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 14:27:23.989 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 14:27:23.992 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 14:27:23.992 +07:00 [INF] Hosting environment: Development
+2023-03-16 14:27:23.993 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 14:31:20.219 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 14:31:20.255 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 14:31:20.258 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 14:31:20.259 +07:00 [INF] Hosting environment: Development
+2023-03-16 14:31:20.259 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 14:57:53.516 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 14:57:53.566 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 14:57:53.570 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 14:57:53.571 +07:00 [INF] Hosting environment: Development
+2023-03-16 14:57:53.571 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 15:32:01.913 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 15:32:01.952 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 15:32:01.955 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 15:32:01.955 +07:00 [INF] Hosting environment: Development
+2023-03-16 15:32:01.956 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
+2023-03-16 15:33:55.042 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-16 15:33:55.082 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-16 15:33:55.086 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-16 15:33:55.086 +07:00 [INF] Hosting environment: Development
+2023-03-16 15:33:55.087 +07:00 [INF] Content root path: E:\TienPhong\FlexMoney\FlexMoney\src\Server
