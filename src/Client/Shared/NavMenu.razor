@@ -91,6 +91,12 @@
                 @_localizer["Memberships"]
             </MudNavLink>
         }
+        @if (_canViewFlexMoneyTypes)
+        {
+            <MudNavLink Href="/catalog/flexmoneytypes" Icon="@Icons.Material.Outlined.CallToAction">
+                @_localizer["Flex Money Types"]
+            </MudNavLink>
+        }
     }
 </MudNavMenu>
 
@@ -108,6 +114,7 @@
     private bool _canViewProducts;
     private bool _canViewBrands;
     private bool _canViewMemberships;
+    private bool _canViewFlexMoneyTypes;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -123,5 +130,6 @@
         _canViewProducts = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Products.View)).Succeeded;
         _canViewBrands = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Brands.View)).Succeeded;
         _canViewMemberships = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Memberships.View)).Succeeded;
+        _canViewFlexMoneyTypes = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.FlexMoneyTypes.View)).Succeeded;
     }
 }

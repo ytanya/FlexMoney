@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.SignalR.Client;
 using MudBlazor;
 using System.Threading.Tasks;
 using Blazored.FluentValidation;
-using FlexMoney.Application.Features.Memberships.Commands.AddEdit;
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Membership;
+using FlexMoney.Application.Features.Memberships.Commands.AddEdit;
 
 namespace FlexMoney.Client.Pages.Catalog
 {

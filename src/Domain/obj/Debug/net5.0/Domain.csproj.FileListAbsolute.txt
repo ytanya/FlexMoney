@@ -9,3 +9,15 @@ E:\TienPhong\FlexMoney\FlexMoney\src\Domain\obj\Debug\net5.0\FlexMoney.Domain.dl
 E:\TienPhong\FlexMoney\FlexMoney\src\Domain\obj\Debug\net5.0\ref\FlexMoney.Domain.dll
 E:\TienPhong\FlexMoney\FlexMoney\src\Domain\obj\Debug\net5.0\FlexMoney.Domain.pdb
 E:\TienPhong\FlexMoney\FlexMoney\src\Domain\bin\Debug\net5.0\ref\FlexMoney.Domain.dll
+D:\FlexMoneyTanya\FlexMoney\src\Domain\bin\Debug\net5.0\FlexMoney.Domain.deps.json
+D:\FlexMoneyTanya\FlexMoney\src\Domain\bin\Debug\net5.0\FlexMoney.Domain.dll
+D:\FlexMoneyTanya\FlexMoney\src\Domain\bin\Debug\net5.0\FlexMoney.Domain.pdb
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\FlexMoney.Domain.dll
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\refint\FlexMoney.Domain.dll
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\FlexMoney.Domain.pdb
+D:\FlexMoneyTanya\FlexMoney\src\Domain\obj\Debug\net5.0\ref\FlexMoney.Domain.dll

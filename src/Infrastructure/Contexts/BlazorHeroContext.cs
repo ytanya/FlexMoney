@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using FlexMoney.Domain.Entities.ExtendedAttributes;
 using FlexMoney.Domain.Entities.Misc;
+using FlexMoney.Domain.Entities.TypeFlexMoney;
 
 namespace FlexMoney.Infrastructure.Contexts
 {
@@ -32,6 +33,7 @@ namespace FlexMoney.Infrastructure.Contexts
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<DocumentExtendedAttribute> DocumentExtendedAttributes { get; set; }
         public DbSet<Membership> Memberships { get; set; }
+        public DbSet<FlexMoneyType> FlexMoneyTypes { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
         {

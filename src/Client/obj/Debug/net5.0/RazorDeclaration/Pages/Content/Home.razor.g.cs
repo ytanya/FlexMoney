@@ -13,273 +13,273 @@ namespace FlexMoney.Client.Pages.Content
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 2 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 2 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 3 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 4 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 5 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 6 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 7 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 8 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 9 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 10 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 11 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 12 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 13 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 14 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Blazored.LocalStorage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 15 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using Blazored.FluentValidation;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 18 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 18 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.Account;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 19 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 19 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 20 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 20 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.Roles;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 21 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 21 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.RoleClaims;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 22 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 22 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.Users;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 23 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 23 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Preferences;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 24 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 24 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Interceptors;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 25 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 25 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Product;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 26 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 26 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Brand;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 27 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 27 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Dashboard;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 28 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 28 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Communication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 29 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 29 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Audit;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 30 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 30 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Misc.Document;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 31 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 31 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Misc.DocumentType;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 34 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 34 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Shared.Constants.Permission;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 35 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 35 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Shared.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 37 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 37 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 38 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 38 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 39 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 39 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Shared.Dialogs;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 40 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 40 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Settings;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 42 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 42 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Application.Requests.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 44 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 44 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Pages.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 46 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 46 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 47 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 47 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Extensions;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 49 "E:\TienPhong\FlexMoney\FlexMoney\src\Client\_Imports.razor"
+#line 49 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 [Authorize]
 
 #line default

@@ -26,6 +26,7 @@
             public const string GetAllBrandsCacheKey = "all-brands";
             public const string GetAllDocumentTypesCacheKey = "all-document-types";
             public const string GetAllMembershipsCacheKey = "all-memberships";
+            public const string GetAllFlexMoneyTypeCacheKey = "all-flexmoneytype";
             
 
             public static string GetAllEntityExtendedAttributesCacheKey(string entityFullName)
