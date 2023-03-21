@@ -70,7 +70,7 @@
             @_localizer["Chat"]
         </MudNavLink>
     }
-    @if (_canViewProducts || _canViewBrands || _canViewMemberships)
+    @if (_canViewProducts || _canViewBrands || _canViewMembers || _canViewTypes)
     {
         <MudListSubheader Class="mt-2 mb-n2">@_localizer["Catalog Management"]</MudListSubheader>
         @if (_canViewProducts)
@@ -85,16 +85,22 @@
                 @_localizer["Brands"]
             </MudNavLink>
         }
-        @if (_canViewMemberships)
+        @if (_canViewMembers)
         {
-            <MudNavLink Href="/catalog/memberships" Icon="@Icons.Material.Outlined.CallToAction">
-                @_localizer["Memberships"]
+            <MudNavLink Href="/catalog/members" Icon="@Icons.Material.Outlined.CallToAction">
+                @_localizer["Members"]
+            </MudNavLink>
+        }
+        @if (_canViewTypes)
+        {
+            <MudNavLink Href="/catalog/types" Icon="@Icons.Material.Outlined.CallToAction">
+                @_localizer["Types"]
             </MudNavLink>
         }
     }
 </MudNavMenu>
 
-@code {
+    @code {
     private ClaimsPrincipal _authenticationStateProviderUser;
 
     private bool _canViewHangfire;
@@ -107,7 +113,8 @@
     private bool _canViewChat;
     private bool _canViewProducts;
     private bool _canViewBrands;
-    private bool _canViewMemberships;
+    private bool _canViewMembers;
+    private bool _canViewTypes;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -122,6 +129,7 @@
         _canViewChat = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Communication.Chat)).Succeeded;
         _canViewProducts = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Products.View)).Succeeded;
         _canViewBrands = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Brands.View)).Succeeded;
-        _canViewMemberships = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Memberships.View)).Succeeded;
+        _canViewMembers = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Members.View)).Succeeded;
+        _canViewTypes = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Types.View)).Succeeded;
     }
 }
