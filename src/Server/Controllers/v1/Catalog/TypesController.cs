@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace FlexMoney.Server.Controllers.v1.Catalog
 {
 
-    public class TypesController  : BaseApiController<MembersController>
+    public class TypesController  : BaseApiController<TypesController>
     {
         /// <summary>
         /// Get All Types
@@ -33,8 +33,8 @@ namespace FlexMoney.Server.Controllers.v1.Catalog
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var member = await _mediator.Send(new GetTypeByIdQuery() { Id = id });
-            return Ok(member);
+            var type = await _mediator.Send(new GetTypeByIdQuery() { Id = id });
+            return Ok(type);
         }
 
         /// <summary>

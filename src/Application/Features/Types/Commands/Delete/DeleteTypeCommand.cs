@@ -1,5 +1,4 @@
-﻿using FlexMoney.Application.Features.Members.Commands.Delete;
-using FlexMoney.Application.Interfaces.Repositories;
+﻿using FlexMoney.Application.Interfaces.Repositories;
 using FlexMoney.Shared.Constants.Application;
 using FlexMoney.Shared.Wrapper;
 using MediatR;

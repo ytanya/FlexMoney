@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using FlexMoney.Application.Features.Members.Commands.AddEdit;
 using FlexMoney.Application.Interfaces.Repositories;
 using FlexMoney.Shared.Constants.Application;
 using FlexMoney.Shared.Wrapper;
@@ -41,8 +40,8 @@ namespace FlexMoney.Application.Features.Types.Commands.AddEdit
             {
                 var type = _mapper.Map<Domain.Entities.Catalog.Type>(command);
                 await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().AddAsync(type);
-                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMembersCacheKey);
-                return await Result<int>.SuccessAsync(type.Id, _localizer["Flex Money Type Saved"]);
+                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTypesCacheKey);
+                return await Result<int>.SuccessAsync(type.Id, _localizer["Type Saved"]);
             }
             else
             {
@@ -52,8 +51,8 @@ namespace FlexMoney.Application.Features.Types.Commands.AddEdit
                     type.Name = command.Name ?? type.Name;
                     type.Note = command.Note ?? type.Note;
                     await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().UpdateAsync(type);
-                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMembersCacheKey);
-                    return await Result<int>.SuccessAsync(type.Id, _localizer["Flex Money Type Updated"]);
+                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTypesCacheKey);
+                    return await Result<int>.SuccessAsync(type.Id, _localizer["Type Updated"]);
                 }
                 else
                 {

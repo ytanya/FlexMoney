@@ -131,6 +131,26 @@ namespace FlexMoney.Shared.Constants.Permission
             public const string Export = "Permissions.Members.Export";
             public const string Search = "Permissions.Members.Search";
         }
+
+        public static class MemberLines
+        {
+            public const string View = "Permissions.MemberLines.View";
+            public const string Create = "Permissions.MemberLines.Create";
+            public const string Edit = "Permissions.MemberLines.Edit";
+            public const string Delete = "Permissions.MemberLines.Delete";
+            public const string Export = "Permissions.MemberLines.Export";
+            public const string Search = "Permissions.MemberLines.Search";
+        }
+
+        public static class MoneyLines
+        {
+            public const string View = "Permissions.MoneyLines.View";
+            public const string Create = "Permissions.MoneyLines.Create";
+            public const string Edit = "Permissions.MoneyLines.Edit";
+            public const string Delete = "Permissions.MoneyLines.Delete";
+            public const string Export = "Permissions.MoneyLines.Export";
+            public const string Search = "Permissions.MoneyLines.Search";
+        }
         /// <summary>
         /// Returns a list of Permissions.
         /// </summary>

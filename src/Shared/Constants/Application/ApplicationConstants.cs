@@ -27,6 +27,8 @@
             public const string GetAllDocumentTypesCacheKey = "all-document-types";
             public const string GetAllMembersCacheKey = "all-members";
             public const string GetAllTypesCacheKey = "all-types";
+            public const string GetAllMoneyLinesCacheKey = "all-money-lines";
+            public const string GetAllMemberLinesCacheKey = "all-member-lines";
 
             public static string GetAllEntityExtendedAttributesCacheKey(string entityFullName)
             {
