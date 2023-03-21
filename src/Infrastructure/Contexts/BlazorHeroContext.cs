@@ -31,7 +31,8 @@ namespace FlexMoney.Infrastructure.Contexts
         public DbSet<Document> Documents { get; set; }
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<DocumentExtendedAttribute> DocumentExtendedAttributes { get; set; }
-        public DbSet<Membership> Memberships { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Type> Types { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
         {
