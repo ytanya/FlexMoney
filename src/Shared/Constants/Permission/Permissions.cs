@@ -26,6 +26,16 @@ namespace FlexMoney.Shared.Constants.Permission
             public const string Search = "Permissions.Brands.Search";
         }
 
+        public static class FlexMoneyTypes
+        {
+            public const string View = "Permissions.FlexMoneyTypes.View";
+            public const string Create = "Permissions.FlexMoneyTypes.Create";
+            public const string Edit = "Permissions.FlexMoneyTypes.Edit";
+            public const string Delete = "Permissions.FlexMoneyTypes.Delete";
+            public const string Export = "Permissions.FlexMoneyTypes.Export";
+            public const string Search = "Permissions.FlexMoneyTypes.Search";
+        }
+
         public static class Documents
         {
             public const string View = "Permissions.Documents.View";
