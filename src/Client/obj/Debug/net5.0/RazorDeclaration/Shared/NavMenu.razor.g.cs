@@ -300,7 +300,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 103 "D:\FlexMoneyTanya\FlexMoney\src\Client\Shared\NavMenu.razor"
+#line 109 "D:\FlexMoneyTanya\FlexMoney\src\Client\Shared\NavMenu.razor"
        
     private ClaimsPrincipal _authenticationStateProviderUser;
 

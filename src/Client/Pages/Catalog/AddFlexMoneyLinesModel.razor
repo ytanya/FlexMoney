@@ -1,0 +1,95 @@
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<AddFlexMoneyLinesModel> _localizer
+
+
+<EditForm Model="@AddFlexMoneyLineModel">
+    <FluentValidationValidator @ref="_fluentValidationValidator" />
+
+    <MudDialog Style="min-width: 500px; max-width: 1200px;">
+      
+        <TitleContent >
+            @{
+                if (AddFlexMoneyLineModel.Id == 0)
+                {
+                        <MudText Typo="Typo.h6">
+                            <MudIcon Icon="@Icons.Material.Filled.Add" Class="mr-3 mb-n1" />
+                            @_localizer["Add Money Line"]
+                        </MudText>
+                }
+                else
+                {
+                        <MudText Typo="Typo.h6">
+                            <MudIcon Icon="@Icons.Material.Filled.Update" Class="mr-3 mb-n1" />
+                            @_localizer["Update Money Line"]
+                        </MudText>
+                }
+            }
+        </TitleContent>
+        <DialogContent >
+            <MudGrid>
+                <MudItem xs="12" md="18">
+                    <MudDatePicker Label="Basic example" @bind-Date="date" />
+                </MudItem>
+               
+                @if (AddFlexMoneyLineModel.Id != 0)
+                {
+                    <MudItem xs="15" md="6">
+                        <MudTextField Disabled For="@(() => AddFlexMoneyLineModel.Id)" @bind-Value="AddFlexMoneyLineModel.Id" Label="@_localizer["Id"]" />
+                    </MudItem>
+                }
+                <MudItem xs="8" md="12">
+                    <MudSelect T="string" Label="Money Type" AnchorOrigin="Origin.BottomCenter">
+                        <MudSelectItem Value="@("1 thang")" />
+                        <MudSelectItem Value="@("7 ngay")" />
+                        <MudSelectItem Value="@("1 ngay")" />
+                    </MudSelect>
+                </MudItem>
+                <MudItem xs="8" md="3">
+                    <select multiple="@true" style="width: 100%;height: 100%; border: 1px solid rgb(189 189 189);border-radius: 3px;">
+                        @foreach (var item in  _flexMoneyLineslist)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    </select>
+                </MudItem>
+                <MudItem xs="12" md="2">
+                    <MudButton Style="width: 100%;">@_localizer[">>"]</MudButton>
+                    <MudButton Style="width: 100%;">@_localizer["<<"]</MudButton>
+                </MudItem>
+                <MudItem xs="8" md="3">
+                    <select multiple="@true" style="width: 100%;height: 100%;border: 1px solid rgb(189 189 189);border-radius: 3px;">
+                        @foreach (var item in _flexMoneyLineslistAdd)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    </select>
+                </MudItem>
+
+
+                <MudItem xs="15" md="4">
+                    <MudTextField T="string" For="@(() => AddFlexMoneyLineModel.Name)" @bind-Value="AddFlexMoneyLineModel.Name" Label="@_localizer["Name"]" />
+                    <MudTextField T="string" For="@(() => AddFlexMoneyLineModel.Name)" @bind-Value="AddFlexMoneyLineModel.Name" Label="@_localizer["Money"]" />
+                    <MudTextField For="@(() => AddFlexMoneyLineModel.Note)" @bind-Value="AddFlexMoneyLineModel.Note" Label="@_localizer["Quantity"]" />
+                    <MudTextField For="@(() => AddFlexMoneyLineModel.Note)" @bind-Value="AddFlexMoneyLineModel.Note" Label="@_localizer["Owner"]" />
+                </MudItem>
+
+
+
+                <MudItem xs="15" md="18">
+                    <MudButton>@_localizer["Reset"]</MudButton>
+                    <MudButton>@_localizer["Delete All"]</MudButton>
+                </MudItem>
+            </MudGrid>
+        </DialogContent>
+        <DialogActions>
+            <MudButton DisableElevation Variant="Variant.Filled" OnClick="Cancel">@_localizer["Cancel"]</MudButton>
+            @if (AddFlexMoneyLineModel.Id != 0)
+            {
+                <MudButton DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Disabled="@(!Validated)" Color="Color.Secondary">@_localizer["Update"]</MudButton>
+            }
+            else
+            {
+                <MudButton DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Disabled="@(!Validated)" Color="Color.Success">@_localizer["Save"]</MudButton>
+            }
+        </DialogActions>
+    </MudDialog>
+</EditForm>

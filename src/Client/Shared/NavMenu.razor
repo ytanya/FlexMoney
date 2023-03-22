@@ -94,7 +94,13 @@
         @if (_canViewFlexMoneyTypes)
         {
             <MudNavLink Href="/catalog/flexmoneytypes" Icon="@Icons.Material.Outlined.CallToAction">
-                @_localizer["Flex Money Types"]
+                @_localizer["Money Types"]
+            </MudNavLink>
+        }
+        @if (_canViewFlexMoneyTypes)
+        {
+            <MudNavLink Href="/catalog/flexmoneyline" Icon="@Icons.Material.Outlined.CallToAction">
+                @_localizer["Money Lines"]
             </MudNavLink>
         }
     }

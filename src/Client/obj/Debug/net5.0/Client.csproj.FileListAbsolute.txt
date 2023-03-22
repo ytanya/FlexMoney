@@ -2456,3 +2456,7 @@ D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\C
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\FlexMoneyTypes.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\AddFlexMoneyTypesModal.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\FlexMoneyTypes.razor.g.cs
+D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\FlexMoneyLine.razor.g.cs
+D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\FlexMoneyLine.razor.g.cs
+D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\AddFlexMoneyLinesModel.razor.g.cs
+D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\AddFlexMoneyLinesModel.razor.g.cs
