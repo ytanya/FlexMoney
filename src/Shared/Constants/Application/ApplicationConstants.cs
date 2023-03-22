@@ -29,6 +29,7 @@
             public const string GetAllTypesCacheKey = "all-types";
             public const string GetAllMoneyLinesCacheKey = "all-money-lines";
             public const string GetAllMemberLinesCacheKey = "all-member-lines";
+            public const string GetAllTransactionsCacheKey = "all-transactions";
 
             public static string GetAllEntityExtendedAttributesCacheKey(string entityFullName)
             {

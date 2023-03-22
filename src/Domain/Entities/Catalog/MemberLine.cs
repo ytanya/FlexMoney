@@ -10,6 +10,8 @@ namespace FlexMoney.Domain.Entities.Catalog
     public class MemberLine : AuditableEntity<int>
     {
         public int MemberId { get; set; }
+        public virtual Member Member { get; set; }
         public int MoneyLineId { get; set; }
+        public virtual MoneyLine MoneyLine { get; set; }
     }
 }

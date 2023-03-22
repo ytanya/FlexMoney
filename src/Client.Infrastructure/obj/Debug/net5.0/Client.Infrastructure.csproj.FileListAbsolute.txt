@@ -40,3 +40,45 @@ E:\TienPhong\FlexMoney\FlexMoney\src\Client.Infrastructure\obj\Debug\net5.0\Flex
 E:\TienPhong\FlexMoney\FlexMoney\src\Client.Infrastructure\obj\Debug\net5.0\ref\FlexMoney.Client.Infrastructure.dll
 E:\TienPhong\FlexMoney\FlexMoney\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.pdb
 E:\TienPhong\FlexMoney\FlexMoney\src\Client.Infrastructure\bin\Debug\net5.0\ref\FlexMoney.Client.Infrastructure.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Client.Infrastructure.deps.json
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Client.Infrastructure.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Client.Infrastructure.pdb
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\en\FlexMoney.Client.Infrastructure.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\ru\FlexMoney.Client.Infrastructure.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\km\FlexMoney.Client.Infrastructure.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Application.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Domain.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Shared.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Application.pdb
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Shared.pdb
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\FlexMoney.Domain.pdb
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\de\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\en\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\es\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\fr\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\id\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\it\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\km\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\ru\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\bin\Debug\net5.0\sv\FlexMoney.Application.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\Client.Infrastructure.csproj.AssemblyReference.cache
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.Resources.Managers.Identity.Authentication.AuthenticationManager.en.resources
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.Resources.Managers.Identity.Authentication.AuthenticationManager.ru.resources
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.Resources.Managers.Interceptors.HttpInterceptorManager.en.resources
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.Resources.Managers.Interceptors.HttpInterceptorManager.km.resources
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.Resources.Managers.Interceptors.HttpInterceptorManager.ru.resources
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.Resources.Managers.Preferences.ClientPreferenceManager.en.resources
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.Resources.Managers.Preferences.ClientPreferenceManager.ru.resources
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\Client.Infrastructure.csproj.GenerateResource.cache
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\Client.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\Client.Infrastructure.AssemblyInfoInputs.cache
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\Client.Infrastructure.AssemblyInfo.cs
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\Client.Infrastructure.csproj.CoreCompileInputs.cache
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\en\FlexMoney.Client.Infrastructure.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\ru\FlexMoney.Client.Infrastructure.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\km\FlexMoney.Client.Infrastructure.resources.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\Client.Infrastructure.csproj.CopyComplete
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\refint\FlexMoney.Client.Infrastructure.dll
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\FlexMoney.Client.Infrastructure.pdb
+D:\TienPhong\Flex Money\src\Client.Infrastructure\obj\Debug\net5.0\ref\FlexMoney.Client.Infrastructure.dll
