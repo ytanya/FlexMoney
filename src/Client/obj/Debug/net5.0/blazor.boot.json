@@ -255,13 +255,13 @@
       "FlexMoney.Client.Infrastructure.dll": "sha256-bm5Kp3q6PEheOr8HLa+Guh\/WQESNfzKsuSFpRX7SRM8=",
       "FlexMoney.Domain.dll": "sha256-RfMTggmAjPxtbLkGEyfrDWfx4kEnIYv62IP0ui5h084=",
       "FlexMoney.Shared.dll": "sha256-3SMxGO7R5x86gSU5Izw6nIEK\/OSABOVemR\/LO\/QIthw=",
-      "FlexMoney.Client.dll": "sha256-gJzJs3w+6mt8PbJMDv5WY81rNLawq74\/3iGcevcMeAw="
+      "FlexMoney.Client.dll": "sha256-A1AD+pKDa6E76hoAbQS0frpP7jN5mPrxzAz2l9luU9c="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "FlexMoney.Client.pdb": "sha256-E3+heU5i1g44hbyaWSoVt2cgyCaA6E7dJYEs5JaMTZs="
+      "FlexMoney.Client.pdb": "sha256-texJhwy25w0OiHACCj5WsrNLx\/6ITn23lCx\/f697+SQ="
     },
     "runtime": {
       "dotnet.timezones.blat": "sha256-8oJip361m8OrfLRJOuIeswWKaoxtT27\/wINCxhn+s4c=",
@@ -274,43 +274,43 @@
     },
     "satelliteResources": {
       "de": {
-        "de\/FlexMoney.Client.resources.dll": "sha256-bHWHEhPy3oQd9oBsTHIgDRajqtvh4jQ+AoMm73rmS3A=",
-        "de\/FlexMoney.Application.resources.dll": "sha256-zRTtQR59j65CMlhGMXCMIN91Pu5ttXgIXcgsa3UWWrQ="
+        "de\/FlexMoney.Client.resources.dll": "sha256-e5Qr\/FUDmgbMnuoKZbqix6zFMbaysdXWzKHWSTS4228=",
+        "de\/FlexMoney.Application.resources.dll": "sha256-29ZPNgCG+CMIjawHM9FnWNnYK7nsrMB+t1zzwk4tRAQ="
       },
       "en": {
-        "en\/FlexMoney.Client.resources.dll": "sha256-a7fG\/FwEScCh\/rMBoycXTCuYTUYv456KLjPvJe+luhM=",
-        "en\/FlexMoney.Client.Infrastructure.resources.dll": "sha256-26uF2Lh+SO3Rgo0b8eoaIFWSa3+TaFyii3OerJiTju0=",
-        "en\/FlexMoney.Application.resources.dll": "sha256-vmW6mVP7\/p\/P6UzceQ1RHh6a1bJNvmXzQenJjcXbF0o="
+        "en\/FlexMoney.Client.resources.dll": "sha256-G8OlWmmsQ2EBmOCjQQHQfDmD70RZV7JPG7VlLPvAYSc=",
+        "en\/FlexMoney.Client.Infrastructure.resources.dll": "sha256-e2ar648HBQuOoM3BkMtUIeFMXAy7XYTzlF7pqczxThk=",
+        "en\/FlexMoney.Application.resources.dll": "sha256-wnUfW0ts9hsNDJ3XAEYeWVPL5Uukc2kjr7XAwyEov\/0="
       },
       "es": {
-        "es\/FlexMoney.Client.resources.dll": "sha256-J+v5jAnKmpfPf+uenIlHu1ru6fBlNWjz\/DzOO\/tUQJ0=",
-        "es\/FlexMoney.Application.resources.dll": "sha256-SX7GntRK5DrOXaFvJxtPyRktzSRnxhBNZP44RaV8nfU="
+        "es\/FlexMoney.Client.resources.dll": "sha256-Pa+N4oNpctWq1HPKA6kXybePUc4XlhOnDBYcbMTw7jU=",
+        "es\/FlexMoney.Application.resources.dll": "sha256-XTNZVbaSO4JWOXpS9ZKzNcs5MRLKoIRf8QfJ6VU6zm0="
       },
       "id": {
-        "id\/FlexMoney.Client.resources.dll": "sha256-j0YseHQI8Rg9KwcC3WDE\/t7cew7xGqcY3+vgCCc9Sgc=",
-        "id\/FlexMoney.Application.resources.dll": "sha256-zK7G+2p\/rMMLBoyTemoaFmbXeUtSH8bCiMfCpugBv1o="
+        "id\/FlexMoney.Client.resources.dll": "sha256-MoRHNwtd5xZNe128yvEmZ6iU+DQ\/KRvZZxqeQpKIhKs=",
+        "id\/FlexMoney.Application.resources.dll": "sha256-nemdP+n9ACc5BiV1m23tYhwx0LkBaKOTLLJxxh0ATNY="
       },
       "it": {
-        "it\/FlexMoney.Client.resources.dll": "sha256-kba9lcFEwtNvsOcIZaZmzO8CRY+TIMn7rZzzHv+SLA0=",
-        "it\/FlexMoney.Application.resources.dll": "sha256-qIK+GfH+HPaeAEkA2j1LqyGTTxBb\/kgR4vWGPYuj67c="
+        "it\/FlexMoney.Client.resources.dll": "sha256-OPxkk4N\/OWnZXrPc5PiQUfTmKBI98MwsC9YF1cZe2io=",
+        "it\/FlexMoney.Application.resources.dll": "sha256-m0C2ZbzCKw85qF0a16oqeJeWsJm0AgDNcVLUoMXfXOk="
       },
       "km": {
-        "km\/FlexMoney.Client.resources.dll": "sha256-ljY05OHFvX6NUh9tDya7NbvuQS9F35h0\/dTsDh\/fy0A=",
-        "km\/FlexMoney.Client.Infrastructure.resources.dll": "sha256-SZslwaFDlfuOI\/jdXDMcBmuj2TBCR0\/DXumJqoy+m+M=",
-        "km\/FlexMoney.Application.resources.dll": "sha256-CiJnaUGrU5\/\/PQVUw91EgRLhPlfl9xKYjqt1lnUU3sk="
+        "km\/FlexMoney.Client.resources.dll": "sha256-mX3SreEwePFrDmwWKLJEgxWpYnFSGAWR+G4fSiZvyRM=",
+        "km\/FlexMoney.Client.Infrastructure.resources.dll": "sha256-h\/VkBUxLAiTI2cri0T3rNsMLzjXDWELsk2q39eQ7BZc=",
+        "km\/FlexMoney.Application.resources.dll": "sha256-sTYOf5kN28icPbR+xjLzc58d1gOzc3q+3YYUAgSalOI="
       },
       "ru": {
-        "ru\/FlexMoney.Client.resources.dll": "sha256-ByQCIGooF77j5x+8CZW444yE56+f4S48MT5b821r0Xc=",
-        "ru\/FlexMoney.Client.Infrastructure.resources.dll": "sha256-Y4QdFX2g6HRcQ1TK61yEgvFlEm1eSNSZipB8jXpivL8=",
-        "ru\/FlexMoney.Application.resources.dll": "sha256-x2yxYdLQpg7xr6MyFlG1MmY4k756j06NP0paLb5boVk="
+        "ru\/FlexMoney.Client.resources.dll": "sha256-bu4+1vhFmMtA0QFcvFYSl9GOqC9hkk1MVG4xQrWfpno=",
+        "ru\/FlexMoney.Client.Infrastructure.resources.dll": "sha256-ZHE8Q3NrhnSpzhTo+hUDnHT21e\/6WP60xfuZuSwRLxE=",
+        "ru\/FlexMoney.Application.resources.dll": "sha256-LqHXubd5XZzSWk9QAgfPjWdSQOQ39PDe2HoeRskMw0I="
       },
       "sv": {
-        "sv\/FlexMoney.Client.resources.dll": "sha256-zfoiZ9QktCZ4fHAgzwS+2oKXsyO9yl9jB\/iGfD59DzM=",
-        "sv\/FlexMoney.Application.resources.dll": "sha256-Hfc6t6NOhtak7aYDBxiqHw2C\/VsTg7dqJUPa2FFbTNs="
+        "sv\/FlexMoney.Client.resources.dll": "sha256-RYKGUUCHJi47G4OaG40mrm9ndN+9LrZB8F2PuVpzc5c=",
+        "sv\/FlexMoney.Application.resources.dll": "sha256-HneBiB2GQQgtRfQQ4mTvy1YtgzG6O8u4B6ACNNFXLQ8="
       },
       "fr": {
-        "fr\/FlexMoney.Client.resources.dll": "sha256-8Cwv+d6AfjKS0xKY49kK78IqXqfDFUHOTBHI2scijS4=",
-        "fr\/FlexMoney.Application.resources.dll": "sha256-NavfenLqUG5cMUYXzgpcDy5ej7GZvzAQH9uSzM3Eh2A="
+        "fr\/FlexMoney.Client.resources.dll": "sha256-ECu0iYY3518oZPFjc0ssnS4KYFe+t9fYguKGqzrnIJI=",
+        "fr\/FlexMoney.Application.resources.dll": "sha256-11KcaH7RpCh9XzU+TxA8kPesB6NyGz30a0MFjysxbTg="
       }
     }
   }

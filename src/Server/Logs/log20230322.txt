@@ -112,3 +112,6 @@
 2023-03-22 15:08:03.262 +07:00 [INF] Application started. Press Ctrl+C to shut down.
 2023-03-22 15:08:03.361 +07:00 [INF] Hosting environment: Development
 2023-03-22 15:08:03.364 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-22 23:40:22.522 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-22 23:40:22.677 +07:00 [INF] Hosting environment: Development
+2023-03-22 23:40:22.680 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server

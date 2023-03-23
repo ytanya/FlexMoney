@@ -1,0 +1,138 @@
+2023-03-23 13:46:54.009 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 13:46:54.083 +07:00 [INF] Hosting environment: Development
+2023-03-23 13:46:54.085 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 13:46:59.245 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-03-23 13:46:59.245 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-03-23 13:46:59.397 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-03-23 13:46:59.416 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-03-23 13:46:59.431 +07:00 [ERR] Connection ID "18230571336156053511", Request ID "80000008-000a-fd00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2023-03-23 13:46:59.431 +07:00 [ERR] Connection ID "17077649801484435461", Request ID "80000006-0003-ed00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2023-03-23 13:46:59.431 +07:00 [ERR] Connection ID "16933534647768317955", Request ID "80000004-000b-eb00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2023-03-23 13:46:59.431 +07:00 [ERR] Connection ID "17798225771928485893", Request ID "80000006-000a-f700-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2023-03-23 13:46:59.542 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2023-03-23 13:46:59.544 +07:00 [ERR] Connection ID "17077649801484435463", Request ID "80000008-0003-ed00-b63f-84710c7967bb": An unhandled exception was thrown by the application.
+System.InvalidOperationException: The response headers cannot be modified because the response has already started.
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.ThrowIfReadOnly()
+   at Microsoft.AspNetCore.HttpSys.Internal.HeaderCollection.set_Item(String key, StringValues value)
+   at FlexMoney.Server.Middlewares.ErrorHandlerMiddleware.Invoke(HttpContext context) in D:\FlexMoneyTanya\FlexMoney\src\Server\Middlewares\ErrorHandlerMiddleware.cs:line 30
+   at Microsoft.AspNetCore.Builder.Extensions.MapMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Server.IIS.Core.IISHttpContextOfT`1.ProcessRequestAsync()
+2023-03-23 14:00:56.898 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 14:00:56.948 +07:00 [INF] Hosting environment: Development
+2023-03-23 14:00:56.950 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 14:03:18.602 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 14:03:18.656 +07:00 [INF] Hosting environment: Development
+2023-03-23 14:03:18.658 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:24:30.038 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:24:30.097 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:24:30.099 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:27:37.998 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:27:38.048 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:27:38.051 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:28:34.776 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:28:34.832 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:28:34.834 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:30:05.740 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:30:05.788 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:30:05.790 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:34:14.967 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:34:15.020 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:34:15.022 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:37:45.830 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:37:45.934 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:37:45.936 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:47:11.151 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:47:11.198 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:47:11.200 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:49:27.136 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:49:27.188 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:49:27.190 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:50:21.990 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:50:22.093 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:50:22.095 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:55:37.772 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:55:37.833 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:55:37.835 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 15:56:50.763 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 15:56:50.813 +07:00 [INF] Hosting environment: Development
+2023-03-23 15:56:50.815 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 16:00:36.421 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 16:00:36.480 +07:00 [INF] Hosting environment: Development
+2023-03-23 16:00:36.482 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
+2023-03-23 16:01:14.913 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-23 16:01:14.967 +07:00 [INF] Hosting environment: Development
+2023-03-23 16:01:14.969 +07:00 [INF] Content root path: D:\FlexMoneyTanya\FlexMoney\src\Server
