@@ -1,4 +1,4 @@
-﻿using FlexMoney.Application.Features.Memberships.Commands.Delete;
+﻿using FlexMoney.Application.Features.Members.Commands.Delete;
 using FlexMoney.Application.Interfaces.Repositories;
 using FlexMoney.Domain.Entities.Catalog;
 using FlexMoney.Domain.Entities.TypeFlexMoney;
@@ -20,10 +20,10 @@ namespace FlexMoney.Application.Features.FlexMoneyTypes.Commands.Delete
         public int Id { get; set; }
         internal class DeleteFlexMoneyTypeCommandHandler : IRequestHandler<DeleteFlexMoneyTypeCommand, Result<int>>
         {
-            private readonly IStringLocalizer<DeleteMembershipCommandHandler> _localizer;
+            private readonly IStringLocalizer<DeleteMemberCommandHandler> _localizer;
             private readonly IUnitOfWork<int> _unitOfWork;
 
-            public DeleteFlexMoneyTypeCommandHandler(IUnitOfWork<int> unitOfWork, IStringLocalizer<DeleteMembershipCommandHandler> localizer)
+            public DeleteFlexMoneyTypeCommandHandler(IUnitOfWork<int> unitOfWork, IStringLocalizer<DeleteMemberCommandHandler> localizer)
             {
                 _unitOfWork = unitOfWork;
                 _localizer = localizer;

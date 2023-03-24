@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System;
 using System.Threading.Tasks;
-using FlexMoney.Application.Features.Memberships.Commands.AddEdit;
+using FlexMoney.Application.Features.Members.Commands.AddEdit;
 
 namespace FlexMoney.Client.Pages.Catalog
 {

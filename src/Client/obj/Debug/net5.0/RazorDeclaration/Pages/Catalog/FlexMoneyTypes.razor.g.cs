@@ -294,7 +294,7 @@ using FlexMoney.Application.Features.FlexMoneyTypes.Queries.GettAll;
 #nullable disable
 #nullable restore
 #line 2 "D:\FlexMoneyTanya\FlexMoney\src\Client\Pages\Catalog\FlexMoneyTypes.razor"
-           [Authorize(Policy = Permissions.FlexMoneyTypes.View)]
+           [Authorize(Policy = Permissions.Types.View)]
 
 #line default
 #line hidden

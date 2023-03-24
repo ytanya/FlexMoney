@@ -8871,6 +8871,7 @@
       "Blazored.LocalStorage >= 4.1.2",
       "EPPlus >= 5.7.0",
       "FlexMoney.Application >= 1.0.0",
+      "FlexMoney.Domain >= 1.0.0",
       "FlexMoney.Shared >= 1.0.0",
       "Hangfire.Core >= 1.7.23",
       "Microsoft.AspNetCore.Components.Authorization >= 5.0.7",
@@ -8915,6 +8916,9 @@
           "projectReferences": {
             "D:\\FlexMoneyTanya\\FlexMoney\\src\\Application\\Application.csproj": {
               "projectPath": "D:\\FlexMoneyTanya\\FlexMoney\\src\\Application\\Application.csproj"
+            },
+            "D:\\FlexMoneyTanya\\FlexMoney\\src\\Domain\\Domain.csproj": {
+              "projectPath": "D:\\FlexMoneyTanya\\FlexMoney\\src\\Domain\\Domain.csproj"
             },
             "D:\\FlexMoneyTanya\\FlexMoney\\src\\Shared\\Shared.csproj": {
               "projectPath": "D:\\FlexMoneyTanya\\FlexMoney\\src\\Shared\\Shared.csproj"

@@ -1,16 +1,18 @@
 ﻿using FlexMoney.Application.Interfaces.Services;
 using FlexMoney.Application.Models.Chat;
-using FlexMoney.Infrastructure.Models.Identity;
 using FlexMoney.Domain.Contracts;
 using FlexMoney.Domain.Entities.Catalog;
+using FlexMoney.Domain.Entities.ExtendedAttributes;
+using FlexMoney.Domain.Entities.Misc;
+using FlexMoney.Infrastructure.Models.Identity;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using FlexMoney.Domain.Entities.ExtendedAttributes;
-using FlexMoney.Domain.Entities.Misc;
-using FlexMoney.Domain.Entities.TypeFlexMoney;
+
+
+
 
 namespace FlexMoney.Infrastructure.Contexts
 {
@@ -32,8 +34,12 @@ namespace FlexMoney.Infrastructure.Contexts
         public DbSet<Document> Documents { get; set; }
         public DbSet<DocumentType> DocumentTypes { get; set; }
         public DbSet<DocumentExtendedAttribute> DocumentExtendedAttributes { get; set; }
-        public DbSet<Membership> Memberships { get; set; }
-        public DbSet<FlexMoneyType> FlexMoneyTypes { get; set; }
+        public DbSet<Member> Members { get; set; }
+        public DbSet<Type> Types { get; set; }
+        public DbSet<MemberLine> MemberLines { get; set; }
+        public DbSet<MoneyLine> MoneyLines { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
         {

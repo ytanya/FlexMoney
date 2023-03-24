@@ -105,8 +105,8 @@ D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\FlexMoney.Applic
 D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\FlexMoney.Domain.dll
 D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\FlexMoney.Shared.dll
 D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\FlexMoney.Application.pdb
-D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\FlexMoney.Shared.pdb
 D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\FlexMoney.Domain.pdb
+D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\FlexMoney.Shared.pdb
 D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\de\FlexMoney.Application.resources.dll
 D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\en\FlexMoney.Application.resources.dll
 D:\FlexMoneyTanya\FlexMoney\src\Infrastructure\bin\Debug\net5.0\es\FlexMoney.Application.resources.dll

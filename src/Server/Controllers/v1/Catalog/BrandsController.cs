@@ -16,7 +16,7 @@ namespace FlexMoney.Server.Controllers.v1.Catalog
         /// Get All Brands
         /// </summary>
         /// <returns>Status 200 OK</returns>
-        [Authorize(Policy = Permissions.Memberships.View)]
+        [Authorize(Policy = Permissions.Brands.View)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {

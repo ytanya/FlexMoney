@@ -212,6 +212,9 @@ E:\TienPhong\FlexMoney\FlexMoney\src\Server\obj\Debug\net5.0\ref\FlexMoney.Serve
 E:\TienPhong\FlexMoney\FlexMoney\src\Server\obj\Debug\net5.0\FlexMoney.Server.pdb
 E:\TienPhong\FlexMoney\FlexMoney\src\Server\obj\Debug\net5.0\Server.genruntimeconfig.cache
 E:\TienPhong\FlexMoney\FlexMoney\src\Server\bin\Debug\net5.0\ref\FlexMoney.Server.dll
+D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\FlexMoney.Client.StaticWebAssets.xml
+D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\appsettings.Development.json
+D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\appsettings.json
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\BlazorDebugProxy\BrowserDebugHost.dll
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\BlazorDebugProxy\BrowserDebugHost.runtimeconfig.json
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\BlazorDebugProxy\BrowserDebugProxy.dll
@@ -221,9 +224,6 @@ D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\BlazorDebugProxy\Mono.Ce
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\BlazorDebugProxy\Mono.Cecil.Pdb.dll
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\BlazorDebugProxy\Mono.Cecil.Rocks.dll
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\BlazorDebugProxy\Newtonsoft.Json.dll
-D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\FlexMoney.Client.StaticWebAssets.xml
-D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\appsettings.Development.json
-D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\appsettings.json
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\FlexMoney.Server.StaticWebAssets.xml
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\FlexMoney.Server.exe
 D:\FlexMoneyTanya\FlexMoney\src\Server\bin\Debug\net5.0\FlexMoney.Server.deps.json

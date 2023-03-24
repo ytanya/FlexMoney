@@ -1,7 +1,7 @@
 ﻿using FlexMoney.Application.Features.FlexMoneyTypes.Commands.AddFlexMoneyType;
 using FlexMoney.Application.Features.FlexMoneyTypes.Queries.GettAll;
-using FlexMoney.Application.Features.Memberships.Commands.AddEdit;
-using FlexMoney.Application.Features.Memberships.Queries.GetAll;
+using FlexMoney.Application.Features.Members.Commands.AddEdit;
+using FlexMoney.Application.Features.Members.Queries.GetAll;
 using FlexMoney.Shared.Constants.Permission;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace FlexMoney.Server.Controllers.v1.Catalog
 {
 
-    public class FlexMoneyTypesController  : BaseApiController<MembershipsController>
+    public class FlexMoneyTypesController  : BaseApiController<MembersController>
     {
         //[Authorize(Policy = Permissions.FlexMoneyTypes.View)]
         [HttpGet]
@@ -22,7 +22,7 @@ namespace FlexMoney.Server.Controllers.v1.Catalog
             return Ok(brands);
         }
 
-        [Authorize(Policy = Permissions.FlexMoneyTypes.Create)]
+        [Authorize(Policy = Permissions.Types.Create)]
         [HttpPost]
         public async Task<IActionResult> Post(AddFlexMonryTypeCommand command)
         {

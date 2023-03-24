@@ -1,5 +1,5 @@
 ﻿@page "/catalog/flexmoneytypes"
-@attribute [Authorize(Policy = Permissions.FlexMoneyTypes.View)]
+@attribute [Authorize(Policy = Permissions.Types.View)]
 @inject Microsoft.Extensions.Localization.IStringLocalizer<FlexMoneyTypes> _localizer
 @using FlexMoney.Application.Features.FlexMoneyTypes.Queries.GettAll
 <style>

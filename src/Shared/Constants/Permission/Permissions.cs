@@ -26,14 +26,15 @@ namespace FlexMoney.Shared.Constants.Permission
             public const string Search = "Permissions.Brands.Search";
         }
 
-        public static class FlexMoneyTypes
+        public static class Types
         {
-            public const string View = "Permissions.FlexMoneyTypes.View";
-            public const string Create = "Permissions.FlexMoneyTypes.Create";
-            public const string Edit = "Permissions.FlexMoneyTypes.Edit";
-            public const string Delete = "Permissions.FlexMoneyTypes.Delete";
-            public const string Export = "Permissions.FlexMoneyTypes.Export";
-            public const string Search = "Permissions.FlexMoneyTypes.Search";
+            public const string View = "Permissions.Types.View";
+            public const string Create = "Permissions.Types.Create";
+            public const string Edit = "Permissions.Types.Edit";
+            public const string Delete = "Permissions.Types.Delete";
+            public const string Export = "Permissions.Types.Export";
+            public const string Search = "Permissions.Types.Search";
+
         }
 
         public static class Documents
@@ -122,14 +123,44 @@ namespace FlexMoney.Shared.Constants.Permission
             public const string Search = "Permissions.AuditTrails.Search";
         }
 
-        public static class Memberships
+        public static class Members
         {
-            public const string View = "Permissions.Memberships.View";
-            public const string Create = "Permissions.Memberships.Create";
-            public const string Edit = "Permissions.Memberships.Edit";
-            public const string Delete = "Permissions.Memberships.Delete";
-            public const string Export = "Permissions.Memberships.Export";
-            public const string Search = "Permissions.Memberships.Search";
+            public const string View = "Permissions.Members.View";
+            public const string Create = "Permissions.Members.Create";
+            public const string Edit = "Permissions.Members.Edit";
+            public const string Delete = "Permissions.Members.Delete";
+            public const string Export = "Permissions.Members.Export";
+            public const string Search = "Permissions.Members.Search";
+        }
+
+        public static class MemberLines
+        {
+            public const string View = "Permissions.MemberLines.View";
+            public const string Create = "Permissions.MemberLines.Create";
+            public const string Edit = "Permissions.MemberLines.Edit";
+            public const string Delete = "Permissions.MemberLines.Delete";
+            public const string Export = "Permissions.MemberLines.Export";
+            public const string Search = "Permissions.MemberLines.Search";
+        }
+
+        public static class MoneyLines
+        {
+            public const string View = "Permissions.MoneyLines.View";
+            public const string Create = "Permissions.MoneyLines.Create";
+            public const string Edit = "Permissions.MoneyLines.Edit";
+            public const string Delete = "Permissions.MoneyLines.Delete";
+            public const string Export = "Permissions.MoneyLines.Export";
+            public const string Search = "Permissions.MoneyLines.Search";
+        }
+
+        public static class Transactions
+        {
+            public const string View = "Permissions.Transactions.View";
+            public const string Create = "Permissions.Transactions.Create";
+            public const string Edit = "Permissions.Transactions.Edit";
+            public const string Delete = "Permissions.Transactions.Delete";
+            public const string Export = "Permissions.Transactions.Export";
+            public const string Search = "Permissions.Transactions.Search";
         }
         /// <summary>
         /// Returns a list of Permissions.

@@ -300,7 +300,7 @@ using System.Security.Claims;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 109 "D:\FlexMoneyTanya\FlexMoney\src\Client\Shared\NavMenu.razor"
+#line 107 "D:\FlexMoneyTanya\FlexMoney\src\Client\Shared\NavMenu.razor"
        
     private ClaimsPrincipal _authenticationStateProviderUser;
 
@@ -314,8 +314,14 @@ using System.Security.Claims;
     private bool _canViewChat;
     private bool _canViewProducts;
     private bool _canViewBrands;
+
     private bool _canViewMemberships;
     private bool _canViewFlexMoneyTypes;
+
+    private bool _canViewMembers;
+    private bool _canViewTypes;
+    private bool _canViewTransactions;
+
 
     protected override async Task OnParametersSetAsync()
     {
@@ -330,9 +336,14 @@ using System.Security.Claims;
         _canViewChat = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Communication.Chat)).Succeeded;
         _canViewProducts = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Products.View)).Succeeded;
         _canViewBrands = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Brands.View)).Succeeded;
-        _canViewMemberships = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Memberships.View)).Succeeded;
-        _canViewFlexMoneyTypes = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.FlexMoneyTypes.View)).Succeeded;
+        _canViewMemberships = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Members.View)).Succeeded;
+        _canViewFlexMoneyTypes = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Types.View)).Succeeded;
+        _canViewMembers = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Members.View)).Succeeded;
+        _canViewTypes = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Types.View)).Succeeded;
+        _canViewTransactions = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Transactions.View)).Succeeded;
+
     }
+  
 
 #line default
 #line hidden

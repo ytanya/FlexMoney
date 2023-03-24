@@ -12,7 +12,7 @@ using FlexMoney.Client.Extensions;
 using FlexMoney.Application.Features.FlexMoneyTypes.Queries.GettAll;
 using MudBlazor.Extensions;
 using FlexMoney.Client.Infrastructure.Managers.Catalog.FlexMoneyType;
-using FlexMoney.Application.Features.Memberships.Commands.AddEdit;
+using FlexMoney.Application.Features.Members.Commands.AddEdit;
 using FlexMoney.Shared.Constants.Application;
 
 namespace FlexMoney.Client.Pages.Catalog
@@ -40,11 +40,11 @@ namespace FlexMoney.Client.Pages.Catalog
         protected override async Task OnInitializedAsync()
         {
             _currentUser = await _authenticationManager.CurrentUser();
-            _canCreateMemberships = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.FlexMoneyTypes.Create)).Succeeded;
-            _canEditMemberships = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.FlexMoneyTypes.Edit)).Succeeded;
-            _canDeleteMemberships = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.FlexMoneyTypes.Delete)).Succeeded;
+            _canCreateMemberships = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Types.Create)).Succeeded;
+            _canEditMemberships = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Types.Edit)).Succeeded;
+            _canDeleteMemberships = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Types.Delete)).Succeeded;
             //_canExportBrands = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Brands.Export)).Succeeded;
-            _canSearchMemberships = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.FlexMoneyTypes.Search)).Succeeded;
+            _canSearchMemberships = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Types.Search)).Succeeded;
 
             await GetFlexMoneyTypeAsync();
             _loaded = true;
@@ -108,7 +108,7 @@ namespace FlexMoney.Client.Pages.Catalog
                 _flexmoney = _flexmoneylist.FirstOrDefault(c => c.Id == id);
                 if (_flexmoney != null)
                 {
-                    parameters.Add(nameof(AddFlexMoneyTypesModal.AddFlexMonryTypeModel), new AddEditMembershipCommand
+                    parameters.Add(nameof(AddFlexMoneyTypesModal.AddFlexMonryTypeModel), new AddEditMemberCommand
                     {
                         Id = _flexmoney.Id,
                         Name = _flexmoney.Name,

@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FlexMoney.Application.Features.Memberships.Queries.GetAll;
+using FlexMoney.Application.Features.Members.Queries.GetAll;
 using FlexMoney.Application.Interfaces.Repositories;
 using FlexMoney.Domain.Entities.Catalog;
 using FlexMoney.Domain.Entities.TypeFlexMoney;
