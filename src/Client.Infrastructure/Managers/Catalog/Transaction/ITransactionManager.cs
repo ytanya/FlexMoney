@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FlexMoney.Application.Features.Transactions.Commands.AddEdit;
 using FlexMoney.Application.Features.Transactions.Queries.GetAll;
+using FlexMoney.Application.Features.Transactions.Queries.GetById;
 using FlexMoney.Shared.Wrapper;
 
 namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction
@@ -18,5 +19,7 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction
         Task<IResult<int>> DeleteAsync(int id);
 
         Task<IResult<string>> ExportToExcelAsync(string searchString = "");
+
+        Task<IResult<List<GetTransactionByLineIdResponse>>> GetByLineIdAsync(GetTransactionByLineIdQuery request);
     }
 }

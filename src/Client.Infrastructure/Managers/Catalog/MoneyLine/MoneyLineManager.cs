@@ -1,5 +1,6 @@
 ﻿using FlexMoney.Application.Features.MoneyLines.Commands.AddEdit;
 using FlexMoney.Application.Features.MoneyLines.Queries.GetAll;
+using FlexMoney.Application.Features.MoneyLines.Queries.GetById;
 using FlexMoney.Client.Infrastructure.Extensions;
 using FlexMoney.Shared.Wrapper;
 using System;
@@ -44,6 +45,12 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.MoneyLine
         {
             var response = await _httpClient.PostAsJsonAsync(Routes.MoneyLinesEndpoints.Save, request);
             return await response.ToResult<int>();
+        }
+
+        public async Task<IResult<GetMoneyLineByIdResponse>> GetByIdAsync(GetMoneyLineByIdQuery request)
+        {
+            var response = await _httpClient.GetAsync(Routes.MoneyLinesEndpoints.GetById(request.Id));
+            return await response.ToResult<GetMoneyLineByIdResponse>();
         }
     }
 }

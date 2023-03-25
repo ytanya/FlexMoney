@@ -6,9 +6,11 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Threading.Tasks;
+using FlexMoney.Application.Features.MoneyLines.Queries.GetById;
 using FlexMoney.Application.Features.Transactions.Commands.AddEdit;
 using FlexMoney.Application.Features.Transactions.Queries.GetAll;
 using FlexMoney.Client.Extensions;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.MoneyLine;
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction;
 using FlexMoney.Shared.Constants.Application;
 using FlexMoney.Shared.Constants.Permission;
@@ -22,6 +24,8 @@ namespace FlexMoney.Client.Pages.Catalog
     public partial class Transactions
     {
         [Inject] private ITransactionManager TransactionManager { get; set; }
+        [Inject] private IMoneyLineManager MoneyLineManager { get; set; }
+
         [CascadingParameter] private HubConnection HubConnection { get; set; }
 
         private List<GetAllTransactionsResponse> _transactionList = new();
@@ -39,6 +43,7 @@ namespace FlexMoney.Client.Pages.Catalog
         private bool _canSearchTransactions;
         private bool _loaded;
         private List<string> data;
+        private GetMoneyLineByIdQuery lineQuery = new();
         protected override async Task OnInitializedAsync()
         {
             _currentUser = await _authenticationManager.CurrentUser();
@@ -108,14 +113,25 @@ namespace FlexMoney.Client.Pages.Catalog
             if (id != 0)
             {
                 _transaction = _transactionList.FirstOrDefault(c => c.Id == id);
+                lineQuery.Id = _transaction.LineId;
+                var response = await MoneyLineManager.GetByIdAsync(lineQuery);
                 if (_transaction != null)
                 {
                     parameters.Add(nameof(AddEditTransactionModal.AddEditTransactionModel), new AddEditTransactionCommand
                     {
                         Id = _transaction.Id,
+                        Earn = _transaction.Earn,
+                        Call = _transaction.Call,
+                        CallerId = _transaction.CallerId,
+                        RealEarn = _transaction.RealEarn,
                         TypeId = _transaction.TypeId,
+                        TypeName = _transaction.TypeName,
+                        //TypeId = _transaction.TypeId,
                         LineId = _transaction.LineId,
-                        ThankMoney = _transaction.ThankMoney
+                        ThankMoney = _transaction.ThankMoney,
+                        Section =_transaction.Section,
+                        Quantity = response.Data.Quantity,
+                        Money = response.Data.Money,
                     });
                 }
             }

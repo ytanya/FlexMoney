@@ -11,6 +11,8 @@ namespace FlexMoney.Application.Features.MoneyLines.Queries.GetAll
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public int TypeId { get; set; }
+        public string TypeName { get; set; }
+        public string Name { get; set; }
         public Decimal Money { get; set; }
         public int Quantity { get; set; }
         public int Owner { get; set; }

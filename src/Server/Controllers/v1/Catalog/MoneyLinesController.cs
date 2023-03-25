@@ -32,7 +32,7 @@ namespace FlexMoney.Server.Controllers.v1.Catalog
         /// <param name="id"></param>
         /// <returns>Status 200 Ok</returns>
         [Authorize(Policy = Permissions.MoneyLines.View)]
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<IActionResult> GetById(int id)
         {
             var moneyLine = await _mediator.Send(new GetMoneyLineByIdQuery() { Id = id });

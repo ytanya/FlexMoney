@@ -11,7 +11,8 @@ namespace FlexMoney.Domain.Entities.Catalog
     {
         public int MemberId { get; set; }
         public virtual Member Member { get; set; }
-        public int MoneyLineId { get; set; }
-        public virtual MoneyLine MoneyLine { get; set; }
+        public int LineId { get; set; }
+        public virtual MoneyLine Line { get; set; }
+        public int Position { get; set; }
     }
 }

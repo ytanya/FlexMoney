@@ -28,6 +28,8 @@ namespace FlexMoney.Infrastructure.Extensions
                 .AddTransient(typeof(IRepositoryAsync<,>), typeof(RepositoryAsync<,>))
                 .AddTransient<IProductRepository, ProductRepository>()
                 .AddTransient<IBrandRepository, BrandRepository>()
+                .AddTransient<ITransactionRepository, TransactionRepository>()
+                .AddTransient<IMemberLineRepository, MemberLineRepository>()
                 .AddTransient<IDocumentRepository, DocumentRepository>()
                 .AddTransient<IDocumentTypeRepository, DocumentTypeRepository>()
                 .AddTransient(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));

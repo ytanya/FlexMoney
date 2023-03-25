@@ -34,6 +34,10 @@ namespace FlexMoney.Application.Features.Transactions.Commands.AddEdit
         public Decimal RealEarn { get; set; }
         public Decimal Dead { get; set; }
         public Decimal Alive { get; set; }
+        public int Position { get; set; }
+        public int Quantity { get; set; }
+        public string TypeName { get; set; }
+        public decimal Money { get; set; }
     }
     internal class AddEditTransactionCommandHandler : IRequestHandler<AddEditTransactionCommand, Result<int>>
     {
@@ -73,6 +77,8 @@ namespace FlexMoney.Application.Features.Transactions.Commands.AddEdit
                     transaction.RealEarn = (command.RealEarn == 0) ? transaction.RealEarn : command.RealEarn;
                     transaction.Dead = (command.Dead == 0) ? transaction.Dead : command.Dead;
                     transaction.Alive = (command.Alive == 0) ? transaction.Alive : command.Alive;
+                    transaction.Position = (command.Position == 0) ? transaction.Position : command.Position;
+                    transaction.TypeId = (command.TypeId == 0) ? transaction.TypeId : command.TypeId;
                     await _unitOfWork.Repository<Transaction>().UpdateAsync(transaction);
                     await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsCacheKey);
                     return await Result<int>.SuccessAsync(transaction.Id, _localizer["Transaction Updated"]);

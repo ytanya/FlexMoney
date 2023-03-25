@@ -1,5 +1,6 @@
 ﻿using FlexMoney.Application.Features.Transactions.Commands.AddEdit;
 using FlexMoney.Application.Features.Transactions.Queries.GetAll;
+using FlexMoney.Application.Features.Transactions.Queries.GetById;
 using FlexMoney.Client.Infrastructure.Extensions;
 using FlexMoney.Shared.Wrapper;
 using System;
@@ -44,6 +45,11 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction
         {
             var response = await _httpClient.PostAsJsonAsync(Routes.TransactionsEndpoints.Save, request);
             return await response.ToResult<int>();
+        }
+        public async Task<IResult<List<GetTransactionByLineIdResponse>>> GetByLineIdAsync(GetTransactionByLineIdQuery request)
+        {
+            var response = await _httpClient.GetAsync(Routes.TransactionsEndpoints.GetByLineId(request.LineId));
+            return await response.ToResult<List<GetTransactionByLineIdResponse>>();
         }
     }
 }

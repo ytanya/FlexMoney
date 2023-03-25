@@ -22,12 +22,14 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
     }
     internal class GetAllTransactionsCachedQueryHandler : IRequestHandler<GetAllTransactionsQuery, Result<List<GetAllTransactionsResponse>>>
     {
+        private readonly ITransactionRepository _transactionRepository;
         private readonly IUnitOfWork<int> _unitOfWork;
         private readonly IMapper _mapper;
         private readonly IAppCache _cache;
 
-        public GetAllTransactionsCachedQueryHandler(IUnitOfWork<int> unitOfWork, IMapper mapper, IAppCache cache)
+        public GetAllTransactionsCachedQueryHandler(IUnitOfWork<int> unitOfWork, ITransactionRepository transactionRepository, IMapper mapper, IAppCache cache)
         {
+            _transactionRepository = transactionRepository;
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _cache = cache;
@@ -35,9 +37,26 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
 
         public async Task<Result<List<GetAllTransactionsResponse>>> Handle(GetAllTransactionsQuery request, CancellationToken cancellationToken)
         {
-            Func<Task<List<Transaction>>> getAllTransactions = () => _unitOfWork.Repository<Transaction>().GetAllAsync();
+            Func<Task<List<Transaction>>> getAllTransactions = async () =>
+            {
+                return await _transactionRepository.GetAllAsync(latestOnly: true);
+            };
             var transactionList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllTransactionsCacheKey, getAllTransactions);
-            var mappedTransactions = _mapper.Map<List<GetAllTransactionsResponse>>(transactionList);
+            var mappedTransactions = new List<GetAllTransactionsResponse>();
+            foreach (var transaction in transactionList)
+            {
+                var type = await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().GetByIdAsync(transaction.TypeId);
+                var caller = await _unitOfWork.Repository<Member>().GetByIdAsync(transaction.CallerId);
+                var moneyLine = await _unitOfWork.Repository<MoneyLine>().GetByIdAsync(transaction.LineId);
+
+                var mappedTransactionItem = _mapper.Map<GetAllTransactionsResponse>(transaction);
+                mappedTransactionItem.TypeName = type.Name;
+                mappedTransactionItem.Caller = caller.Name;
+                mappedTransactionItem.MoneyLine = moneyLine.Name;
+
+                mappedTransactions.Add(mappedTransactionItem);
+            }
+
             return await Result<List<GetAllTransactionsResponse>>.SuccessAsync(mappedTransactions);
         }
     }

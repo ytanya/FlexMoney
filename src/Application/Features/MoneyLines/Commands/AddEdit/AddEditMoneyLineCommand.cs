@@ -66,7 +66,7 @@ namespace FlexMoney.Application.Features.MoneyLines.Commands.AddEdit
                         moneyLine.TypeId = command.TypeId;
                         moneyLine.Money = command.Money;
                         moneyLine.Quantity = command.Quantity;
-                        moneyLine.Owner = command.Owner;
+                        moneyLine.OwnerId = command.Owner;
                         await _unitOfWork.Repository<MoneyLine>().UpdateAsync(moneyLine);
                         await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMoneyLinesCacheKey);
                         return await Result<int>.SuccessAsync(moneyLine.Id, _localizer["Money Line Updated"]);

@@ -37,7 +37,15 @@ namespace FlexMoney.Application.Features.MoneyLines.Queries.GetAll
         {
             Func<Task<List<MoneyLine>>> getAllMoneyLines = () => _unitOfWork.Repository<MoneyLine>().GetAllAsync();
             var moneyLineList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllMoneyLinesCacheKey, getAllMoneyLines);
-            var mappedMoneyLines = _mapper.Map<List<GetAllMoneyLinesResponse>>(moneyLineList);
+            var mappedMoneyLines = new List<GetAllMoneyLinesResponse>();
+            foreach (var moneyLine in moneyLineList)
+            {
+                var type = await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().GetByIdAsync(moneyLine.TypeId);
+                var mappedMoneyLineItem = _mapper.Map<GetAllMoneyLinesResponse>(moneyLine);
+                mappedMoneyLineItem.TypeName = type.Name; // set the member name property
+                mappedMoneyLines.Add(mappedMoneyLineItem);
+            }
+
             return await Result<List<GetAllMoneyLinesResponse>>.SuccessAsync(mappedMoneyLines);
         }
     }

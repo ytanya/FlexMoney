@@ -18,6 +18,8 @@ namespace FlexMoney.Application.Mappings
             CreateMap<AddEditMemberLineCommand, MemberLine>().ReverseMap();
             CreateMap<GetMemberLineByIdResponse, MemberLine>().ReverseMap();
             CreateMap<GetAllMemberLinesResponse, MemberLine>().ReverseMap();
+            CreateMap<GetMemberLineByLineIdResponse, MemberLine>().ReverseMap();
+            //CreateMap<List<GetMemberLineByIdResponse>, List<MemberLine>>().ReverseMap();
         }
     }
 }

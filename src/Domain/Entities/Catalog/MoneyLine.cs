@@ -15,6 +15,8 @@ namespace FlexMoney.Domain.Entities.Catalog
         public string Name { get; set; }
         public Decimal Money { get; set; }
         public int Quantity { get; set; }
-        public int Owner { get; set; }
+        public int OwnerId { get; set; }
+        public int Position { get; set; }
+        public int StatusId { get; set; }
     }
 }

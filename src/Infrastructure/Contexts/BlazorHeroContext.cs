@@ -36,6 +36,7 @@ namespace FlexMoney.Infrastructure.Contexts
         public DbSet<MemberLine> MemberLines { get; set; }
         public DbSet<MoneyLine> MoneyLines { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
+        public DbSet<Status> Status { get; set; }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new())
         {

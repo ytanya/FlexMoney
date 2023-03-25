@@ -1,5 +1,11 @@
 ﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<AddEditTransactionModal> _localizer
-
+@using FlexMoney.Application.Features.MoneyLines.Queries.GetAll;
+@using FlexMoney.Application.Features.MemberLines.Queries.GetById;
+@{
+    string sectionQuantity = $"{AddEditTransactionModel.Section}/{AddEditTransactionModel.Quantity}";
+    string typeName = AddEditTransactionModel.TypeName;
+    decimal money = AddEditTransactionModel.Money;
+}
 <EditForm Model="@AddEditTransactionModel" OnValidSubmit="SaveAsync">
     <FluentValidationValidator @ref="_fluentValidationValidator" />
     <MudDialog>
@@ -28,8 +34,94 @@
                     <MudItem xs="12" md="6">
                         <MudTextField Disabled For="@(() => AddEditTransactionModel.Id)" @bind-Value="AddEditTransactionModel.Id" Label="@_localizer["Id"]" />
                     </MudItem>
+                    @*<MudItem xs="12" md="6">
+                        <MudSelect T="GetAllMoneyLinesResponse" Label="Select a line" Variant="Variant.Filled" ValueChanged="HandleLineChange" >
+                            @foreach (var line in _moneyLineList)
+                            {
+                                <MudSelectItem Value="@line">@line.Name</MudSelectItem>
+                            }
+                        </MudSelect>
+                    </MudItem>*@
+                    <MudItem xs="12" md="6">
+                    <MudText Color="Color.Error">Type: @typeName</MudText>
+                </MudItem>
+                    <MudItem xs="12" md="6">
+                    <MudText Color="Color.Error">Section: @sectionQuantity</MudText>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudText Color="Color.Error">Money: @money</MudText>
+                    </MudItem>
+                @*<MudItem xs="12" md="6">
+                    <MudText Color="Color.Error">Total Thank Money: @_thankMoneyTotal</MudText>
+                </MudItem>*@
+                @*<MudItem xs="12" md="6">
+                        <MudSelect T="GetMemberLineByLineIdResponse" Label="Select a caller" Variant="Variant.Filled" ValueChanged="HandleCallerChange" >
+                            @foreach (var caller in _readyCallerList)
+                            {
+                                <MudSelectItem Value="@caller">@(caller.MemberName + "-" + caller.Position)</MudSelectItem>
+                            }
+                        </MudSelect>
+                    </MudItem>*@
+                
+                <MudItem xs="12" md="6">
+                    <MudTextField For="@(() => AddEditTransactionModel.Call)" Immediate="true" @bind-Value="AddEditTransactionModel.Call" Label="@_localizer["Call"]" Format="C0" TextChanged="OnValueCallChangeHandler"/>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField Disabled For="@(() => AddEditTransactionModel.Earn)" @bind-Value="AddEditTransactionModel.Earn" Label="@_localizer["Earn"]"/>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField For="@(() => AddEditTransactionModel.ThankMoney)" Immediate="true" @bind-Value="AddEditTransactionModel.ThankMoney" Label="@_localizer["Thank Money"]" TextChanged="OnValueThankMoneyChangeHandler"/>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField Disabled For="@(() => AddEditTransactionModel.RealEarn)" @bind-Value="AddEditTransactionModel.RealEarn" Label="@_localizer["Real Earn"]"/>
+                </MudItem>
                 }
-               @* <MudItem xs="12" md="6">
+                else
+                {
+                    <MudItem xs="12" md="6">
+                        <MudSelect T="GetAllMoneyLinesResponse" Label="Select a line" Variant="Variant.Filled" ValueChanged="HandleLineChange" >
+                            @foreach (var line in _moneyLineList)
+                            {
+                                <MudSelectItem Value="@line">@line.Name</MudSelectItem>
+                            }
+                        </MudSelect>
+                    </MudItem>
+                    <MudItem xs="12" md="6">
+                    <MudText Color="Color.Error">Type: @_selectedLine.TypeName</MudText>
+                </MudItem>
+                    <MudItem xs="12" md="6">
+                    <MudText Color="Color.Error">Section: @(_section + "/" + _selectedLine.Quantity)</MudText>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudText Color="Color.Error">Money: @_money</MudText>
+                    </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudText Color="Color.Error">Total Thank Money: @_thankMoneyTotal</MudText>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                        <MudSelect T="GetMemberLineByLineIdResponse" Label="Select a caller" Variant="Variant.Filled" ValueChanged="HandleCallerChange" >
+                            @foreach (var caller in _readyCallerList)
+                            {
+                                <MudSelectItem Value="@caller">@(caller.MemberName + "-" + caller.Position)</MudSelectItem>
+                            }
+                        </MudSelect>
+                    </MudItem>
+                
+                <MudItem xs="12" md="6">
+                    <MudTextField For="@(() => AddEditTransactionModel.Call)" Immediate="true" @bind-Value="AddEditTransactionModel.Call" Label="@_localizer["Call"]" Format="C0" TextChanged="OnValueCallChangeHandler"/>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField Disabled @bind-Value="@_earn" Label="@_localizer["Earn"]" />
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField For="@(() => AddEditTransactionModel.ThankMoney)" Immediate="true" @bind-Value="AddEditTransactionModel.ThankMoney" Label="@_localizer["Thank Money"]" TextChanged="OnValueThankMoneyChangeHandler"/>
+                </MudItem>
+                <MudItem xs="12" md="6">
+                    <MudTextField Disabled @bind-Value="@_realearn" Label="@_localizer["Real Earn"]" />
+                </MudItem>
+                }
+                
+                @*<MudItem xs="12" md="6">
                     <MudTextField For="@(() => AddEditTransactionModel.LineId)" @bind-Value="@(AddEditTransactionModel.LineId.ToString())" Label="@_localizer["Line"]" />
                 </MudItem>
                 <MudItem xs="12" md="6">

@@ -13,7 +13,7 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
         public int LineId { get; set; }
         public string MoneyLine { get; set; }
         public int TypeId { get; set; }
-        public string Type { get; set; }
+        public string TypeName { get; set; }
         public int Section { get; set; }
         public int CallerId { get; set; }
         public string Caller { get; set; }

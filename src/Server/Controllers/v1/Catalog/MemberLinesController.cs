@@ -62,5 +62,18 @@ namespace FlexMoney.Server.Controllers.v1.Catalog
         {
             return Ok(await _mediator.Send(new DeleteMemberLineCommand { Id = id }));
         }
+
+        /// <summary>
+        /// Get a Member Line By Line Id
+        /// </summary>
+        /// <param name="lineId"></param>
+        /// <returns>Status 200 Ok</returns>
+        [Authorize(Policy = Permissions.MemberLines.View)]
+        [HttpGet("line/{lineId}")]
+        public async Task<IActionResult> GetByLineId(int lineId)
+        {
+            var memberLine = await _mediator.Send(new GetMemberLineByLineIdQuery() { LineId = lineId });
+            return Ok(memberLine);
+        }
     }
 }

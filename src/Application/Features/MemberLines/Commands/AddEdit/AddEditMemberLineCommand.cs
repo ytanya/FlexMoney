@@ -51,7 +51,7 @@ namespace FlexMoney.Application.Features.MemberLines.Commands.AddEdit
                 if (memberLine != null)
                 {
                     memberLine.MemberId = command.MemberId;
-                    memberLine.MoneyLineId = command.MoneyLineId;
+                    memberLine.LineId = command.MoneyLineId;
                     await _unitOfWork.Repository<MemberLine>().UpdateAsync(memberLine);
                     await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMemberLinesCacheKey);
                     return await Result<int>.SuccessAsync(memberLine.Id, _localizer["Member Line Updated"]);

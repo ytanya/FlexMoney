@@ -1,5 +1,6 @@
 ﻿using FlexMoney.Application.Features.MemberLines.Commands.AddEdit;
 using FlexMoney.Application.Features.MemberLines.Queries.GetAll;
+using FlexMoney.Application.Features.MemberLines.Queries.GetById;
 using FlexMoney.Client.Infrastructure.Extensions;
 using FlexMoney.Shared.Wrapper;
 using System;
@@ -44,6 +45,11 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.MemberLine
         {
             var response = await _httpClient.PostAsJsonAsync(Routes.MemberLinesEndpoints.Save, request);
             return await response.ToResult<int>();
+        }
+        public async Task<IResult<List<GetMemberLineByLineIdResponse>>> GetByLineIdAsync(GetMemberLineByLineIdQuery request)
+        {
+            var response = await _httpClient.GetAsync(Routes.MemberLinesEndpoints.GetByLineId(request.LineId));
+            return await response.ToResult<List<GetMemberLineByLineIdResponse>>();
         }
     }
 }

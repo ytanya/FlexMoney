@@ -13,6 +13,8 @@ namespace FlexMoney.Application.Mappings
             CreateMap<AddEditTransactionCommand, Transaction>().ReverseMap();
             CreateMap<GetTransactionByIdResponse, Transaction>().ReverseMap();
             CreateMap<GetAllTransactionsResponse, Transaction>().ReverseMap();
+            CreateMap<GetTransactionByLineIdResponse, Transaction>().ReverseMap();
+            CreateMap<GetTransactionByLineIdResponse, Transaction>().ReverseMap();
         }
     }
 }

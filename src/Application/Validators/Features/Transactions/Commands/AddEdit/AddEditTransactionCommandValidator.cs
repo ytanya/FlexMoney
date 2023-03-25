@@ -13,12 +13,10 @@ namespace FlexMoney.Application.Validators.Features.Transactions.Commands.AddEdi
     {
         public AddEditTransactionCommandValidator(IStringLocalizer<AddEditTransactionCommandValidator> localizer)
         {
-            RuleFor(request => request.LineId)
-                .GreaterThan(0).WithMessage(x => localizer["Line is required!"]);
-            RuleFor(request => request.CallerId)
-                .GreaterThan(0).WithMessage(x => localizer["Caller is required!"]);
-            RuleFor(request => request.Section)
-                    .GreaterThan(0).WithMessage(x => localizer["Section must be greater than 0"]);
+            //RuleFor(request => request.LineId)
+            //    .GreaterThan(0).WithMessage(x => localizer["Line is required!"]);
+            //RuleFor(request => request.CallerId)
+            //    .GreaterThan(0).WithMessage(x => localizer["Caller is required!"]);
         }
     }
 }

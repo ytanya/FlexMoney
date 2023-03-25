@@ -13,6 +13,11 @@ namespace FlexMoney.Client.Infrastructure.Routes
             return $"{Export}?searchString={searchString}";
         }
 
+        public static string GetById(int id)
+        {
+            return $"api/v1/moneylines/id/{id}";
+        }
+
         public static string Export = "api/v1/moneylines/export";
 
         public static string GetAll = "api/v1/moneylines";
