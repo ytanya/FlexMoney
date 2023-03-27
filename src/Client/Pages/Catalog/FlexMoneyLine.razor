@@ -1,4 +1,5 @@
-﻿@page "/catalog/flexmoneyline"
+﻿@page "/catalog/flexmoneylines"
+@using FlexMoney.Application.Features.MoneyLines.Queries.GetAll
 @inject Microsoft.Extensions.Localization.IStringLocalizer<FlexMoneyLine> _localizer
 <style>
 .mud-table-container {
@@ -7,29 +8,92 @@
 </style>
 <HeroTitle Title="@_localizer["Money Line"]" Description="@_localizer["Manage Money Line."]" />
 
-<MudTable Items="@_flexMoneyLineslist" Hover="true" Breakpoint="Breakpoint.Sm"  LoadingProgressColor="Color.Info">
-    <ToolBarContent>
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="(() => InvokeModal())" Style="margin-right: 5px;">@_localizer["Create"]</MudButton>
-        <MudButton Variant="Variant.Filled" Color="Color.Secondary" StartIcon="@Icons.Material.Filled.Refresh" Style="margin-right: 5px;">@_localizer["Reload"]</MudButton>
-        <MudButton Variant="Variant.Filled" Color="Color.Secondary"Style="margin-right: 5px;">@_localizer["Export"]</MudButton>
-    </ToolBarContent>
-@*        <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Flex Money type"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
-*@
-    <HeaderContent>
-        <MudTh>Id</MudTh>
-        <MudTh>Name</MudTh>
-        <MudTh>Note</MudTh>
-        <MudTh Style="text-align: right">Action</MudTh>
-    </HeaderContent>
-    <RowTemplate>
-        <MudTd DataLabel="Id">@context.Id</MudTd>
-        <MudTd DataLabel="Name">@context.Name</MudTd>
-        <MudTd DataLabel=" Note">@context.Note</MudTd>
-        <MudTd DataLabel="Actions" Style="text-align: right">
-            <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown" IconColor="Color.Secondary" Direction="Direction.Left" OffsetX="true">
-                <MudMenuItem>@_localizer["Edit"]</MudMenuItem>
-                <MudMenuItem>@_localizer["Delete"]</MudMenuItem>
-            </MudMenu>
-        </MudTd>
-    </RowTemplate>
-</MudTable>
+@if(!_loaded){
+    <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+}
+else
+{
+        <MudTable Hover="true" Elevation="25" Items="_moneyLineList" Dense="@_dense" Bordered="@_bordered" Striped="@_striped" Filter="new Func<GetAllMoneyLinesResponse, bool>(Search)" @bind-moneyline="_moneyLine">
+            <ToolBarContent>
+                <div class="justify-center mud-text-align-center">
+                @if (_canCreateMoneyLines)
+                {
+                    <MudButton DisableElevation Variant="Variant.Filled" Color="Color.Primary" OnClick="(() => InvokeModal())" StartIcon="@Icons.Material.Filled.Add" IconColor="Color.Surface">@_localizer["Create"]</MudButton>
+                    <MudButton DisableElevation Variant="Variant.Filled" OnClick="GetMoneyLinesAsync" StartIcon="@Icons.Material.Filled.Refresh" IconColor="Color.Surface" Color="Color.Secondary">@_localizer["Reload"]</MudButton>
+                    @if (_canExportMoneyLines)
+                    {
+                                        <MudButton DisableElevation Variant="Variant.Filled" OnClick="ExportToExcel" StartIcon="@Icons.Custom.FileFormats.FileExcel" IconColor="Color.Secondary" Color="Color.Surface" Style="margin-left: 5px;">@_localizer["Export"]</MudButton>
+                    }
+                }
+                else
+                {
+                    <MudButton DisableElevation Variant="Variant.Filled" OnClick="GetMoneyLinesAsync" StartIcon="@Icons.Material.Filled.Refresh" IconColor="Color.Surface" Color="Color.Secondary">@_localizer["Reload"]</MudButton>
+                    @if (_canExportMoneyLines)
+                    {
+                                    <MudButton DisableElevation Variant="Variant.Filled" OnClick="ExportToExcel" StartIcon="@Icons.Custom.FileFormats.FileExcel" IconColor="Color.Secondary" Color="Color.Surface" Style="margin-left: 5px;">@_localizer["Export"]</MudButton>
+                    }
+                }
+                </div>
+                <MudToolBarSpacer />
+            @if (_canSearchMoneyLines)
+            {
+                        <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Brands"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
+            }
+            </ToolBarContent>
+            <HeaderContent>
+                <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.Id)">@_localizer["Id"]</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.Name)">@_localizer["Name"]</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.CreatedDate)">@_localizer["Created Date"]</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.TypeId)">@_localizer["Type"]</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.Money)">@_localizer["Money"]</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.Quantity)">@_localizer["Quantity"]</MudTableSortLabel></MudTh>
+                <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.Owner)">@_localizer["Owner"]</MudTableSortLabel></MudTh>
+                <MudTh Style="text-align:right">@_localizer["Actions"]</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Id">@context.Id</MudTd>
+                <MudTd DataLabel="Name">
+                    <MudHighlighter Text="@context.Name" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="Description">
+                    <MudHighlighter Text="@context.CreatedDate.ToString()" HighlightedText="@_searchString" />
+                </MudTd>
+                <MudTd DataLabel="Type">@context.TypeId</MudTd>
+
+                <MudTd DataLabel="Actions" Style="text-align: right">
+                @if (_canEditMoneyLines || _canDeleteMoneyLines)
+                {
+                            <MudMenu Label="@_localizer["Actions"]" Variant="Variant.Filled" DisableElevation="true" EndIcon="@Icons.Filled.KeyboardArrowDown" IconColor="Color.Secondary" Direction="Direction.Left" OffsetX="true">
+                        @if (_canEditMoneyLines)
+                        {
+                                        <MudMenuItem @onclick="@(() => InvokeModal(@context.Id))">@_localizer["Edit"]</MudMenuItem>
+                        }
+                        @if (_canDeleteMoneyLines)
+                        {
+                                        <MudMenuItem @onclick="@(() => Delete(@context.Id))">@_localizer["Delete"]</MudMenuItem>
+                        }
+                            </MudMenu>
+                }
+                else
+                {
+                            <MudButton Variant="Variant.Filled"
+                               DisableElevation="true"
+                               StartIcon="@Icons.Material.Filled.DoNotTouch"
+                               IconColor="Color.Secondary"
+                               Size="Size.Small"
+                               Color="Color.Surface">
+                        @_localizer["No Allowed Actions"]
+                            </MudButton>
+                }
+                </MudTd>
+            </RowTemplate>
+            <FooterContent>
+                <MudSwitch @bind-Checked="@_dense" Color="Color.Secondary" Style="margin-left: 5px;">@_localizer["Dense"]</MudSwitch>
+                <MudSwitch @bind-Checked="@_striped" Color="Color.Tertiary" Style="margin-left: 5px;">@_localizer["Striped"]</MudSwitch>
+                <MudSwitch @bind-Checked="@_bordered" Color="Color.Warning" Style="margin-left: 5px;">@_localizer["Bordered"]</MudSwitch>
+            </FooterContent>
+            <PagerContent>
+                <TablePager />
+            </PagerContent>
+        </MudTable>
+}

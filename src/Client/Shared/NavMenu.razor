@@ -80,10 +80,6 @@
         }
 
     }
-    @if (_canViewMemberships)
-    {
-        <MudNavLink Href="/catalog/memberships" Icon="@Icons.Material.Outlined.CallToAction">@_localizer["Memberships"]</MudNavLink>
-    }
     @if (_canViewTransactions)
     {
         <MudNavLink Href="/catalog/transactions" Icon="@Icons.Material.Outlined.CallToAction">
@@ -91,15 +87,10 @@
 
         </MudNavLink>
     }
+
     @if (_canViewFlexMoneyTypes)
     {
-        <MudNavLink Href="/catalog/flexmoneytypes" Icon="@Icons.Material.Outlined.CallToAction">
-            @_localizer["Money Types"]
-        </MudNavLink>
-    }
-    @if (_canViewFlexMoneyTypes)
-    {
-        <MudNavLink Href="/catalog/flexmoneyline" Icon="@Icons.Material.Outlined.CallToAction">
+        <MudNavLink Href="/catalog/flexmoneylines" Icon="@Icons.Material.Outlined.CallToAction">
             @_localizer["Money Lines"]
         </MudNavLink>
     }

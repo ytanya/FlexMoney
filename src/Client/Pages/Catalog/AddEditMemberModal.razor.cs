@@ -8,8 +8,6 @@ using Blazored.FluentValidation;
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Member;
 using FlexMoney.Application.Features.Members.Commands.AddEdit;
 
-using FlexMoney.Application.Features.Members.Commands.AddEdit;
-using FlexMoney.Client.Infrastructure.Managers.Catalog.Member;
 
 namespace FlexMoney.Client.Pages.Catalog
 {

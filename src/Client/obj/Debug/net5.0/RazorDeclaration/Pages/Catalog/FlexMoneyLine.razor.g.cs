@@ -279,13 +279,20 @@ using FlexMoney.Client.Extensions;
 #line hidden
 #nullable disable
 #nullable restore
+#line 2 "D:\FlexMoneyTanya\FlexMoney\src\Client\Pages\Catalog\FlexMoneyLine.razor"
+using FlexMoney.Application.Features.MoneyLines.Queries.GetAll;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 49 "D:\FlexMoneyTanya\FlexMoney\src\Client\_Imports.razor"
 [Authorize]
 
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/catalog/flexmoneyline")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/catalog/flexmoneylines")]
     public partial class FlexMoneyLine : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

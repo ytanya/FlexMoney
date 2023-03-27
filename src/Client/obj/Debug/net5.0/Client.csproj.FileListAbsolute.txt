@@ -855,10 +855,8 @@ D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\C
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\AddEditTransactionModal.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\AddEditTypeModal.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\AddFlexMoneyLinesModel.razor.g.cs
-D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\AddFlexMoneyTypesModal.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\Brands.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\FlexMoneyLine.razor.g.cs
-D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\FlexMoneyTypes.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\Members.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\Products.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Catalog\Transactions.razor.g.cs
@@ -912,10 +910,8 @@ D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\AddE
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\AddEditTransactionModal.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\AddEditTypeModal.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\AddFlexMoneyLinesModel.razor.g.cs
-D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\AddFlexMoneyTypesModal.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\Brands.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\FlexMoneyLine.razor.g.cs
-D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\FlexMoneyTypes.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\Members.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\Products.razor.g.cs
 D:\FlexMoneyTanya\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Pages\Catalog\Transactions.razor.g.cs
