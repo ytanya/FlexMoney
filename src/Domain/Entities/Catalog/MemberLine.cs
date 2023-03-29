@@ -15,6 +15,5 @@ namespace FlexMoney.Domain.Entities.Catalog
         public virtual MoneyLine Line { get; set; }
         public int Position { get; set; }
         public int Section { get; set; }
-        public bool IsDead { get; set; }
     }
 }
