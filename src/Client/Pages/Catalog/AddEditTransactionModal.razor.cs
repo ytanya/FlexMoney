@@ -43,7 +43,7 @@ namespace FlexMoney.Client.Pages.Catalog
         private Decimal _earn = 0;
         private Decimal _thankmoney =0;
         private Decimal _realearn = 0;
-        private Decimal _call = 0;
+        private Decimal _call = 0; 
         private FluentValidationValidator _fluentValidationValidator;
         private bool Validated => _fluentValidationValidator.Validate(options => { options.IncludeAllRuleSets(); });
 
@@ -58,6 +58,7 @@ namespace FlexMoney.Client.Pages.Catalog
             if (response.Succeeded)
             {
                 _moneyLineList = response.Data.ToList();
+                _selectedLine = _moneyLineList.Where(x => x.Id == AddEditTransactionModel.LineId).FirstOrDefault();
             }
             else
             {

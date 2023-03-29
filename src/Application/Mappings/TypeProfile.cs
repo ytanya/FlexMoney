@@ -1,12 +1,7 @@
 ﻿using AutoMapper;
 using FlexMoney.Application.Features.Types.Commands.AddEdit;
 using FlexMoney.Application.Features.Types.Queries.GetById;
-using FlexMoney.Application.Features.Types.Queries.GettAll;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FlexMoney.Application.Features.Types.Queries.GetAll;
 
 namespace FlexMoney.Application.Mappings
 {

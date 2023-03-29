@@ -63,7 +63,7 @@
             <MudNavLink Href="/identity/roles" Icon="@Icons.Material.Outlined.Person">@_localizer["Roles"]</MudNavLink>
         }
     }
-    @if (_canViewMembers || _canViewTypes || _canViewTransactions)
+    @if (_canViewMembers || _canViewTypes || _canViewTransactions || _canViewMoneyLines)
     {
         <MudListSubheader Class="mt-2 mb-n2">@_localizer["Catalog Management"]</MudListSubheader>
         @if (_canViewMembers)
@@ -78,12 +78,19 @@
                 @_localizer["Types"]
             </MudNavLink>
         }
+        @if (_canViewMoneyLines)
+        {
+            <MudNavLink Href="/catalog/moneylines" Icon="@Icons.Material.Outlined.CallToAction">
+                @_localizer["Money Lines"]
+            </MudNavLink>
+        }
         @if (_canViewTransactions)
         {
             <MudNavLink Href="/catalog/transactions" Icon="@Icons.Material.Outlined.CallToAction">
                 @_localizer["Transactions"]
             </MudNavLink>
         }
+        
     }
 </MudNavMenu>
 
@@ -103,6 +110,7 @@
     private bool _canViewMembers;
     private bool _canViewTypes;
     private bool _canViewTransactions;
+    private bool _canViewMoneyLines;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -119,6 +127,7 @@
         _canViewBrands = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Brands.View)).Succeeded;
         _canViewMembers = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Members.View)).Succeeded;
         _canViewTypes = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Types.View)).Succeeded;
-        _canViewTransactions = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Transactions.View)).Succeeded;
+        _canViewTransactions = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.MoneyLines.View)).Succeeded;
+        _canViewMoneyLines = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Transactions.View)).Succeeded;
     }
 }

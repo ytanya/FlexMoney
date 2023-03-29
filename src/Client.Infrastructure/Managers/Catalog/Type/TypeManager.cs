@@ -1,5 +1,5 @@
 ﻿using FlexMoney.Application.Features.Types.Commands.AddEdit;
-using FlexMoney.Application.Features.Types.Queries.GettAll;
+using FlexMoney.Application.Features.Types.Queries.GetAll;
 using FlexMoney.Client.Infrastructure.Extensions;
 using FlexMoney.Shared.Wrapper;
 using System;

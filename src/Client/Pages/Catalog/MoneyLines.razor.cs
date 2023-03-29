@@ -1,52 +1,54 @@
-﻿using FlexMoney.Shared.Constants.Permission;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Security.Claims;
+using System.Text.Json;
+using System.Threading.Tasks;
+using FlexMoney.Application.Features.MoneyLines.Commands.AddEdit;
+using FlexMoney.Application.Features.MoneyLines.Queries.GetAll;
+using FlexMoney.Client.Extensions;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.MoneyLine;
+using FlexMoney.Shared.Constants.Application;
+using FlexMoney.Shared.Constants.Permission;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using MudBlazor;
-using System.Collections.Generic;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using System;
-using Microsoft.AspNetCore.Authorization;
-using System.Linq;
-using FlexMoney.Client.Extensions;
-using MudBlazor.Extensions;
-using FlexMoney.Application.Features.Types.Commands.AddEdit;
-using FlexMoney.Shared.Constants.Application;
-using FlexMoney.Application.Features.Types.Queries.GetAll;
-using FlexMoney.Client.Infrastructure.Managers.Catalog.Type;
 
 namespace FlexMoney.Client.Pages.Catalog
 {
-    public partial class Types
+    public partial class MoneyLines
     {
-        [Inject] private ITypeManager TypeManager { get; set; }
+        [Inject] private IMoneyLineManager MoneyLineManager { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
 
-        private List<GetAllTypesResponse> _typelist = new();
-        private GetAllTypesResponse _type = new();
+        private List<GetAllMoneyLinesResponse> _moneyLineList = new();
+        private GetAllMoneyLinesResponse _moneyLine = new();
         private string _searchString = "";
         private bool _dense = false;
         private bool _striped = true;
         private bool _bordered = false;
 
         private ClaimsPrincipal _currentUser;
-        private bool _canCreateTypes;
-        private bool _canEditTypes;
-        private bool _canDeleteTypes;
-        //private bool _canExportMembers;
-        private bool _canSearchTypes;
+        private bool _canCreateMoneyLines;
+        private bool _canEditMoneyLines;
+        private bool _canDeleteMoneyLines;
+        //private bool _canExportMoneyLines;
+        private bool _canSearchMoneyLines;
         private bool _loaded;
         private List<string> data;
         protected override async Task OnInitializedAsync()
         {
             _currentUser = await _authenticationManager.CurrentUser();
-            _canCreateTypes = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Types.Create)).Succeeded;
-            _canEditTypes = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Types.Edit)).Succeeded;
-            _canDeleteTypes = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Types.Delete)).Succeeded;
+            _canCreateMoneyLines = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.MoneyLines.Create)).Succeeded;
+            _canEditMoneyLines = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.MoneyLines.Edit)).Succeeded;
+            _canDeleteMoneyLines = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.MoneyLines.Delete)).Succeeded;
             //_canExportBrands = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Brands.Export)).Succeeded;
-            _canSearchTypes = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Types.Search)).Succeeded;
+            _canSearchMoneyLines = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.MoneyLines.Search)).Succeeded;
 
-            await GetTypesAsync();
+            await GetMoneyLinesAsync();
             _loaded = true;
             HubConnection = HubConnection.TryInitialize(_navigationManager);
             if (HubConnection.State == HubConnectionState.Disconnected)
@@ -55,12 +57,12 @@ namespace FlexMoney.Client.Pages.Catalog
             }
         }
 
-        private async Task GetTypesAsync()
+        private async Task GetMoneyLinesAsync()
         {
-            var response = await TypeManager.GetAllAsync();
+            var response = await MoneyLineManager.GetAllAsync();
             if (response.Succeeded)
             {
-                _typelist = response.Data.ToList();
+                _moneyLineList = response.Data.ToList();
             }
             else
             {
@@ -83,7 +85,7 @@ namespace FlexMoney.Client.Pages.Catalog
             var result = await dialog.Result;
             if (!result.Cancelled)
             {
-                var response = await TypeManager.DeleteAsync(id);
+                var response = await MoneyLineManager.DeleteAsync(id);
                 if (response.Succeeded)
                 {
                     await Reset();
@@ -105,19 +107,23 @@ namespace FlexMoney.Client.Pages.Catalog
             var parameters = new DialogParameters();
             if (id != 0)
             {
-                _type = _typelist.FirstOrDefault(c => c.Id == id);
-                if (_type != null)
+                _moneyLine = _moneyLineList.FirstOrDefault(c => c.Id == id);
+                if (_moneyLine != null)
                 {
-                    parameters.Add(nameof(AddEditTypeModal.AddEditTypeModel), new AddEditTypeCommand
+                    parameters.Add(nameof(AddEditMoneyLineModal.AddEditMoneyLineModel), new AddEditMoneyLineCommand
                     {
-                        Id = _type.Id,
-                        Name = _type.Name,
-                        Note = _type.Note
+                        Id = _moneyLine.Id,
+                        Name = _moneyLine.Name,
+                        CreatedDate = DateTime.Now,
+                        Money = _moneyLine.Money,
+                        OwnerId = _moneyLine.Owner,
+                        Quantity = _moneyLine.Quantity,
+                        TypeId = _moneyLine.TypeId,
                     });
                 }
             }
             var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
-            var dialog = _dialogService.Show<AddEditTypeModal>(id == 0 ? _localizer["Create"] : _localizer["Edit"], parameters, options);
+            var dialog = _dialogService.Show<AddEditMoneyLineModal>(id == 0 ? _localizer["Create"] : _localizer["Edit"], parameters, options);
             var result = await dialog.Result;
             if (!result.Cancelled)
             {
@@ -127,18 +133,19 @@ namespace FlexMoney.Client.Pages.Catalog
 
         private async Task Reset()
         {
-            _type = new GetAllTypesResponse();
-            await GetTypesAsync();
+            _moneyLine = new GetAllMoneyLinesResponse();
+            await GetMoneyLinesAsync();
         }
 
-        private bool Search(GetAllTypesResponse type)
+        private bool Search(GetAllMoneyLinesResponse MoneyLine)
         {
             if (string.IsNullOrWhiteSpace(_searchString)) return true;
-            if (type.Name?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)
+            if (MoneyLine.Name?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)
             {
                 return true;
             }
             return false;
         }
     }
+
 }

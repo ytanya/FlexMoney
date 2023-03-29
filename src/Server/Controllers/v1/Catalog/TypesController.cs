@@ -1,7 +1,7 @@
 ﻿using FlexMoney.Application.Features.Types.Commands.AddEdit;
 using FlexMoney.Application.Features.Types.Commands.Delete;
 using FlexMoney.Application.Features.Types.Queries.GetById;
-using FlexMoney.Application.Features.Types.Queries.GettAll;
+using FlexMoney.Application.Features.Types.Queries.GetAll;
 using FlexMoney.Shared.Constants.Permission;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;

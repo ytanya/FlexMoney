@@ -34,14 +34,14 @@
                     <MudItem xs="12" md="6">
                         <MudTextField Disabled For="@(() => AddEditTransactionModel.Id)" @bind-Value="AddEditTransactionModel.Id" Label="@_localizer["Id"]" />
                     </MudItem>
-                    @*<MudItem xs="12" md="6">
-                        <MudSelect T="GetAllMoneyLinesResponse" Label="Select a line" Variant="Variant.Filled" ValueChanged="HandleLineChange" >
+                    <MudItem xs="12" md="6">
+                        <MudSelect T="GetAllMoneyLinesResponse" Label="Select a line" Variant="Variant.Filled" Value="@_selectedLine" ValueChanged="HandleLineChange" >
                             @foreach (var line in _moneyLineList)
                             {
                                 <MudSelectItem Value="@line">@line.Name</MudSelectItem>
                             }
                         </MudSelect>
-                    </MudItem>*@
+                    </MudItem>
                     <MudItem xs="12" md="6">
                     <MudText Color="Color.Error">Type: @typeName</MudText>
                 </MudItem>

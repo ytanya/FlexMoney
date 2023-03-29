@@ -1,7 +1,7 @@
 ﻿@page "/catalog/types"
 @attribute [Authorize(Policy = Permissions.Types.View)]
 @inject Microsoft.Extensions.Localization.IStringLocalizer<Types> _localizer
-@using FlexMoney.Application.Features.Types.Queries.GettAll
+@using FlexMoney.Application.Features.Types.Queries.GetAll
 <style>
     .mud-table-container {
         overflow: auto;

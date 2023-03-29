@@ -21,7 +21,9 @@ namespace FlexMoney.Application.Features.MemberLines.Commands.AddEdit
         [Required]
         public int MemberId { get; set; }
         [Required]
-        public int MoneyLineId { get; set; }
+        public int LineId { get; set; }
+        [Required]
+        public int Position { get; set; }
     }
     internal class AddEditMemberLineCommandHandler : IRequestHandler<AddEditMemberLineCommand, Result<int>>
     {
@@ -51,7 +53,7 @@ namespace FlexMoney.Application.Features.MemberLines.Commands.AddEdit
                 if (memberLine != null)
                 {
                     memberLine.MemberId = command.MemberId;
-                    memberLine.LineId = command.MoneyLineId;
+                    memberLine.LineId = command.LineId;
                     await _unitOfWork.Repository<MemberLine>().UpdateAsync(memberLine);
                     await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMemberLinesCacheKey);
                     return await Result<int>.SuccessAsync(memberLine.Id, _localizer["Member Line Updated"]);

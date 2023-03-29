@@ -41,8 +41,10 @@ namespace FlexMoney.Application.Features.MoneyLines.Queries.GetAll
             foreach (var moneyLine in moneyLineList)
             {
                 var type = await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().GetByIdAsync(moneyLine.TypeId);
+                var owner = await _unitOfWork.Repository<Domain.Entities.Catalog.Member>().GetByIdAsync(moneyLine.OwnerId);
                 var mappedMoneyLineItem = _mapper.Map<GetAllMoneyLinesResponse>(moneyLine);
-                mappedMoneyLineItem.TypeName = type.Name; // set the member name property
+                mappedMoneyLineItem.TypeName = type.Name; // set the type name property
+                mappedMoneyLineItem.OwnerName = owner.Name; // set the member name property
                 mappedMoneyLines.Add(mappedMoneyLineItem);
             }
 
