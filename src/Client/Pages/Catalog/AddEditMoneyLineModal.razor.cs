@@ -2,6 +2,7 @@
 using FlexMoney.Shared.Constants.Application;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
+using System.Globalization;
 using MudBlazor;
 using System.Threading.Tasks;
 using Blazored.FluentValidation;
@@ -205,6 +206,13 @@ namespace FlexMoney.Client.Pages.Catalog
         private void HandleMemberChange(GetAllMembersResponse selectedMember)
         {
             _selectedOwner = selectedMember;
+        }
+
+        private int number = 1000000;
+
+        private string FormatNumber(int number)
+        {
+            return number.ToString("#,##0");
         }
     }
 }

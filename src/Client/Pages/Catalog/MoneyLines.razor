@@ -60,7 +60,7 @@ else
                 <MudHighlighter Text="@context.Name" HighlightedText="@_searchString" />
             </MudTd>
             <MudTd DataLabel="Money">
-                <MudHighlighter Text="@($"{context.Money}")"/>
+                <MudHighlighter Text="@($"{context.Money.ToString("0")}")"/>
             </MudTd>
             <MudTd DataLabel="Type">
                 <MudHighlighter Text="@context.TypeName"/>

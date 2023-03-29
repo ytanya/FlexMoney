@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Build Myself\\FlexMoney\\src\\Server\\Server.csproj": {}
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Server\\Server.csproj": {}
   },
   "projects": {
-    "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj": {
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj",
+        "projectUniqueName": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj",
         "projectName": "FlexMoney.Application",
-        "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\Build Myself\\FlexMoney\\src\\Application\\obj\\",
+        "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/lenslock-engineering/36dde85c-4c5d-4846-b800-1bc3072e9f4f/_packaging/lenslock-infrastructure/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Build Myself\\FlexMoney\\src\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Domain\\Domain.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Domain\\Domain.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Domain\\Domain.csproj"
               },
-              "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -95,7 +98,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -104,21 +108,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Build Myself\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Build Myself\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "projectUniqueName": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
         "projectName": "FlexMoney.Client.Infrastructure",
-        "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\Build Myself\\FlexMoney\\src\\Client.Infrastructure\\obj\\",
+        "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -126,18 +134,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/lenslock-engineering/36dde85c-4c5d-4846-b800-1bc3072e9f4f/_packaging/lenslock-infrastructure/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj"
               },
-              "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -187,7 +194,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -196,21 +204,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Build Myself\\FlexMoney\\src\\Client\\Client.csproj": {
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client\\Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Build Myself\\FlexMoney\\src\\Client\\Client.csproj",
+        "projectUniqueName": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client\\Client.csproj",
         "projectName": "FlexMoney.Client",
-        "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Client\\Client.csproj",
-        "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\Build Myself\\FlexMoney\\src\\Client\\obj\\",
+        "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client\\Client.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -218,18 +230,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/lenslock-engineering/36dde85c-4c5d-4846-b800-1bc3072e9f4f/_packaging/lenslock-infrastructure/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Build Myself\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj"
               },
-              "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -304,7 +315,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -319,7 +331,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -328,17 +340,21 @@
         }
       }
     },
-    "D:\\Build Myself\\FlexMoney\\src\\Domain\\Domain.csproj": {
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Build Myself\\FlexMoney\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Domain\\Domain.csproj",
         "projectName": "FlexMoney.Domain",
-        "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\Build Myself\\FlexMoney\\src\\Domain\\obj\\",
+        "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -346,8 +362,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/lenslock-engineering/36dde85c-4c5d-4846-b800-1bc3072e9f4f/_packaging/lenslock-infrastructure/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -370,7 +385,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -379,21 +395,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Build Myself\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj": {
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Build Myself\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
+        "projectUniqueName": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
         "projectName": "FlexMoney.Infrastructure.Shared",
-        "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
-        "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\Build Myself\\FlexMoney\\src\\Infrastructure.Shared\\obj\\",
+        "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure.Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -401,15 +421,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/lenslock-engineering/36dde85c-4c5d-4846-b800-1bc3072e9f4f/_packaging/lenslock-infrastructure/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj"
               }
             }
           }
@@ -439,7 +458,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -448,21 +468,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Build Myself\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj": {
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Build Myself\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj",
         "projectName": "FlexMoney.Infrastructure",
-        "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\Build Myself\\FlexMoney\\src\\Infrastructure\\obj\\",
+        "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -470,18 +494,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/lenslock-engineering/36dde85c-4c5d-4846-b800-1bc3072e9f4f/_packaging/lenslock-infrastructure/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj"
               },
-              "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -549,7 +572,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -558,21 +582,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Build Myself\\FlexMoney\\src\\Server\\Server.csproj": {
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Build Myself\\FlexMoney\\src\\Server\\Server.csproj",
+        "projectUniqueName": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Server\\Server.csproj",
         "projectName": "FlexMoney.Server",
-        "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\Build Myself\\FlexMoney\\src\\Server\\obj\\",
+        "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Server\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -580,27 +608,26 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/lenslock-engineering/36dde85c-4c5d-4846-b800-1bc3072e9f4f/_packaging/lenslock-infrastructure/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Application\\Application.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Application\\Application.csproj"
               },
-              "D:\\Build Myself\\FlexMoney\\src\\Client\\Client.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Client\\Client.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client\\Client.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Client\\Client.csproj"
               },
-              "D:\\Build Myself\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure.Shared\\Infrastructure.Shared.csproj"
               },
-              "D:\\Build Myself\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Infrastructure\\Infrastructure.csproj"
               },
-              "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj": {
-                "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj"
+              "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj": {
+                "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -700,7 +727,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -712,21 +740,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj": {
+    "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj",
+        "projectUniqueName": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj",
         "projectName": "FlexMoney.Shared",
-        "projectPath": "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj",
-        "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\Build Myself\\FlexMoney\\src\\Shared\\obj\\",
+        "projectPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
+        "outputPath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -734,8 +766,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://pkgs.dev.azure.com/lenslock-engineering/36dde85c-4c5d-4846-b800-1bc3072e9f4f/_packaging/lenslock-infrastructure/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net5.0": {
@@ -768,7 +799,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -777,7 +809,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

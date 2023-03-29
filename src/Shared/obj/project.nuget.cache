@@ -1,21 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "Ih0vslNjOqHdg5wmxBGz+8kB0l9XRnB5MrucAiEuSotm/+oNmZ1ZFLy1l7/jhIwAJ38JDq76Em7+FQiHRWtqYw==",
+  "dgSpecHash": "2ulOyHgs0KexhSY0rsDOoFTP0ZGOF61OKDH7FzIUAnmzFeQNIg+wkmau6bhk49znQzV6xVeSgQ6A0rDmUyN5VA==",
   "success": true,
-  "projectFilePath": "D:\\Build Myself\\FlexMoney\\src\\Shared\\Shared.csproj",
+  "projectFilePath": "D:\\FlexMoneyCSJ\\FlexMoney\\src\\Shared\\Shared.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.7\\microsoft.aspnetcore.cryptography.keyderivation.5.0.7.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.7\\microsoft.extensions.identity.core.5.0.7.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.7\\microsoft.extensions.identity.stores.5.0.7.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\5.0.7\\microsoft.extensions.localization.abstractions.5.0.7.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
-    "C:\\Users\\Tanya\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\5.0.7\\microsoft.aspnetcore.cryptography.internal.5.0.7.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\5.0.7\\microsoft.aspnetcore.cryptography.keyderivation.5.0.7.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\5.0.0\\microsoft.extensions.dependencyinjection.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.identity.core\\5.0.7\\microsoft.extensions.identity.core.5.0.7.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.identity.stores\\5.0.7\\microsoft.extensions.identity.stores.5.0.7.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.localization.abstractions\\5.0.7\\microsoft.extensions.localization.abstractions.5.0.7.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.logging\\5.0.0\\microsoft.extensions.logging.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\5.0.0\\microsoft.extensions.logging.abstractions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.options\\5.0.0\\microsoft.extensions.options.5.0.0.nupkg.sha512",
+    "C:\\Users\\Acer\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.0\\microsoft.extensions.primitives.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }
