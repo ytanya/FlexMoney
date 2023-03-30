@@ -35,7 +35,7 @@ namespace FlexMoney.Application.Features.Members.Queries.GetAll
 
         public async Task<Result<List<GetAllMembersResponse>>> Handle(GetAllMembersQuery request, CancellationToken cancellationToken)
         {
-            Func<Task<List<Member>>> getAllMembers = () => _unitOfWork.Repository<Member>().GetAllAsync();
+            Func<Task<List<Member>>> getAllMembers = () => _unitOfWork.Repository<Member>().GetAllAsync(e =>e.IsDeleted == false);
             var memberList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllMembersCacheKey, getAllMembers);
             var mappedMembers = _mapper.Map<List<GetAllMembersResponse>>(memberList);
             return await Result<List<GetAllMembersResponse>>.SuccessAsync(mappedMembers);

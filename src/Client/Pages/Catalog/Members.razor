@@ -67,7 +67,7 @@ else
                         }
                         @if (_canDeleteMembers)
                         {
-                            <MudMenuItem @onclick="@(() => Delete(@context.Id))">@_localizer["Delete"]</MudMenuItem>
+                            <MudMenuItem DisableElevation Variant="Variant.Filled" ButtonType="ButtonType.Submit" Color="Color.Success" @onclick="@(() => Delete(@context.Id))">@_localizer["Delete"]</MudMenuItem>
                         }
                     </MudMenu>
                 }

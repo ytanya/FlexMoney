@@ -6,15 +6,18 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Threading.Tasks;
+using FlexMoney.Application.Features.MemberLines.Queries.GetById;
 using FlexMoney.Application.Features.MoneyLines.Commands.AddEdit;
 using FlexMoney.Application.Features.MoneyLines.Queries.GetAll;
 using FlexMoney.Client.Extensions;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.MemberLine;
 using FlexMoney.Client.Infrastructure.Managers.Catalog.MoneyLine;
 using FlexMoney.Shared.Constants.Application;
 using FlexMoney.Shared.Constants.Permission;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MudBlazor;
 
 namespace FlexMoney.Client.Pages.Catalog
@@ -22,10 +25,16 @@ namespace FlexMoney.Client.Pages.Catalog
     public partial class MoneyLines
     {
         [Inject] private IMoneyLineManager MoneyLineManager { get; set; }
+        [Inject] private IMemberLineManager MemberLineManager { get; set; }
+
         [CascadingParameter] private HubConnection HubConnection { get; set; }
 
         private List<GetAllMoneyLinesResponse> _moneyLineList = new();
         private GetAllMoneyLinesResponse _moneyLine = new();
+
+        private GetMemberLineByIdResponse _memberLine = new();
+        private List<GetMemberLineByIdResponse> _memberLineList = new();
+
         private string _searchString = "";
         private bool _dense = false;
         private bool _striped = true;
@@ -146,6 +155,7 @@ namespace FlexMoney.Client.Pages.Catalog
             }
             return false;
         }
-    }
+
+    }   
 
 }

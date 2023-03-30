@@ -22,6 +22,7 @@ namespace FlexMoney.Application.Features.Members.Commands.AddEdit
         public string Name { get; set; }
         public string AccountNumber { get; set; }
         public string Note { get; set; }
+        public bool IsDeleted { get; set; }
     }
     internal class AddEditMemberCommandHandler : IRequestHandler<AddEditMemberCommand, Result<int>>
     {
@@ -53,6 +54,7 @@ namespace FlexMoney.Application.Features.Members.Commands.AddEdit
                     member.Name = command.Name ?? member.Name;
                     member.AccountNumber = command.AccountNumber ?? member.AccountNumber;
                     member.Note = command.Note ?? member.Note;
+                    member.IsDeleted = command.IsDeleted;
                     await _unitOfWork.Repository<Member>().UpdateAsync(member);
                     await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMembersCacheKey);
                     return await Result<int>.SuccessAsync(member.Id, _localizer["Member Updated"]);

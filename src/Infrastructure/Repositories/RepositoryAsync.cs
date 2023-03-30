@@ -2,8 +2,10 @@
 using FlexMoney.Domain.Contracts;
 using FlexMoney.Infrastructure.Contexts;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace FlexMoney.Infrastructure.Repositories
@@ -36,6 +38,15 @@ namespace FlexMoney.Infrastructure.Repositories
             return await _dbContext
                 .Set<T>()
                 .ToListAsync();
+        }
+        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>> predicate = null)
+        {
+            var query = _dbContext.Set<T>().AsQueryable();
+            if (predicate != null)
+            {
+                query = query.Where(predicate);
+            }
+            return await query.ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(TId id)

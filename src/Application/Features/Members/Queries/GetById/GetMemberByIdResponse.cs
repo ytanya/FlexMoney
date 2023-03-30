@@ -12,5 +12,7 @@ namespace FlexMoney.Application.Features.Members.Queries.GetById
         public string Name { get; set; }
         public string AccountNumber { get; set; }
         public string Note { get; set; }
+        public bool IsDeleted { get; set; }
+
     }
 }

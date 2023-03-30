@@ -208,11 +208,5 @@ namespace FlexMoney.Client.Pages.Catalog
             _selectedOwner = selectedMember;
         }
 
-        private int number = 1000000;
-
-        private string FormatNumber(int number)
-        {
-            return number.ToString("#,##0");
-        }
     }
 }

@@ -81,13 +81,13 @@ else
                 <MudHighlighter Text="@($"{context.Call}")"/>
             </MudTd>
             <MudTd DataLabel="Earn">
-                <MudHighlighter Text="@($"{context.Earn}")"/>
+                <MudHighlighter Text="@($"{context.Earn.ToString("0")}")" />
             </MudTd>
             <MudTd DataLabel="Thank Money">
-                <MudHighlighter Text="@($"{context.ThankMoney}")"/>
+                <MudHighlighter Text="@($"{context.ThankMoney.ToString("0")}")"/>
             </MudTd>
             <MudTd DataLabel="Real Earn">
-                <MudHighlighter Text="@($"{context.RealEarn}")"/>
+                <MudHighlighter Text="@($"{context.RealEarn.ToString("0")}")" />
             </MudTd>
             <MudTd DataLabel="Dead">
                 <MudHighlighter Text="@($"{context.Dead}")"/>

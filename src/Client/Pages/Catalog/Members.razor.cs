@@ -6,10 +6,15 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Text.Json;
 using System.Threading.Tasks;
+using FlexMoney.Application.Features.MemberLines.Queries.GetAll;
+using FlexMoney.Application.Features.MemberLines.Queries.GetById;
 using FlexMoney.Application.Features.Members.Commands.AddEdit;
 using FlexMoney.Application.Features.Members.Queries.GetAll;
 using FlexMoney.Client.Extensions;
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Member;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.MemberLine;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.MoneyLine;
+using FlexMoney.Client.Shared.Dialogs;
 using FlexMoney.Shared.Constants.Application;
 using FlexMoney.Shared.Constants.Permission;
 using Microsoft.AspNetCore.Authorization;
@@ -22,10 +27,15 @@ namespace FlexMoney.Client.Pages.Catalog
     public partial class Members
     {
         [Inject] private IMemberManager MemberManager { get; set; }
+        [Inject] private IMemberLineManager MemberLineManager { get; set; }
         [CascadingParameter] private HubConnection HubConnection { get; set; }
+        [CascadingParameter] private MudDialogInstance MudDialog { get; set; }
 
+        private AddEditMemberCommand _addEditMemberModel { get; set; }
         private List<GetAllMembersResponse> _memberList = new();
         private GetAllMembersResponse _member = new();
+        private GetAllMemberLinesResponse _memberLineResponse = new();
+        private List<GetAllMemberLinesResponse> _memberLineResponseList = new();
         private string _searchString = "";
         private bool _dense = false;
         private bool _striped = true;
@@ -73,35 +83,52 @@ namespace FlexMoney.Client.Pages.Catalog
             }
         }
 
+        // Implement IsDeleted this method will be not use in anywhere
         private async Task Delete(int id)
         {
-            string deleteContent = _localizer["Delete Content"];
-            var parameters = new DialogParameters
+
+            if (SearchMemberIdInLineId(id) == true)
             {
-                {nameof(Shared.Dialogs.DeleteConfirmation.ContentText), string.Format(deleteContent, id)}
-            };
-            var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
-            var dialog = _dialogService.Show<Shared.Dialogs.DeleteConfirmation>(_localizer["Delete"], parameters, options);
-            var result = await dialog.Result;
-            if (!result.Cancelled)
+                string deleteContent = _localizer["This member has a MoneyLine"];
+                var parameters = new DialogParameters
+                {
+                    {nameof(Shared.Dialogs.IsDeletedConfirmation.ContentText), string.Format(deleteContent, id)}
+                };
+                var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
+                var dialog = _dialogService.Show<Shared.Dialogs.IsDeletedConfirmation>(_localizer["Delete"], parameters, options);
+                var result = await dialog.Result;
+
+            }
+            else
             {
-                var response = await MemberManager.DeleteAsync(id);
-                if (response.Succeeded)
+                string deleteContent = _localizer["Delete Member"];
+                var parameters = new DialogParameters();
+                if (id != 0)
                 {
-                    await Reset();
-                    await HubConnection.SendAsync(ApplicationConstants.SignalR.SendUpdateDashboard);
-                    _snackBar.Add(response.Messages[0], Severity.Success);
-                }
-                else
-                {
-                    await Reset();
-                    foreach (var message in response.Messages)
+                    _member = _memberList.FirstOrDefault(c => c.Id == id);
+                    if (_member != null)
                     {
-                        _snackBar.Add(message, Severity.Error);
+                        parameters.Add(nameof(IsDeletedConfirmation.AddEditMemberModel), new AddEditMemberCommand
+                        {
+                            Id = _member.Id,
+                            Name = _member.Name,
+                            AccountNumber = _member.AccountNumber,
+                            Note = _member.Note,
+                            IsDeleted = true,
+                        });
                     }
                 }
+                var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
+                var dialog = _dialogService.Show<IsDeletedConfirmation>(id == 0 ? _localizer["Delete"] : _localizer["Delete"], parameters, options);
+                var result = await dialog.Result;
+                if (!result.Cancelled)
+                {
+                    await Reset();
+                }
             }
+
         }
+
         private async Task InvokeModal(int id = 0)
         {
             var parameters = new DialogParameters();
@@ -128,6 +155,34 @@ namespace FlexMoney.Client.Pages.Catalog
             }
         }
 
+        private async Task InvokeModalIsDeleted(int id)
+        {
+            var parameters = new DialogParameters();
+            if (id != 0)
+            {
+                _member = _memberList.FirstOrDefault(c => c.Id == id);
+                if (_member != null)
+                {
+                    parameters.Add(nameof(IsDeletedConfirmation.AddEditMemberModel), new AddEditMemberCommand
+                    {
+                        Id = _member.Id,
+                        Name = _member.Name,
+                        AccountNumber = _member.AccountNumber,
+                        Note = _member.Note,
+                        IsDeleted = true,
+                    });
+                }
+            }
+            var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
+            var dialog = _dialogService.Show<IsDeletedConfirmation>(id == 0 ? _localizer["Delete"] : _localizer["Delete"], parameters, options);
+            var result = await dialog.Result;
+            if (!result.Cancelled)
+            {
+                await Reset();
+            }
+        }
+
+
         private async Task Reset()
         {
             _member = new GetAllMembersResponse();
@@ -142,6 +197,32 @@ namespace FlexMoney.Client.Pages.Catalog
                 return true;
             }
             return false;
+        }
+        private async Task GetMemberLinesAsync()
+        {
+            var response = await MemberLineManager.GetAllAsync();
+            if (response.Succeeded)
+            {
+                _memberLineResponseList = response.Data.ToList();
+            }
+            else
+            {
+                foreach (var message in response.Messages)
+                {
+                    _snackBar.Add(message, Severity.Error);
+                }
+            }
+        }
+
+        private bool SearchMemberIdInLineId(int memberId)
+        {
+            GetMemberLinesAsync();
+            _memberLineResponse = _memberLineResponseList.FirstOrDefault(c => c.MemberId == memberId);
+            if (_memberLineResponse == null)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

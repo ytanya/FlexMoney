@@ -89,9 +89,9 @@
 
                 <MudItem xs="15" md="4">
                     <MudTextField T="string" For="@(() => AddEditMoneyLineModel.Name)" @bind-Value="AddEditMoneyLineModel.Name" Label="@_localizer["Name"]" />
-                    <MudTextField For="@(() => AddEditMoneyLineModel.Money)" @bind-Value="AddEditMoneyLineModel.Money" Label="@_localizer["Money"]"/>
-                    <div>@FormatNumber(number)</div>
-
+                    <div class="d-flex">
+                        <MudTextField For="@(() => AddEditMoneyLineModel.Money)" @bind-Value="AddEditMoneyLineModel.Money" Label="@_localizer["Money"]" Variant="Variant.Text" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.AttachMoney" />
+                    </div>
                     <MudTextField For="@(() => AddEditMoneyLineModel.Quantity)" @bind-Value="AddEditMoneyLineModel.Quantity" Label="@_localizer["Quantity"]" />
                     <MudSelect T="GetAllMembersResponse" Label="Select an owner" Variant="Variant.Filled" ValueChanged="HandleMemberChange" >
                             @foreach (var type in _allMember)
