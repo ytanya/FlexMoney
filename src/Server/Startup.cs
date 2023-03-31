@@ -14,6 +14,8 @@ using System.IO;
 using FlexMoney.Server.Filters;
 using FlexMoney.Server.Managers.Preferences;
 using Microsoft.Extensions.Localization;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace FlexMoney.Server
 {
@@ -58,6 +60,9 @@ namespace FlexMoney.Server
             services.AddExtendedAttributesValidators();
             services.AddExtendedAttributesHandlers();
             services.AddRazorPages();
+            services.AddTransient<IDbConnection>(c =>
+            new SqlConnection(_configuration.GetConnectionString("DefaultConnection")));
+
             services.AddApiVersioning(config =>
             {
                 config.DefaultApiVersion = new ApiVersion(1, 0);

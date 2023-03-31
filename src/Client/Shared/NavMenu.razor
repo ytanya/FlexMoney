@@ -16,7 +16,7 @@
     @*<MudNavLink Href="/swagger/index.html" Target="_blank" Icon="@Icons.Material.Outlined.LiveHelp">
         @_localizer["Swagger"]
     </MudNavLink>*@
-    <MudListSubheader Class="mt-2 mb-n2">@_localizer["Personal"]</MudListSubheader>
+    @*<MudListSubheader Class="mt-2 mb-n2">@_localizer["Personal"]</MudListSubheader>
     @if (_canViewDashboards)
     {
         <MudNavLink Href="/dashboard" Icon="@Icons.Material.Outlined.Dashboard">
@@ -31,8 +31,8 @@
         <MudNavLink Href="/audit-trails" Icon="@Icons.Material.Outlined.Security">
             @_localizer["Audit Trails"]
         </MudNavLink>
-    }
-    @if (_canViewDocuments || _canViewDocumentTypes)
+    }*@
+@*    @if (_canViewDocuments || _canViewDocumentTypes)
     {
         <MudListSubheader Class="mt-2 mb-n2">@_localizer["Document Management"]</MudListSubheader>
         @if (_canViewDocuments)
@@ -47,7 +47,7 @@
                 @_localizer["Document Types"]
             </MudNavLink>
         }
-    }
+    }*@
 
     @if (_canViewUsers || _canViewRoles)
     {
@@ -92,7 +92,20 @@
         }
         
     }
-</MudNavMenu>
+    @if (_canViewReports)
+    {
+        <MudListSubheader Class="mt-2 mb-n2">@_localizer["Report Management"]</MudListSubheader>
+        <MudNavLink Href="/catalog/reports/allmembers" Icon="@Icons.Material.Outlined.CallToAction">
+            @_localizer["All Members"]
+        </MudNavLink>
+        <MudNavLink Href="/catalog/reports/singlemember" Icon="@Icons.Material.Outlined.CallToAction">
+            @_localizer["Single Member"]
+        </MudNavLink>
+        <MudNavLink Href="/catalog/reports/thankmoney" Icon="@Icons.Material.Outlined.CallToAction">
+            @_localizer["Thank Money"]
+        </MudNavLink>
+    }
+    </MudNavMenu>
 
     @code {
     private ClaimsPrincipal _authenticationStateProviderUser;
@@ -111,6 +124,7 @@
     private bool _canViewTypes;
     private bool _canViewTransactions;
     private bool _canViewMoneyLines;
+    private bool _canViewReports;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -129,5 +143,6 @@
         _canViewTypes = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Types.View)).Succeeded;
         _canViewTransactions = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.MoneyLines.View)).Succeeded;
         _canViewMoneyLines = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Transactions.View)).Succeeded;
+        _canViewReports = (await _authorizationService.AuthorizeAsync(_authenticationStateProviderUser, Permissions.Reports.View)).Succeeded;
     }
 }

@@ -33,6 +33,7 @@ namespace FlexMoney.Infrastructure.Extensions
                 .AddTransient<IDocumentRepository, DocumentRepository>()
                 .AddTransient<IDocumentTypeRepository, DocumentTypeRepository>()
                 .AddTransient<IMoneyLineRepository, MoneyLineRepository>()
+                .AddTransient<IReportRepository, ReportRepository>()
                 .AddTransient(typeof(IUnitOfWork<>), typeof(UnitOfWork<>));
         }
 

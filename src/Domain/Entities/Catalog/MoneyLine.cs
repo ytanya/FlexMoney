@@ -17,6 +17,6 @@ namespace FlexMoney.Domain.Entities.Catalog
         public int Quantity { get; set; }
         public int OwnerId { get; set; }
         public int StatusId { get; set; }
-        public int currentSection { get; set; }
+        public int CurrentSection { get; set; }
     }
 }

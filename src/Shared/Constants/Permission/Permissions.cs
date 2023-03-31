@@ -161,6 +161,11 @@ namespace FlexMoney.Shared.Constants.Permission
             public const string Export = "Permissions.Transactions.Export";
             public const string Search = "Permissions.Transactions.Search";
         }
+
+        public static class Reports
+        {
+            public const string View = "Permissions.Reports.View";
+        }
         /// <summary>
         /// Returns a list of Permissions.
         /// </summary>

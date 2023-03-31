@@ -1,0 +1,68 @@
+﻿@page "/catalog/reports/singlemember"
+@attribute [Authorize(Policy = Permissions.Reports.View)]
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SingleMemberReport> _localizer
+@using FlexMoney.Application.Features.Reports.Queries.GetById;
+@using FlexMoney.Application.Features.Members.Queries.GetAll;
+<style>
+    .mud-table-container {
+        overflow: auto;
+    }
+</style>
+<HeroTitle Title="@_localizer["Single Member Report"]" Description="@_localizer["Manage Reports."]" />
+@if (!_loaded)
+{
+    <MudProgressCircular Color="Color.Primary" Indeterminate="true" />
+}
+else
+{
+    <MudItem xs="12" md="2">
+        <MudSelect T="GetAllMembersResponse" Label="Select a member" Variant="Variant.Filled" ValueChanged="HandleMemberChange">
+            @foreach (var type in _allMember)
+            {
+                <MudSelectItem Value="@type">@type.Name</MudSelectItem>
+            }
+        </MudSelect>
+    </MudItem>
+    <MudTable Hover="true" Elevation="25" Items="_singleMemberReportList" Dense="@_dense" Bordered="@_bordered" Striped="@_striped" Filter="new Func<GetByIdReportResponse, bool>(Search)" @bind-member="_singleMemberReport">
+        <ToolBarContent>
+            <MudToolBarSpacer />
+            @*@if (_canSearchMembers)
+            {
+                <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Members"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
+            }*@
+        </ToolBarContent>
+        <HeaderContent>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetByIdReportResponse, object>(x => x.CreatedDate)">@_localizer["Date"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetByIdReportResponse, object>(x => x.LineName)">@_localizer["LineName"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetByIdReportResponse, object>(x => x.CurrentSection)">@_localizer["CurrentSection"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetByIdReportResponse, object>(x => x.Earn)">@_localizer["Earn"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetByIdReportResponse, object>(x => x.Pay)">@_localizer["Pay"]</MudTableSortLabel></MudTh>
+
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Date">
+                <MudHighlighter Text="@($"{context.CreatedDate}")" />
+            </MudTd>
+            <MudTd DataLabel="LineName">
+                <MudHighlighter Text="@context.LineName" HighlightedText="@_searchString" />
+            </MudTd>
+            <MudTd DataLabel="CurrentSection">
+                <MudHighlighter Text="@($"{context.CurrentSection}")" />
+            </MudTd>
+            <MudTd DataLabel="Earn">
+                <MudHighlighter Text="@($"{context.Earn}")" />
+            </MudTd>
+            <MudTd DataLabel="Pay">
+                <MudHighlighter Text="@($"{context.Pay}")" />
+            </MudTd>
+        </RowTemplate>
+        <FooterContent>
+            <MudSwitch @bind-Checked="@_dense" Color="Color.Secondary" Style="margin-left: 5px;">@_localizer["Dense"]</MudSwitch>
+            <MudSwitch @bind-Checked="@_striped" Color="Color.Tertiary" Style="margin-left: 5px;">@_localizer["Striped"]</MudSwitch>
+            <MudSwitch @bind-Checked="@_bordered" Color="Color.Warning" Style="margin-left: 5px;">@_localizer["Bordered"]</MudSwitch>
+        </FooterContent>
+        <PagerContent>
+            <TablePager />
+        </PagerContent>
+    </MudTable>
+}
