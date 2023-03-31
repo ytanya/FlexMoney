@@ -2466,3 +2466,5 @@ D:\FlexMoneyCSJ\FlexMoney\src\Client\obj\Debug\net5.0\FlexMoney.Client.pdb
 D:\FlexMoneyCSJ\FlexMoney\src\Client\obj\Debug\net5.0\ref\FlexMoney.Client.dll
 D:\FlexMoneyCSJ\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Shared\Dialogs\IsDeletedConfirmation.razor.g.cs
 D:\FlexMoneyCSJ\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Shared\Dialogs\IsDeletedConfirmation.razor.g.cs
+D:\FlexMoneyCSJ\FlexMoney\src\Client\obj\Debug\net5.0\RazorDeclaration\Shared\Dialogs\CanNotDeleteComfirmation.razor.g.cs
+D:\FlexMoneyCSJ\FlexMoney\src\Client\obj\Debug\net5.0\Razor\Shared\Dialogs\CanNotDeleteComfirmation.razor.g.cs

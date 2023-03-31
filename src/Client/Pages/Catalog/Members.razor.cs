@@ -83,19 +83,17 @@ namespace FlexMoney.Client.Pages.Catalog
             }
         }
 
-        // Implement IsDeleted this method will be not use in anywhere
         private async Task Delete(int id)
         {
-
             if (SearchMemberIdInLineId(id) == true)
             {
                 string deleteContent = _localizer["This member has a MoneyLine"];
                 var parameters = new DialogParameters
                 {
-                    {nameof(Shared.Dialogs.IsDeletedConfirmation.ContentText), string.Format(deleteContent, id)}
+                    {nameof(Shared.Dialogs.CanNotDeleteComfirmation.ContentText), string.Format(deleteContent, id)}
                 };
                 var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
-                var dialog = _dialogService.Show<Shared.Dialogs.IsDeletedConfirmation>(_localizer["Delete"], parameters, options);
+                var dialog = _dialogService.Show<Shared.Dialogs.CanNotDeleteComfirmation>(_localizer["Can not Delete"], parameters, options);
                 var result = await dialog.Result;
 
             }
@@ -126,7 +124,6 @@ namespace FlexMoney.Client.Pages.Catalog
                     await Reset();
                 }
             }
-
         }
 
         private async Task InvokeModal(int id = 0)
@@ -154,34 +151,6 @@ namespace FlexMoney.Client.Pages.Catalog
                 await Reset();
             }
         }
-
-        private async Task InvokeModalIsDeleted(int id)
-        {
-            var parameters = new DialogParameters();
-            if (id != 0)
-            {
-                _member = _memberList.FirstOrDefault(c => c.Id == id);
-                if (_member != null)
-                {
-                    parameters.Add(nameof(IsDeletedConfirmation.AddEditMemberModel), new AddEditMemberCommand
-                    {
-                        Id = _member.Id,
-                        Name = _member.Name,
-                        AccountNumber = _member.AccountNumber,
-                        Note = _member.Note,
-                        IsDeleted = true,
-                    });
-                }
-            }
-            var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
-            var dialog = _dialogService.Show<IsDeletedConfirmation>(id == 0 ? _localizer["Delete"] : _localizer["Delete"], parameters, options);
-            var result = await dialog.Result;
-            if (!result.Cancelled)
-            {
-                await Reset();
-            }
-        }
-
 
         private async Task Reset()
         {

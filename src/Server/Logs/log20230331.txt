@@ -1,0 +1,50 @@
+2023-03-31 10:53:53.692 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 10:53:53.793 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 10:53:53.802 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 10:53:53.806 +07:00 [INF] Hosting environment: Development
+2023-03-31 10:53:53.811 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 11:19:36.909 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 11:19:36.988 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 11:19:36.994 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 11:19:37.021 +07:00 [INF] Hosting environment: Development
+2023-03-31 11:19:37.023 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 11:21:29.357 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 11:21:29.443 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 11:21:29.451 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 11:21:29.455 +07:00 [INF] Hosting environment: Development
+2023-03-31 11:21:29.462 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 11:22:21.937 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 11:22:22.012 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 11:22:22.020 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 11:22:22.023 +07:00 [INF] Hosting environment: Development
+2023-03-31 11:22:22.027 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 11:51:02.286 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 11:51:02.361 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 11:51:02.366 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 11:51:02.367 +07:00 [INF] Hosting environment: Development
+2023-03-31 11:51:02.368 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 11:55:18.321 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 11:55:18.413 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 11:55:18.418 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 11:55:18.419 +07:00 [INF] Hosting environment: Development
+2023-03-31 11:55:18.421 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 11:58:41.044 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 11:58:41.142 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 11:58:41.150 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 11:58:41.153 +07:00 [INF] Hosting environment: Development
+2023-03-31 11:58:41.160 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 12:03:19.659 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 12:03:19.731 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 12:03:19.740 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:03:19.744 +07:00 [INF] Hosting environment: Development
+2023-03-31 12:03:19.749 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 12:04:45.108 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 12:04:45.188 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 12:04:45.198 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:04:45.202 +07:00 [INF] Hosting environment: Development
+2023-03-31 12:04:45.205 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-03-31 12:05:13.754 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-31 12:05:13.826 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-31 12:05:13.835 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-31 12:05:13.839 +07:00 [INF] Hosting environment: Development
+2023-03-31 12:05:13.845 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
