@@ -85,7 +85,7 @@ namespace FlexMoney.Client.Pages.Catalog
 
         private async Task Delete(int id)
         {
-            if (SearchMemberIdInLineId(id) == true)
+            if (await SearchMemberIdInLineId(id) == true)
             {
                 string deleteContent = _localizer["This member has a MoneyLine"];
                 var parameters = new DialogParameters
@@ -183,9 +183,9 @@ namespace FlexMoney.Client.Pages.Catalog
             }
         }
 
-        private bool SearchMemberIdInLineId(int memberId)
+        private async Task<bool>SearchMemberIdInLineId(int memberId)
         {
-            GetMemberLinesAsync();
+            await GetMemberLinesAsync();
             _memberLineResponse = _memberLineResponseList.FirstOrDefault(c => c.MemberId == memberId);
             if (_memberLineResponse == null)
             {

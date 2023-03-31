@@ -83,7 +83,7 @@ namespace FlexMoney.Client.Pages.Catalog
 
         private async Task Delete(int id)
         {
-            if (SearchTypeIdInMoneyLines(id) == true)
+            if (await SearchTypeIdInMoneyLines(id) == true)
             {
                 string deleteContent = _localizer["This Type in use"];
                 var parameters = new DialogParameters
@@ -181,9 +181,9 @@ namespace FlexMoney.Client.Pages.Catalog
             }
         }
 
-        private bool SearchTypeIdInMoneyLines(int typeId)
+        private async Task<bool> SearchTypeIdInMoneyLines(int typeId)
         {
-            GetMoneyLinesAsync();
+            await GetMoneyLinesAsync();
             _getAllMoneyLinesResponse = _getAllMoneyLinesResponseList.FirstOrDefault(e => e.TypeId == typeId);
             if (_getAllMoneyLinesResponse == null)
             {

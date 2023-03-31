@@ -60,7 +60,7 @@ else
         <RowTemplate>
             <MudTd DataLabel="Id">@context.Id</MudTd>
             <MudTd DataLabel="Date">
-                <MudHighlighter Text="@($"{context.CreatedDate}")"/>
+                <MudHighlighter Text="@($"{context.CreatedDate.ToString("dd/MM/yyyy h:mm tt")}")" />
             </MudTd>
             <MudTd DataLabel="Line">
                 <MudHighlighter Text="@context.MoneyLine"/>
@@ -75,25 +75,25 @@ else
                 <MudHighlighter Text="@context.Caller"/>
             </MudTd>
             <MudTd DataLabel="Pay">
-                <MudHighlighter Text="@($"{context.Pay}")"/>
+                <MudHighlighter Text="@($"{String.Format("{0:N0}", context.Pay)}")" />
             </MudTd>
             <MudTd DataLabel="Call">
-                <MudHighlighter Text="@($"{context.Call}")"/>
-            </MudTd>
+                <MudHighlighter Text="@($"{String.Format("{0:N0}",context.Call)}")"/>
+            </MudTd> 
             <MudTd DataLabel="Earn">
-                <MudHighlighter Text="@($"{context.Earn.ToString("0")}")" />
+                <MudHighlighter Text="@($"{String.Format("{0:N0}", context.Earn)}")" />
             </MudTd>
             <MudTd DataLabel="Thank Money">
-                <MudHighlighter Text="@($"{context.ThankMoney.ToString("0")}")"/>
+                <MudHighlighter Text="@($"{String.Format("{0:N0}", context.ThankMoney)}")"/>
             </MudTd>
             <MudTd DataLabel="Real Earn">
-                <MudHighlighter Text="@($"{context.RealEarn.ToString("0")}")" />
+                <MudHighlighter Text="@($"{String.Format("{0:N0}", context.RealEarn)}")" />
             </MudTd>
             <MudTd DataLabel="Dead">
-                <MudHighlighter Text="@($"{context.Dead}")"/>
+                <MudHighlighter Text="@($"{String.Format("{0:N0}", context.Dead)}")" />
             </MudTd>
             <MudTd DataLabel="Alive">
-                <MudHighlighter Text="@($"{context.Alive}")"/>
+                <MudHighlighter Text="@($"{String.Format("{0:N0}", context.Alive)}")" />
             </MudTd>
             <MudTd DataLabel="Actions" Style="text-align: right">
                 @if (_canEditTransactions || _canDeleteTransactions)

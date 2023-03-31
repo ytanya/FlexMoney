@@ -54,13 +54,13 @@ else
         <RowTemplate>
             <MudTd DataLabel="Id">@context.Id</MudTd>
             <MudTd DataLabel="Date">
-                <MudHighlighter Text="@($"{context.CreatedDate}")"/>
+                <MudHighlighter Text="@($"{context.CreatedDate.ToString("dd/MM/yyyy h:mm tt")}")" />
             </MudTd>
             <MudTd DataLabel="Name">
                 <MudHighlighter Text="@context.Name" HighlightedText="@_searchString" />
             </MudTd>
             <MudTd DataLabel="Money">
-                <MudHighlighter Text="@($"{context.Money.ToString("0")}")"/>
+                <MudHighlighter Text="@($"{String.Format("{0:N0}", context.Money)}")" />
             </MudTd>
             <MudTd DataLabel="Type">
                 <MudHighlighter Text="@context.TypeName"/>

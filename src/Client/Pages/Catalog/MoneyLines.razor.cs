@@ -192,7 +192,7 @@ namespace FlexMoney.Client.Pages.Catalog
         }
         private async Task<bool> SearchMoneyLineInTransaction(int moneyLineId)
         {
-            GetTransactionsAsync();
+            await GetTransactionsAsync();
             _transaction = _transactionList.FirstOrDefault(c => c.LineId == moneyLineId);
             if (_transaction == null)
             {
