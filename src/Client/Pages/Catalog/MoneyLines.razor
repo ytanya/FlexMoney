@@ -48,7 +48,7 @@ else
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.Money)">@_localizer["Money"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.TypeName)">@_localizer["Type"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.Quantity)">@_localizer["Quantity"]</MudTableSortLabel></MudTh>
-            <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.Owner)">@_localizer["Owner"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllMoneyLinesResponse, object>(x => x.OwnerId)">@_localizer["Owner"]</MudTableSortLabel></MudTh>
             <MudTh Style="text-align:right">@_localizer["Actions"]</MudTh>
         </HeaderContent>
         <RowTemplate>

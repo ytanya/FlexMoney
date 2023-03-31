@@ -17,6 +17,17 @@ namespace FlexMoney.Client.Infrastructure.Routes
         {
             return $"api/v1/transactions/line/{lineId}";
         }
+
+        public static string GetTransactionInfoByLineId(int lineId)
+        {
+            return $"api/v1/transactions/transantioninfo/{lineId}";
+        }
+
+        public static string GetReadyCallerByLineId(int lineId)
+        {
+            return $"api/v1/transactions/readycaller/{lineId}";
+        }
+
         public static string Export = "api/v1/transactions/export";
 
         public static string GetAll = "api/v1/transactions";

@@ -16,7 +16,10 @@
           "Microsoft.AspNetCore.Components.Authorization": "5.0.7",
           "Microsoft.AspNetCore.Components.WebAssembly": "5.0.7",
           "MudBlazor": "5.0.14",
-          "Toolbelt.Blazor.HttpClientInterceptor": "9.2.1"
+          "Toolbelt.Blazor.HttpClientInterceptor": "9.2.1",
+          "FlexMoney.Application.Reference": "1.0.0.0",
+          "FlexMoney.Domain.Reference": "1.0.0.0",
+          "FlexMoney.Shared.Reference": "1.0.0.0"
         },
         "runtime": {
           "FlexMoney.Client.Infrastructure.dll": {}
@@ -626,6 +629,59 @@
         "runtime": {
           "FlexMoney.Shared.dll": {}
         }
+      },
+      "FlexMoney.Application.Reference/1.0.0.0": {
+        "runtime": {
+          "FlexMoney.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "resources": {
+          "de/FlexMoney.Application.resources.dll": {
+            "locale": "de"
+          },
+          "en/FlexMoney.Application.resources.dll": {
+            "locale": "en"
+          },
+          "es/FlexMoney.Application.resources.dll": {
+            "locale": "es"
+          },
+          "fr/FlexMoney.Application.resources.dll": {
+            "locale": "fr"
+          },
+          "id/FlexMoney.Application.resources.dll": {
+            "locale": "id"
+          },
+          "it/FlexMoney.Application.resources.dll": {
+            "locale": "it"
+          },
+          "km/FlexMoney.Application.resources.dll": {
+            "locale": "km"
+          },
+          "ru/FlexMoney.Application.resources.dll": {
+            "locale": "ru"
+          },
+          "sv/FlexMoney.Application.resources.dll": {
+            "locale": "sv"
+          }
+        }
+      },
+      "FlexMoney.Domain.Reference/1.0.0.0": {
+        "runtime": {
+          "FlexMoney.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "FlexMoney.Shared.Reference/1.0.0.0": {
+        "runtime": {
+          "FlexMoney.Shared.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
       }
     }
   },
@@ -1018,6 +1074,21 @@
     },
     "FlexMoney.Shared/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FlexMoney.Application.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FlexMoney.Domain.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FlexMoney.Shared.Reference/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

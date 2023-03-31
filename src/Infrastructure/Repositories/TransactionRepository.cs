@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
+using FlexMoney.Application.Features.Reports.Queries.GetById;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace FlexMoney.Infrastructure.Repositories
 {
@@ -43,10 +46,50 @@ namespace FlexMoney.Infrastructure.Repositories
 
             return await query.ToListAsync();
         }
+        
+        public async Task<GetTransactionInfoByLineIdResponse> GetTransactionInfoByLineIdAsync(int lineId)
+        {
+            var connection = (SqlConnection)_dbContext.Database.GetDbConnection();
+            var command = connection.CreateCommand();
+            command.CommandText = "GetTransactionInfoByLineId";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@LineId", lineId);
+            await connection.OpenAsync();
+            using var reader = await command.ExecuteReaderAsync();
+            if (await reader.ReadAsync())
+            {
+                return new GetTransactionInfoByLineIdResponse
+                {
+                    TypeName = reader.GetString(0),
+                    CurrentSection = reader.GetInt32(1),
+                    Money = reader.GetDecimal(2),
+                    TotalThankMoney = reader.GetDecimal(3),
+                };
+            }
 
+            return null;
+        }
+        public async Task<List<GetReadyCallerByLineIdResponse>> GetReadyCallerByLineIdAsync(int lineId)
+        {
+            var connection = (SqlConnection)_dbContext.Database.GetDbConnection();
+            var command = connection.CreateCommand();
+            command.CommandText = "GetReadyCallerByLineId";
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@LineId", lineId);
+            await connection.OpenAsync();
+            using var reader = await command.ExecuteReaderAsync();
+            var result = new List<GetReadyCallerByLineIdResponse>();
+            while (await reader.ReadAsync())
+            {
+                result.Add(new GetReadyCallerByLineIdResponse
+                {
+                    Id = reader.GetInt32(0),
+                    MemberName = reader.GetString(1),
+                    Position = reader.GetInt32(2),
+                });
+            }
 
-
-
-
+            return result;
+        }
     }
 }

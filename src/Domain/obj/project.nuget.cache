@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hEqFC7zNXMHCgZ+3TnZx/0kmksG00bIqW4/OxOC4q4QFyaST+hGZ6vKSoc/PTgPPcXKTt7wCylyeZAKsUBo78g==",
+  "dgSpecHash": "oSPP14uneSuF7YCdO0j9SNGCgn8FPLiSS5YnUfHI46KEoEWLmfj/R6sxo408WM1FpVz2+c/46S0A4gTo2XS2dw==",
   "success": true,
-  "projectFilePath": "D:\\Build Myself\\FlexMoney\\src\\Domain\\Domain.csproj",
+  "projectFilePath": "G:\\TienPhong\\main\\FlexMoney\\src\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

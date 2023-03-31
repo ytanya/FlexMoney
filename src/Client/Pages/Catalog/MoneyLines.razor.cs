@@ -116,7 +116,7 @@ namespace FlexMoney.Client.Pages.Catalog
                         Name = _moneyLine.Name,
                         CreatedDate = DateTime.Now,
                         Money = _moneyLine.Money,
-                        OwnerId = _moneyLine.Owner,
+                        OwnerId = _moneyLine.OwnerId,
                         Quantity = _moneyLine.Quantity,
                         TypeId = _moneyLine.TypeId,
                     });

@@ -372,29 +372,90 @@
             <param name="searchString"></param>
             <returns></returns>
         </member>
-        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MembershipsController.GetAll">
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MemberLinesController.GetAll">
             <summary>
-            Get All Brands
+            Get All Member Line
             </summary>
             <returns>Status 200 OK</returns>
         </member>
-        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MembershipsController.GetById(System.Int32)">
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MemberLinesController.GetById(System.Int32)">
             <summary>
-            Get a Brand By Id
+            Get a Member Line By Id
             </summary>
             <param name="id"></param>
             <returns>Status 200 Ok</returns>
         </member>
-        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MembershipsController.Post(FlexMoney.Application.Features.Memberships.Commands.AddEdit.AddEditMembershipCommand)">
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MemberLinesController.Post(FlexMoney.Application.Features.MemberLines.Commands.AddEdit.AddEditMemberLineCommand)">
             <summary>
-            Create/Update a Brand
+            Create/Update a Member Line
             </summary>
             <param name="command"></param>
             <returns>Status 200 OK</returns>
         </member>
-        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MembershipsController.Delete(System.Int32)">
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MemberLinesController.Delete(System.Int32)">
             <summary>
-            Delete a Brand
+            Delete a Member Line
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MemberLinesController.GetByLineId(System.Int32)">
+            <summary>
+            Get a Member Line By Line Id
+            </summary>
+            <param name="lineId"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MembersController.GetAll">
+            <summary>
+            Get All Members
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MembersController.GetById(System.Int32)">
+            <summary>
+            Get a Member By Id
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MembersController.Post(FlexMoney.Application.Features.Members.Commands.AddEdit.AddEditMemberCommand)">
+            <summary>
+            Create/Update a Member
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MembersController.Delete(System.Int32)">
+            <summary>
+            Delete a Member
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MoneyLinesController.GetAll">
+            <summary>
+            Get All Money Line
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MoneyLinesController.GetById(System.Int32)">
+            <summary>
+            Get a Money Line By Id
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MoneyLinesController.Post(FlexMoney.Application.Features.MoneyLines.Commands.AddEdit.AddEditMoneyLineCommand)">
+            <summary>
+            Create/Update a Money Line
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.MoneyLinesController.Delete(System.Int32)">
+            <summary>
+            Delete a Money Line
             </summary>
             <param name="id"></param>
             <returns>Status 200 OK</returns>
@@ -435,6 +496,101 @@
             Search Products and Export to Excel
             </summary>
             <param name="searchString"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.ReportsController.GetAll">
+            <summary>
+            Get all  member report
+            </summary>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.ReportsController.GetById(System.Int32)">
+            <summary>
+            Get a report By Member Id
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.ReportsController.GetByOwnerId(System.Int32)">
+            <summary>
+            Get a report By Member Id
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TransactionsController.GetAll">
+            <summary>
+            Get All Transactions
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TransactionsController.GetById(System.Int32)">
+            <summary>
+            Get a Transaction By Id
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TransactionsController.Post(FlexMoney.Application.Features.Transactions.Commands.AddEdit.AddEditTransactionCommand)">
+            <summary>
+            Create/Update a Transaction
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TransactionsController.Delete(System.Int32)">
+            <summary>
+            Delete a Transaction
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TransactionsController.GetByLineId(System.Int32)">
+            <summary>
+            Get a Transaction By Line Id
+            </summary>
+            <param name="lineId"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TransactionsController.GetTransactionInfoByLineId(System.Int32)">
+            <summary>
+            Get a Transaction Info By Line Id
+            </summary>
+            <param name="lineId"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TransactionsController.GetReadyCallerByLineId(System.Int32)">
+            <summary>
+            Get a ready caller By Line Id
+            </summary>
+            <param name="lineId"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TypesController.GetAll">
+            <summary>
+            Get All Types
+            </summary>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TypesController.GetById(System.Int32)">
+            <summary>
+            Get a Type By Id
+            </summary>
+            <param name="id"></param>
+            <returns>Status 200 Ok</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TypesController.Post(FlexMoney.Application.Features.Types.Commands.AddEdit.AddEditTypeCommand)">
+            <summary>
+            Create/Update a Type
+            </summary>
+            <param name="command"></param>
+            <returns>Status 200 OK</returns>
+        </member>
+        <member name="M:FlexMoney.Server.Controllers.v1.Catalog.TypesController.Delete(System.Int32)">
+            <summary>
+            Delete a Type
+            </summary>
+            <param name="id"></param>
             <returns>Status 200 OK</returns>
         </member>
         <member name="M:FlexMoney.Server.Controllers.v1.DashboardController.GetDataAsync">

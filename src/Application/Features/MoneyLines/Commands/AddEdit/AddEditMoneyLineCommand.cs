@@ -30,6 +30,7 @@ namespace FlexMoney.Application.Features.MoneyLines.Commands.AddEdit
         [Required]
         public int OwnerId { get; set; }
         public int StatusId { get; set; }
+        public int CurrentSection { get; set; }
     }
     internal class AddEditMoneyLineCommandHandler : IRequestHandler<AddEditMoneyLineCommand, Result<int>>
     {
@@ -72,6 +73,7 @@ namespace FlexMoney.Application.Features.MoneyLines.Commands.AddEdit
                             moneyLine.Quantity = moneyLine.Quantity;
                             moneyLine.OwnerId = moneyLine.OwnerId;
                             moneyLine.StatusId = moneyLine.StatusId;
+                            moneyLine.CurrentSection = moneyLine.CurrentSection;
                             await _unitOfWork.Repository<MoneyLine>().UpdateAsync(moneyLine);
                             await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMoneyLinesCacheKey);
                             return await Result<int>.SuccessAsync(moneyLine.Id, _localizer["Money Line Updated"]);

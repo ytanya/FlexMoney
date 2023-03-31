@@ -75,5 +75,31 @@ namespace FlexMoney.Server.Controllers.v1.Catalog
             var transaction = await _mediator.Send(new GetTransactionByLineIdQuery() { LineId = lineId });
             return Ok(transaction);
         }
+
+        /// <summary>
+        /// Get a Transaction Info By Line Id
+        /// </summary>
+        /// <param name="lineId"></param>
+        /// <returns>Status 200 Ok</returns>
+        [Authorize(Policy = Permissions.Transactions.View)]
+        [HttpGet("transantioninfo/{lineId}")]
+        public async Task<IActionResult> GetTransactionInfoByLineId(int lineId)
+        {
+            var transactioninfo = await _mediator.Send(new GetTransactionInfoByLineIdQuery() { LineId = lineId });
+            return Ok(transactioninfo);
+        }
+
+        /// <summary>
+        /// Get a ready caller By Line Id
+        /// </summary>
+        /// <param name="lineId"></param>
+        /// <returns>Status 200 Ok</returns>
+        [Authorize(Policy = Permissions.Transactions.View)]
+        [HttpGet("readycaller/{lineId}")]
+        public async Task<IActionResult> GetReadyCallerByLineId(int lineId)
+        {
+            var readycaller = await _mediator.Send(new GetReadyCallerByLineIdQuery() { LineId = lineId });
+            return Ok(readycaller);
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<AddEditTransactionModal> _localizer
 @using FlexMoney.Application.Features.MoneyLines.Queries.GetAll;
 @using FlexMoney.Application.Features.MemberLines.Queries.GetById;
+@using FlexMoney.Application.Features.Transactions.Queries.GetById;
 @{
     string sectionQuantity = $"{AddEditTransactionModel.Section}/{AddEditTransactionModel.Quantity}";
     string typeName = AddEditTransactionModel.TypeName;
@@ -99,7 +100,7 @@
                     <MudText Color="Color.Error">Total Thank Money: @_thankMoneyTotal</MudText>
                 </MudItem>
                 <MudItem xs="12" md="6">
-                        <MudSelect T="GetMemberLineByLineIdResponse" Label="Select a caller" Variant="Variant.Filled" ValueChanged="HandleCallerChange" >
+                        <MudSelect T="GetReadyCallerByLineIdResponse" Label="Select a caller" Variant="Variant.Filled" ValueChanged="HandleCallerChange">
                             @foreach (var caller in _readyCallerList)
                             {
                                 <MudSelectItem Value="@caller">@(caller.MemberName + "-" + caller.Position)</MudSelectItem>

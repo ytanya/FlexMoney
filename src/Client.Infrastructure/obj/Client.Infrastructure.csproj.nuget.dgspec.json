@@ -1,25 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TienPhong\\Flex Money\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {}
+    "G:\\TienPhong\\main\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\TienPhong\\Flex Money\\src\\Application\\Application.csproj": {
+    "G:\\TienPhong\\main\\FlexMoney\\src\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TienPhong\\Flex Money\\src\\Application\\Application.csproj",
+        "projectUniqueName": "G:\\TienPhong\\main\\FlexMoney\\src\\Application\\Application.csproj",
         "projectName": "FlexMoney.Application",
-        "projectPath": "D:\\TienPhong\\Flex Money\\src\\Application\\Application.csproj",
+        "projectPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Application\\Application.csproj",
         "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\TienPhong\\Flex Money\\src\\Application\\obj\\",
+        "outputPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Application\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -33,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\TienPhong\\Flex Money\\src\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\TienPhong\\Flex Money\\src\\Domain\\Domain.csproj"
+              "G:\\TienPhong\\main\\FlexMoney\\src\\Domain\\Domain.csproj": {
+                "projectPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Domain\\Domain.csproj"
               },
-              "D:\\TienPhong\\Flex Money\\src\\Shared\\Shared.csproj": {
-                "projectPath": "D:\\TienPhong\\Flex Money\\src\\Shared\\Shared.csproj"
+              "G:\\TienPhong\\main\\FlexMoney\\src\\Shared\\Shared.csproj": {
+                "projectPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -99,7 +94,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -108,26 +104,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\TienPhong\\Flex Money\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
+    "G:\\TienPhong\\main\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TienPhong\\Flex Money\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "projectUniqueName": "G:\\TienPhong\\main\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
         "projectName": "FlexMoney.Client.Infrastructure",
-        "projectPath": "D:\\TienPhong\\Flex Money\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
+        "projectPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Client.Infrastructure\\Client.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\TienPhong\\Flex Money\\src\\Client.Infrastructure\\obj\\",
+        "outputPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Client.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -141,11 +132,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\TienPhong\\Flex Money\\src\\Application\\Application.csproj": {
-                "projectPath": "D:\\TienPhong\\Flex Money\\src\\Application\\Application.csproj"
+              "G:\\TienPhong\\main\\FlexMoney\\src\\Application\\Application.csproj": {
+                "projectPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Application\\Application.csproj"
               },
-              "D:\\TienPhong\\Flex Money\\src\\Shared\\Shared.csproj": {
-                "projectPath": "D:\\TienPhong\\Flex Money\\src\\Shared\\Shared.csproj"
+              "G:\\TienPhong\\main\\FlexMoney\\src\\Shared\\Shared.csproj": {
+                "projectPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Shared\\Shared.csproj"
               }
             }
           }
@@ -195,7 +186,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -204,26 +196,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\TienPhong\\Flex Money\\src\\Domain\\Domain.csproj": {
+    "G:\\TienPhong\\main\\FlexMoney\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TienPhong\\Flex Money\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "G:\\TienPhong\\main\\FlexMoney\\src\\Domain\\Domain.csproj",
         "projectName": "FlexMoney.Domain",
-        "projectPath": "D:\\TienPhong\\Flex Money\\src\\Domain\\Domain.csproj",
+        "projectPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\TienPhong\\Flex Money\\src\\Domain\\obj\\",
+        "outputPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -254,7 +241,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -263,26 +251,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\TienPhong\\Flex Money\\src\\Shared\\Shared.csproj": {
+    "G:\\TienPhong\\main\\FlexMoney\\src\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TienPhong\\Flex Money\\src\\Shared\\Shared.csproj",
+        "projectUniqueName": "G:\\TienPhong\\main\\FlexMoney\\src\\Shared\\Shared.csproj",
         "projectName": "FlexMoney.Shared",
-        "projectPath": "D:\\TienPhong\\Flex Money\\src\\Shared\\Shared.csproj",
+        "projectPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Shared\\Shared.csproj",
         "packagesPath": "C:\\Users\\Tanya\\.nuget\\packages\\",
-        "outputPath": "D:\\TienPhong\\Flex Money\\src\\Shared\\obj\\",
+        "outputPath": "G:\\TienPhong\\main\\FlexMoney\\src\\Shared\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
           "C:\\Users\\Tanya\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -323,7 +306,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -332,7 +316,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

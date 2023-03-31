@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0YYcgBZHdBj+Cwb5MpUWjup3ktOsk4BAiAq0RwAr6pKJexPnPzYNj0kWYMEaBMmHMOo4uj/IKmBAQdvEZlmFlw==",
+  "dgSpecHash": "Uvyboy2vn2+grcUhukavvY7hiu9pK0/ONDK+NYJ6W3DZIp5ikI5+cwG6Fd7HkzlmZ5O97DkSfqFqQVsz5aALPQ==",
   "success": true,
-  "projectFilePath": "D:\\Build Myself\\FlexMoney\\src\\Server\\Server.csproj",
+  "projectFilePath": "G:\\TienPhong\\main\\FlexMoney\\src\\Server\\Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Tanya\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Tanya\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

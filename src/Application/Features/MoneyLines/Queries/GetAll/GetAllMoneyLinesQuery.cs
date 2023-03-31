@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FlexMoney.Application.Features.Members.Queries.GetAll;
 using FlexMoney.Application.Interfaces.Repositories;
 using FlexMoney.Domain.Entities.Catalog;
 using FlexMoney.Shared.Constants.Application;
@@ -37,17 +38,7 @@ namespace FlexMoney.Application.Features.MoneyLines.Queries.GetAll
         {
             Func<Task<List<MoneyLine>>> getAllMoneyLines = () => _unitOfWork.Repository<MoneyLine>().GetAllAsync();
             var moneyLineList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllMoneyLinesCacheKey, getAllMoneyLines);
-            var mappedMoneyLines = new List<GetAllMoneyLinesResponse>();
-            foreach (var moneyLine in moneyLineList)
-            {
-                var type = await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().GetByIdAsync(moneyLine.TypeId);
-                var owner = await _unitOfWork.Repository<Domain.Entities.Catalog.Member>().GetByIdAsync(moneyLine.OwnerId);
-                var mappedMoneyLineItem = _mapper.Map<GetAllMoneyLinesResponse>(moneyLine);
-                mappedMoneyLineItem.TypeName = type.Name; // set the type name property
-                mappedMoneyLineItem.OwnerName = owner.Name; // set the member name property
-                mappedMoneyLines.Add(mappedMoneyLineItem);
-            }
-
+            var mappedMoneyLines = _mapper.Map<List<GetAllMoneyLinesResponse>>(moneyLineList);
             return await Result<List<GetAllMoneyLinesResponse>>.SuccessAsync(mappedMoneyLines);
         }
     }

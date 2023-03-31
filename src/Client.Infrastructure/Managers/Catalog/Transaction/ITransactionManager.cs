@@ -21,5 +21,8 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction
         Task<IResult<string>> ExportToExcelAsync(string searchString = "");
 
         Task<IResult<List<GetTransactionByLineIdResponse>>> GetByLineIdAsync(GetTransactionByLineIdQuery request);
+
+        Task<IResult<GetTransactionInfoByLineIdResponse>> GetTransactionInfoByLineIdAsync(GetTransactionInfoByLineIdQuery request);
+        Task<IResult<List<GetReadyCallerByLineIdResponse>>> GetReadyCallerByLineIdAsync(GetReadyCallerByLineIdQuery request);
     }
 }

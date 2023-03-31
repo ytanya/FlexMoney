@@ -1,0 +1,10 @@
+2023-03-30 10:28:53.585 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-30 10:28:53.751 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-30 10:28:53.759 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 10:28:53.762 +07:00 [INF] Hosting environment: Development
+2023-03-30 10:28:53.765 +07:00 [INF] Content root path: G:\TienPhong\main\FlexMoney\src\Server
+2023-03-30 10:41:51.204 +07:00 [INF] Now listening on: https://localhost:5001
+2023-03-30 10:41:51.419 +07:00 [INF] Now listening on: http://localhost:5000
+2023-03-30 10:41:51.434 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-30 10:41:51.435 +07:00 [INF] Hosting environment: Development
+2023-03-30 10:41:51.439 +07:00 [INF] Content root path: G:\TienPhong\main\FlexMoney\src\Server

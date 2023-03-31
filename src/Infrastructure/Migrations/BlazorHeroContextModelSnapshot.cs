@@ -80,7 +80,7 @@ namespace FlexMoney.Infrastructure.Migrations
                     b.ToTable("Brands");
                 });
 
-            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.Membership", b =>
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.Member", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -96,6 +96,9 @@ namespace FlexMoney.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -110,7 +113,97 @@ namespace FlexMoney.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Memberships");
+                    b.ToTable("Members");
+                });
+
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.MemberLine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DeadSection")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LineId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MemberId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LineId");
+
+                    b.HasIndex("MemberId");
+
+                    b.ToTable("MemberLines");
+                });
+
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.MoneyLine", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("CurrentSection")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Money")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OwnerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("StatusId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TypeId");
+
+                    b.ToTable("MoneyLines");
                 });
 
             modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.Product", b =>
@@ -155,6 +248,130 @@ namespace FlexMoney.Infrastructure.Migrations
                     b.HasIndex("BrandId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.Status", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LineStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Status");
+                });
+
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.Transaction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Alive")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Call")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("CallerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("Dead")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("Earn")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("LineId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Pay")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Position")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("RealEarn")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Section")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ThankMoney")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CallerId");
+
+                    b.HasIndex("LineId");
+
+                    b.ToTable("Transactions");
+                });
+
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.Type", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Types");
                 });
 
             modelBuilder.Entity("FlexMoney.Domain.Entities.ExtendedAttributes.DocumentExtendedAttribute", b =>
@@ -605,6 +822,36 @@ namespace FlexMoney.Infrastructure.Migrations
                     b.Navigation("ToUser");
                 });
 
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.MemberLine", b =>
+                {
+                    b.HasOne("FlexMoney.Domain.Entities.Catalog.MoneyLine", "Line")
+                        .WithMany()
+                        .HasForeignKey("LineId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FlexMoney.Domain.Entities.Catalog.Member", "Member")
+                        .WithMany()
+                        .HasForeignKey("MemberId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Line");
+
+                    b.Navigation("Member");
+                });
+
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.MoneyLine", b =>
+                {
+                    b.HasOne("FlexMoney.Domain.Entities.Catalog.Type", "Type")
+                        .WithMany()
+                        .HasForeignKey("TypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Type");
+                });
+
             modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.Product", b =>
                 {
                     b.HasOne("FlexMoney.Domain.Entities.Catalog.Brand", "Brand")
@@ -614,6 +861,25 @@ namespace FlexMoney.Infrastructure.Migrations
                         .IsRequired();
 
                     b.Navigation("Brand");
+                });
+
+            modelBuilder.Entity("FlexMoney.Domain.Entities.Catalog.Transaction", b =>
+                {
+                    b.HasOne("FlexMoney.Domain.Entities.Catalog.Member", "Caller")
+                        .WithMany()
+                        .HasForeignKey("CallerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FlexMoney.Domain.Entities.Catalog.MoneyLine", "Line")
+                        .WithMany()
+                        .HasForeignKey("LineId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Caller");
+
+                    b.Navigation("Line");
                 });
 
             modelBuilder.Entity("FlexMoney.Domain.Entities.ExtendedAttributes.DocumentExtendedAttribute", b =>

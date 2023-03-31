@@ -51,5 +51,17 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction
             var response = await _httpClient.GetAsync(Routes.TransactionsEndpoints.GetByLineId(request.LineId));
             return await response.ToResult<List<GetTransactionByLineIdResponse>>();
         }
+
+        public async Task<IResult<GetTransactionInfoByLineIdResponse>> GetTransactionInfoByLineIdAsync(GetTransactionInfoByLineIdQuery request)
+        {
+            var response = await _httpClient.GetAsync(Routes.TransactionsEndpoints.GetTransactionInfoByLineId(request.LineId));
+            return await response.ToResult<GetTransactionInfoByLineIdResponse>();
+        }
+
+        public async Task<IResult<List<GetReadyCallerByLineIdResponse>>> GetReadyCallerByLineIdAsync(GetReadyCallerByLineIdQuery request)
+        {
+            var response = await _httpClient.GetAsync(Routes.TransactionsEndpoints.GetReadyCallerByLineId(request.LineId));
+            return await response.ToResult<List<GetReadyCallerByLineIdResponse>>();
+        }
     }
 }

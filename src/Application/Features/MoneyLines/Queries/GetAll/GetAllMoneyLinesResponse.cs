@@ -15,7 +15,9 @@ namespace FlexMoney.Application.Features.MoneyLines.Queries.GetAll
         public string Name { get; set; }
         public Decimal Money { get; set; }
         public int Quantity { get; set; }
-        public int Owner { get; set; }
+        public int OwnerId { get; set; }
+        public int StatusId { get; set; }
         public string OwnerName { get; set; }
+        public int CurrentSection { get; set; }
     }
 }
