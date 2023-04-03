@@ -9,6 +9,10 @@ using System.Linq;
 using FlexMoney.Application.Features.Reports.Queries.GetById;
 using Microsoft.Data.SqlClient;
 using System.Data;
+using FlexMoney.Application.Features.Transactions.Commands.AddEdit;
+using System.Data.Common;
+using FlexMoney.Application.Interfaces.Services;
+using FlexMoney.Application.Features.Transactions.Commands.Delete;
 
 namespace FlexMoney.Infrastructure.Repositories
 {
@@ -16,11 +20,15 @@ namespace FlexMoney.Infrastructure.Repositories
     {
         private readonly IRepositoryAsync<Transaction, int> _repository;
         private readonly BlazorHeroContext _dbContext;
+        private readonly ICurrentUserService _currentUserService;
+        private readonly IDateTimeService _dateTimeService;
 
-        public TransactionRepository(IRepositoryAsync<Transaction, int> repository, BlazorHeroContext dbContext)
+        public TransactionRepository(IRepositoryAsync<Transaction, int> repository, BlazorHeroContext dbContext, ICurrentUserService currentUserService, IDateTimeService dateTimeService)
         {
             _repository = repository;
             _dbContext = dbContext;
+            _currentUserService = currentUserService;
+            _dateTimeService = dateTimeService;
         }
         public async Task<List<Transaction>> GetByLineIdAsync(int lineId)
         {
@@ -88,6 +96,72 @@ namespace FlexMoney.Infrastructure.Repositories
                     Position = reader.GetInt32(2),
                 });
             }
+
+            return result;
+        }
+
+        public async Task<int> AddTransactionAsync(AddEditTransactionCommand command)
+        {
+            SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
+            idParam.Direction = ParameterDirection.Output;
+
+            var parameters = new[]
+        {
+            new SqlParameter("@createddate", command.CreatedDate),
+            new SqlParameter("@lineid", command.LineId),
+            new SqlParameter("@typeid", command.TypeId),
+            new SqlParameter("@section", command.Section),
+            new SqlParameter("@callerid", command.CallerId),
+            new SqlParameter("@position", command.Position),
+            new SqlParameter("@pay", command.Pay),
+            new SqlParameter("@call", command.Call),
+            new SqlParameter("@earn", command.Earn),
+            new SqlParameter("@thankmoney", command.ThankMoney),
+            new SqlParameter("@realearn", command.RealEarn),
+            new SqlParameter("@dead", command.Dead),
+            new SqlParameter("@alive", command.Alive),
+            new SqlParameter("@createdby", _currentUserService.UserId),
+            new SqlParameter("@createdon", _dateTimeService.NowUtc),
+            idParam
+        };
+
+            var result = await _dbContext.Database.ExecuteSqlRawAsync("EXEC InsertTransaction @createddate, @lineid, @typeid, @section, @callerid, @position, @pay, @call, @earn, @thankmoney, @realearn, @dead, @alive, @createdby, @createdon, @id OUTPUT", parameters);
+            
+            return result;
+        }
+
+        public async Task<int> UpdateTransactionAsync(AddEditTransactionCommand command)
+        {
+            var parameters = new[]
+        {
+            new SqlParameter("@id", command.Id),
+            new SqlParameter("@lineid", command.LineId),
+            new SqlParameter("@typeid", command.TypeId),
+            new SqlParameter("@section", command.Section),
+            new SqlParameter("@callerid", command.CallerId),
+            new SqlParameter("@position", command.Position),
+            new SqlParameter("@pay", command.Pay),
+            new SqlParameter("@call", command.Call),
+            new SqlParameter("@earn", command.Earn),
+            new SqlParameter("@thankmoney", command.ThankMoney),
+            new SqlParameter("@realearn", command.RealEarn),
+            new SqlParameter("@dead", command.Dead),
+            new SqlParameter("@alive", command.Alive),
+        };
+
+            var result = await _dbContext.Database.ExecuteSqlRawAsync("EXEC UpdateTransaction @id, @lineid, @typeid, @section, @callerid, @position, @pay, @call, @earn, @thankmoney, @realearn, @dead, @alive", parameters);
+
+            return result;
+        }
+
+        public async Task<int> DeleteTransactionAsync(DeleteTransactionCommand command)
+        {
+            var parameters = new[]
+        {
+            new SqlParameter("@lineid", command.Id),
+        };
+
+            var result = await _dbContext.Database.ExecuteSqlRawAsync("EXEC DeleteTransaction @lineid", parameters);
 
             return result;
         }

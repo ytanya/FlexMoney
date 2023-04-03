@@ -38,48 +38,38 @@ namespace FlexMoney.Application.Features.Transactions.Commands.AddEdit
         public int Quantity { get; set; }
         public string TypeName { get; set; }
         public decimal Money { get; set; }
+        public string LineName { get; set; }
+        public string Caller { get; set; }
     }
     internal class AddEditTransactionCommandHandler : IRequestHandler<AddEditTransactionCommand, Result<int>>
     {
         private readonly IMapper _mapper;
         private readonly IStringLocalizer<AddEditTransactionCommandHandler> _localizer;
         private readonly IUnitOfWork<int> _unitOfWork;
+        private readonly ITransactionRepository _transactionRepository;
 
-        public AddEditTransactionCommandHandler(IUnitOfWork<int> unitOfWork, IMapper mapper, IStringLocalizer<AddEditTransactionCommandHandler> localizer)
+        public AddEditTransactionCommandHandler(ITransactionRepository transactionRepository, IUnitOfWork<int> unitOfWork, IMapper mapper, IStringLocalizer<AddEditTransactionCommandHandler> localizer)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _localizer = localizer;
+            _transactionRepository = transactionRepository;
         }
 
         public async Task<Result<int>> Handle(AddEditTransactionCommand command, CancellationToken cancellationToken)
         {
             if (command.Id == 0)
             {
-                var transaction = _mapper.Map<Transaction>(command);
-                await _unitOfWork.Repository<Transaction>().AddAsync(transaction);
+                var transactionId = await _transactionRepository.AddTransactionAsync(command);
                 await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsCacheKey);
-                return await Result<int>.SuccessAsync(transaction.Id, _localizer["Transaction Saved"]);
+                return await Result<int>.SuccessAsync(transactionId, _localizer["Transaction Saved"]);
             }
             else
             {
                 var transaction = await _unitOfWork.Repository<Transaction>().GetByIdAsync(command.Id);
                 if (transaction != null)
                 {
-                    transaction.CreatedDate = command.CreatedDate;
-                    transaction.LineId = (command.LineId == 0) ? transaction.LineId : command.LineId;
-                    transaction.Section = command.Section;
-                    transaction.CallerId = (command.CallerId == 0) ? transaction.CallerId : command.CallerId;
-                    transaction.Pay = (command.Pay == 0) ? transaction.Pay : command.Pay;
-                    transaction.Call = (command.Call == 0) ? transaction.Call : command.Call;
-                    transaction.Earn = (command.Earn == 0) ? transaction.Earn : command.Earn;
-                    transaction.ThankMoney = (command.ThankMoney == 0) ? transaction.ThankMoney : command.ThankMoney;
-                    transaction.RealEarn = (command.RealEarn == 0) ? transaction.RealEarn : command.RealEarn;
-                    transaction.Dead = (command.Dead == 0) ? transaction.Dead : command.Dead;
-                    transaction.Alive = (command.Alive == 0) ? transaction.Alive : command.Alive;
-                    transaction.Position = (command.Position == 0) ? transaction.Position : command.Position;
-                    transaction.TypeId = (command.TypeId == 0) ? transaction.TypeId : command.TypeId;
-                    await _unitOfWork.Repository<Transaction>().UpdateAsync(transaction);
+                    var transactionId = await _transactionRepository.UpdateTransactionAsync(command);
                     await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsCacheKey);
                     return await Result<int>.SuccessAsync(transaction.Id, _localizer["Transaction Updated"]);
                 }

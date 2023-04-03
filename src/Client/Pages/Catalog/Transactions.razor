@@ -44,7 +44,7 @@ else
         <HeaderContent>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllTransactionsResponse, object>(x => x.Id)">@_localizer["Id"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllTransactionsResponse, object>(x => x.CreatedDate)">@_localizer["Date"]</MudTableSortLabel></MudTh>
-            <MudTh><MudTableSortLabel SortBy="new Func<GetAllTransactionsResponse, object>(x => x.MoneyLine)">@_localizer["Line"]</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<GetAllTransactionsResponse, object>(x => x.LineName)">@_localizer["Line"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllTransactionsResponse, object>(x => x.TypeName)">@_localizer["Type"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllTransactionsResponse, object>(x => x.Section)">@_localizer["Section"]</MudTableSortLabel></MudTh>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllTransactionsResponse, object>(x => x.Caller)">@_localizer["Caller"]</MudTableSortLabel></MudTh>
@@ -63,7 +63,7 @@ else
                 <MudHighlighter Text="@($"{context.CreatedDate}")"/>
             </MudTd>
             <MudTd DataLabel="Line">
-                <MudHighlighter Text="@context.MoneyLine"/>
+                <MudHighlighter Text="@context.LineName"/>
             </MudTd>
             <MudTd DataLabel="Type">
                 <MudHighlighter Text="@context.TypeName"/>

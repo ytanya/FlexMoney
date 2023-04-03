@@ -63,5 +63,11 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction
             var response = await _httpClient.GetAsync(Routes.TransactionsEndpoints.GetReadyCallerByLineId(request.LineId));
             return await response.ToResult<List<GetReadyCallerByLineIdResponse>>();
         }
+
+        public async Task<IResult<int>> SaveTransactionInfoAsync(AddEditTransactionCommand request)
+        {
+            var response = await _httpClient.PostAsJsonAsync(Routes.TransactionsEndpoints.SaveTransactionInfo, request);
+            return await response.ToResult<int>();
+        }
     }
 }

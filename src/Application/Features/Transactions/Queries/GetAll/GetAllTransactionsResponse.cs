@@ -11,7 +11,7 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
         public int Id { get; set; }
         public DateTime CreatedDate { get; set; }
         public int LineId { get; set; }
-        public string MoneyLine { get; set; }
+        public string LineName { get; set; }
         public int TypeId { get; set; }
         public string TypeName { get; set; }
         public int Section { get; set; }
@@ -24,5 +24,6 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
         public Decimal RealEarn { get; set; }
         public Decimal Dead { get; set; }
         public Decimal Alive { get; set; }
+        public int Position { get; set; }
     }
 }

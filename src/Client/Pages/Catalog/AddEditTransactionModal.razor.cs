@@ -1,4 +1,4 @@
-﻿using FlexMoney.Client.Extensions;
+using FlexMoney.Client.Extensions;
 using FlexMoney.Shared.Constants.Application;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
@@ -41,6 +41,7 @@ namespace FlexMoney.Client.Pages.Catalog
         private Decimal _thankMoneyTotal = 0;
         private Decimal _money = 0;
         private int _quantity = 0;
+        private string _typeName;
         private int _section = 0;
         private Decimal _earn = 0;
         private Decimal _thankmoney =0;
@@ -48,6 +49,8 @@ namespace FlexMoney.Client.Pages.Catalog
         private Decimal _call = 0; 
         private int _currentSection = 0;
         private FluentValidationValidator _fluentValidationValidator;
+        private HashSet<GetAllMoneyLinesResponse> _selectedLines = new HashSet<GetAllMoneyLinesResponse>();
+        private HashSet<GetReadyCallerByLineIdResponse> _selectedCallers = new HashSet<GetReadyCallerByLineIdResponse>();
         private bool Validated => _fluentValidationValidator.Validate(options => { options.IncludeAllRuleSets(); });
 
         public void Cancel()
@@ -195,6 +198,7 @@ namespace FlexMoney.Client.Pages.Catalog
             _lineQuery.LineId = selectedLine.Id;
             _money = selectedLine.Money;
             _quantity=selectedLine.Quantity;
+            _typeName = selectedLine.TypeName;
             await GetTransactionByLineId(_lineQuery);
             // Do other stuff
         }

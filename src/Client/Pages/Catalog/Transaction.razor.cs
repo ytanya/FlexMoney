@@ -126,12 +126,14 @@ namespace FlexMoney.Client.Pages.Catalog
                         RealEarn = _transaction.RealEarn,
                         TypeId = _transaction.TypeId,
                         TypeName = _transaction.TypeName,
-                        //TypeId = _transaction.TypeId,
+                        LineName = _transaction.LineName,
                         LineId = _transaction.LineId,
                         ThankMoney = _transaction.ThankMoney,
                         Section =_transaction.Section,
                         Quantity = response.Data.Quantity,
                         Money = response.Data.Money,
+                        Caller = _transaction.Caller,
+                        Position = _transaction.Position
                     });
                 }
             }
@@ -153,7 +155,7 @@ namespace FlexMoney.Client.Pages.Catalog
         private bool Search(GetAllTransactionsResponse Transaction)
         {
             if (string.IsNullOrWhiteSpace(_searchString)) return true;
-            if (Transaction.MoneyLine?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)
+            if (Transaction.LineName?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)
             {
                 return true;
             }

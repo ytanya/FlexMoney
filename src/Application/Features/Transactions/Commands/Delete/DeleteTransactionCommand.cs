@@ -21,11 +21,13 @@ namespace FlexMoney.Application.Features.Transactions.Commands.Delete
     {
         private readonly IStringLocalizer<DeleteTransactionCommandHandler> _localizer;
         private readonly IUnitOfWork<int> _unitOfWork;
+        private readonly ITransactionRepository _transactionRepository;
 
-        public DeleteTransactionCommandHandler(IUnitOfWork<int> unitOfWork,  IStringLocalizer<DeleteTransactionCommandHandler> localizer)
+        public DeleteTransactionCommandHandler(IUnitOfWork<int> unitOfWork, ITransactionRepository transactionRepository, IStringLocalizer<DeleteTransactionCommandHandler> localizer)
         {
             _unitOfWork = unitOfWork;
             _localizer = localizer;
+            _transactionRepository = transactionRepository;
         }
 
         public async Task<Result<int>> Handle(DeleteTransactionCommand command, CancellationToken cancellationToken)
@@ -33,7 +35,7 @@ namespace FlexMoney.Application.Features.Transactions.Commands.Delete
             var transaction = await _unitOfWork.Repository<Transaction>().GetByIdAsync(command.Id);
             if (transaction != null)
             {
-                await _unitOfWork.Repository<Transaction>().DeleteAsync(transaction);
+                await _transactionRepository.DeleteTransactionAsync(command);
                 await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsCacheKey);
                 return await Result<int>.SuccessAsync(transaction.Id, _localizer["Transaction Deleted"]);
             }

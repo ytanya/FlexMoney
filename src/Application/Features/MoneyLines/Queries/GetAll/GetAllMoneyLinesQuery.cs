@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using FlexMoney.Application.Features.MemberLines.Queries.GetById;
 using FlexMoney.Application.Features.Members.Queries.GetAll;
 using FlexMoney.Application.Interfaces.Repositories;
 using FlexMoney.Domain.Entities.Catalog;
@@ -12,6 +13,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using static FlexMoney.Shared.Constants.Permission.Permissions;
 
 namespace FlexMoney.Application.Features.MoneyLines.Queries.GetAll
 {
@@ -38,7 +40,15 @@ namespace FlexMoney.Application.Features.MoneyLines.Queries.GetAll
         {
             Func<Task<List<MoneyLine>>> getAllMoneyLines = () => _unitOfWork.Repository<MoneyLine>().GetAllAsync();
             var moneyLineList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllMoneyLinesCacheKey, getAllMoneyLines);
-            var mappedMoneyLines = _mapper.Map<List<GetAllMoneyLinesResponse>>(moneyLineList);
+            //var mappedMoneyLines = _mapper.Map<List<GetAllMoneyLinesResponse>>(moneyLineList);
+            var mappedMoneyLines = new List<GetAllMoneyLinesResponse>();
+            foreach (var moneyLine in moneyLineList)
+            {
+                var type = await _unitOfWork.Repository<FlexMoney.Domain.Entities.Catalog.Type>().GetByIdAsync(moneyLine.TypeId);
+                var mappedTypeItem = _mapper.Map<GetAllMoneyLinesResponse>(moneyLine);
+                mappedTypeItem.TypeName = type.Name; // set the type name property
+                mappedMoneyLines.Add(mappedTypeItem);
+            }
             return await Result<List<GetAllMoneyLinesResponse>>.SuccessAsync(mappedMoneyLines);
         }
     }

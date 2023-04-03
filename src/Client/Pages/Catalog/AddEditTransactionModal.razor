@@ -6,6 +6,10 @@
     string sectionQuantity = $"{AddEditTransactionModel.Section}/{AddEditTransactionModel.Quantity}";
     string typeName = AddEditTransactionModel.TypeName;
     decimal money = AddEditTransactionModel.Money;
+    decimal thankMoneyTotal = AddEditTransactionModel.ThankMoney;
+    //GetAllMoneyLinesResponse selectedLine = new();
+    //selectedLine.Id = AddEditTransactionModel.LineId;
+    //selectedLine.Name = AddEditTransactionModel.LineName;
 }
 <EditForm Model="@AddEditTransactionModel" OnValidSubmit="SaveAsync">
     <FluentValidationValidator @ref="_fluentValidationValidator" />
@@ -36,7 +40,7 @@
                         <MudTextField Disabled For="@(() => AddEditTransactionModel.Id)" @bind-Value="AddEditTransactionModel.Id" Label="@_localizer["Id"]" />
                     </MudItem>
                     <MudItem xs="12" md="6">
-                        <MudSelect T="GetAllMoneyLinesResponse" Label="Select a line" Variant="Variant.Filled" Value="@_selectedLine" ValueChanged="HandleLineChange" >
+                        <MudSelect T="GetAllMoneyLinesResponse" Label="Select a line" Variant="Variant.Filled" @bind-SelectedValues="@_selectedLines" ValueChanged="HandleLineChange">
                             @foreach (var line in _moneyLineList)
                             {
                                 <MudSelectItem Value="@line">@line.Name</MudSelectItem>
@@ -44,25 +48,25 @@
                         </MudSelect>
                     </MudItem>
                     <MudItem xs="12" md="6">
-                    <MudText Color="Color.Error">Type: @typeName</MudText>
-                </MudItem>
-                    <MudItem xs="12" md="6">
-                    <MudText Color="Color.Error">Section: @sectionQuantity</MudText>
-                </MudItem>
-                <MudItem xs="12" md="6">
-                    <MudText Color="Color.Error">Money: @money</MudText>
+                        <MudText Color="Color.Error">Type: @typeName</MudText>
                     </MudItem>
-                @*<MudItem xs="12" md="6">
-                    <MudText Color="Color.Error">Total Thank Money: @_thankMoneyTotal</MudText>
-                </MudItem>*@
-                @*<MudItem xs="12" md="6">
-                        <MudSelect T="GetMemberLineByLineIdResponse" Label="Select a caller" Variant="Variant.Filled" ValueChanged="HandleCallerChange" >
+                    <MudItem xs="12" md="6">
+                        <MudText Color="Color.Error">Section: @(_section + "/" + _quantity)</MudText>
+                        </MudItem>
+                    <MudItem xs="12" md="6">
+                        <MudText Color="Color.Error">Money: @_money</MudText>
+                    </MudItem>
+                    <MudItem xs="12" md="6">
+                        <MudText Color="Color.Error">Total Thank Money: @_thankMoneyTotal</MudText>
+                    </MudItem>
+                <MudItem xs="12" md="6">
+                        <MudSelect T="GetReadyCallerByLineIdResponse" Label="Select a caller" Variant="Variant.Filled" @bind-SelectedValues="@_selectedCallers" ValueChanged="HandleCallerChange">
                             @foreach (var caller in _readyCallerList)
                             {
                                 <MudSelectItem Value="@caller">@(caller.MemberName + "-" + caller.Position)</MudSelectItem>
                             }
                         </MudSelect>
-                    </MudItem>*@
+                    </MudItem>
                 
                 <MudItem xs="12" md="6">
                     <MudTextField For="@(() => AddEditTransactionModel.Call)" Immediate="true" @bind-Value="AddEditTransactionModel.Call" Label="@_localizer["Call"]" Format="C0" TextChanged="OnValueCallChangeHandler"/>
@@ -88,10 +92,10 @@
                         </MudSelect>
                     </MudItem>
                     <MudItem xs="12" md="6">
-                    <MudText Color="Color.Error">Type: @_selectedLine.TypeName</MudText>
+                        <MudText Color="Color.Error">Type: @_typeName</MudText>
                 </MudItem>
                     <MudItem xs="12" md="6">
-                    <MudText Color="Color.Error">Section: @(_section + "/" + _selectedLine.Quantity)</MudText>
+                    <MudText Color="Color.Error">Section: @(_section + "/" + _quantity)</MudText>
                 </MudItem>
                 <MudItem xs="12" md="6">
                     <MudText Color="Color.Error">Money: @_money</MudText>
