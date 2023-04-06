@@ -60,7 +60,7 @@ else
         <RowTemplate>
             <MudTd DataLabel="Id">@context.Id</MudTd>
             <MudTd DataLabel="Date">
-                <MudHighlighter Text="@($"{context.CreatedDate.ToString("dd/MM/yyyy h:mm tt")}")" />
+                <MudHighlighter Text="@($"{context.CreatedDate.ToString("dd/MM/yyyy")}")" />
             </MudTd>
             <MudTd DataLabel="Line">
                 <MudHighlighter Text="@context.MoneyLine"/>
