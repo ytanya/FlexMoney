@@ -19,10 +19,10 @@ namespace FlexMoney.Server.Controllers.v1.Catalog
         /// </summary>
         /// <returns>Status 200 OK</returns>
         [Authorize(Policy = Permissions.Transactions.View)]
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
+        [HttpGet("all/{latestOnly}")]
+        public async Task<IActionResult> GetAll(bool latestOnly)
         {
-            var transactions = await _mediator.Send(new GetAllTransactionsQuery());
+            var transactions = await _mediator.Send(new GetAllTransactionsQuery() { latestOnly = latestOnly});
             return Ok(transactions);
         }
 

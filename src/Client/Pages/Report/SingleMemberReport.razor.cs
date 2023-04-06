@@ -22,6 +22,7 @@ using FlexMoney.Shared.Constants.Permission;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.JSInterop;
 using MudBlazor;
 
 namespace FlexMoney.Client.Pages.Report
@@ -40,7 +41,7 @@ namespace FlexMoney.Client.Pages.Report
         private bool _bordered = false;
 
         private ClaimsPrincipal _currentUser;
-        //private bool _canExportMembers;
+        private bool _canExportSingleMemberReport;
         private bool _canSearchMembers;
         private bool _loaded;
         private List<string> data;
@@ -53,7 +54,7 @@ namespace FlexMoney.Client.Pages.Report
             //_canCreateMembers = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Members.Create)).Succeeded;
             //_canEditMembers = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Members.Edit)).Succeeded;
             //_canDeleteMembers = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Members.Delete)).Succeeded;
-            //_canExportBrands = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Brands.Export)).Succeeded;
+            _canExportSingleMemberReport = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Reports.Export)).Succeeded;
             _canSearchMembers = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Members.Search)).Succeeded;
 
             await GetMembersAsync();
@@ -117,6 +118,30 @@ namespace FlexMoney.Client.Pages.Report
         {
             _query.MemberId = selectedMember.Id;
             await GetReportByMemberIdAsync(_query);
+        }
+
+        private async Task ExportToExcel()
+        {
+            var response = await ReportManager.ExportByIdToExcelAsync(_query.MemberId);
+            if (response.Succeeded)
+            {
+                await _jsRuntime.InvokeVoidAsync("Download", new
+                {
+                    ByteArray = response.Data,
+                    FileName = $"SingleMemberReport_{DateTime.Now:ddMMyyyyHHmmss}.xlsx",
+                    MimeType = ApplicationConstants.MimeTypes.OpenXml
+                });
+                _snackBar.Add(string.IsNullOrWhiteSpace(_searchString)
+                    ? _localizer["Single Member Report exported"]
+                    : _localizer["Filtered Single Member Report exported"], Severity.Success);
+            }
+            else
+            {
+                foreach (var message in response.Messages)
+                {
+                    _snackBar.Add(message, Severity.Error);
+                }
+            }
         }
     }
 }

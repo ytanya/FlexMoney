@@ -28,22 +28,32 @@ namespace FlexMoney.Application.Features.Members.Commands.AddEdit
         private readonly IMapper _mapper;
         private readonly IStringLocalizer<AddEditMemberCommandHandler> _localizer;
         private readonly IUnitOfWork<int> _unitOfWork;
+        private readonly IMemberRepository _memberRepository;
 
-        public AddEditMemberCommandHandler(IUnitOfWork<int> unitOfWork, IMapper mapper, IStringLocalizer<AddEditMemberCommandHandler> localizer)
+        public AddEditMemberCommandHandler(IUnitOfWork<int> unitOfWork, IMapper mapper, IMemberRepository memberRepository, IStringLocalizer<AddEditMemberCommandHandler> localizer)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _localizer = localizer;
+            _memberRepository = memberRepository;
         }
 
         public async Task<Result<int>> Handle(AddEditMemberCommand command, CancellationToken cancellationToken)
         {
             if (command.Id == 0)
             {
-                var member = _mapper.Map<Member>(command);
-                await _unitOfWork.Repository<Member>().AddAsync(member);
-                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMembersCacheKey);
-                return await Result<int>.SuccessAsync(member.Id, _localizer["Member Saved"]);
+                var isNameUnique = await _memberRepository.IsNameUnique(command.Name);
+                if (!isNameUnique)
+                {
+                    var member = _mapper.Map<Member>(command);
+                    await _unitOfWork.Repository<Member>().AddAsync(member);
+                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMembersCacheKey);
+                    return await Result<int>.SuccessAsync(member.Id, _localizer["Member Saved"]);
+                }
+                else
+                {
+                    return await Result<int>.FailAsync(_localizer["Member Name Is Existed!"]);
+                }
             }
             else
             {
@@ -62,6 +72,7 @@ namespace FlexMoney.Application.Features.Members.Commands.AddEdit
                     return await Result<int>.FailAsync(_localizer["Member Not Found!"]);
                 }
             }
+
         }
     }
 }

@@ -21,21 +21,22 @@ namespace FlexMoney.Application.Features.MemberLines.Commands.Delete
     {
         private readonly IStringLocalizer<DeleteMemberLineCommandHandler> _localizer;
         private readonly IUnitOfWork<int> _unitOfWork;
-
-        public DeleteMemberLineCommandHandler(IUnitOfWork<int> unitOfWork, IStringLocalizer<DeleteMemberLineCommandHandler> localizer)
+        private readonly IMemberLineRepository _memberLineRepository;
+        public DeleteMemberLineCommandHandler(IUnitOfWork<int> unitOfWork, IMemberLineRepository memberLineRepository, IStringLocalizer<DeleteMemberLineCommandHandler> localizer)
         {
             _unitOfWork = unitOfWork;
             _localizer = localizer;
+            _memberLineRepository = memberLineRepository;
         }
 
         public async Task<Result<int>> Handle(DeleteMemberLineCommand command, CancellationToken cancellationToken)
         {
-            var memberLine = await _unitOfWork.Repository<MemberLine>().GetByIdAsync(command.Id);
+            var memberLine = await _memberLineRepository.GetByLineIdAsync(command.Id);
             if (memberLine != null)
             {
-                await _unitOfWork.Repository<MemberLine>().DeleteAsync(memberLine);
+                await _memberLineRepository.DeleteMemberLinesAsync(command);
                 await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMemberLinesCacheKey);
-                return await Result<int>.SuccessAsync(memberLine.Id, _localizer["Member Line Deleted"]);
+                return await Result<int>.SuccessAsync(memberLine.Count, _localizer["Member Line Deleted"]);
             }
             else
             {

@@ -47,12 +47,12 @@ namespace FlexMoney.Infrastructure.Repositories
             {
                 var transactions = await query.Where(t => t.Section > 0).ToListAsync();
                 var latestTransactions = transactions.GroupBy(e => e.LineId)
-                                                     .Select(g => g.OrderByDescending(e => e.CreatedDate).FirstOrDefault())
+                                                     .Select(g => g.OrderByDescending(e => e.Section).FirstOrDefault())
                                                      .ToList();
                 return latestTransactions;
             }
 
-            return await query.ToListAsync();
+            return query.ToList();
         }
         
         public async Task<GetTransactionInfoByLineIdResponse> GetTransactionInfoByLineIdAsync(int lineId)
@@ -94,6 +94,7 @@ namespace FlexMoney.Infrastructure.Repositories
                     Id = reader.GetInt32(0),
                     MemberName = reader.GetString(1),
                     Position = reader.GetInt32(2),
+                    IsDead = reader.GetInt32(3),
                 });
             }
 

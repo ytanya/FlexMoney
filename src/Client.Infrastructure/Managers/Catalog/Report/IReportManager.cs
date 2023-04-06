@@ -14,5 +14,8 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Report
         Task<IResult<List<GetAllMembersReportResponse>>> GetAllMembersReportAsync();
         Task<IResult<List<GetByIdReportResponse>>> GetReportByMemberIdAsync(GetByIdReportQuery request);
         Task<IResult<List<GetByOwnerIdReportResponse>>> GetReportByOwnerIdAsync(GetByOwnerIdReportQuery request);
+        Task<IResult<string>> ExportAllToExcelAsync(string searchString = "");
+        Task<IResult<string>> ExportByIdToExcelAsync(int id, string searchString = "");
+        Task<IResult<string>> ExportThankMoneyToExcelAsync(int id, string searchString = "");
     }
 }

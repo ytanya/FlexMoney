@@ -1,11 +1,9 @@
-﻿using FlexMoney.Application.Features.Reports.Queries.GetAll;
+﻿using FlexMoney.Application.Features.Reports.Queries.Export;
+using FlexMoney.Application.Features.Reports.Queries.GetAll;
 using FlexMoney.Application.Features.Reports.Queries.GetById;
-using FlexMoney.Application.Features.Transactions.Queries.GetAll;
-using FlexMoney.Application.Features.Transactions.Queries.GetById;
 using FlexMoney.Shared.Constants.Permission;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Polly;
 using System.Threading.Tasks;
 
 namespace FlexMoney.Server.Controllers.v1.Catalog
@@ -48,6 +46,43 @@ namespace FlexMoney.Server.Controllers.v1.Catalog
         {
             var transaction = await _mediator.Send(new GetByOwnerIdReportQuery() { OwnerId = id });
             return Ok(transaction);
+        }
+
+        /// <summary>
+        /// Search Products and Export to Excel
+        /// </summary>
+        /// <param name="searchString"></param>
+        /// <returns>Status 200 OK</returns>
+        [Authorize(Policy = Permissions.Reports.Export)]
+        [HttpGet("all/export")]
+        public async Task<IActionResult> Export(string searchString = "")
+        {
+            return Ok(await _mediator.Send(new ExportReportsQuery() { Id = 0, Prefix="all" }));
+        }
+        /// <summary>
+        /// Search Products and Export to Excel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="searchString"></param>
+        /// <returns>Status 200 OK</returns>
+        [Authorize(Policy = Permissions.Reports.Export)]
+        [HttpGet("{id}/export")]
+        public async Task<IActionResult> ExportById(int id, string searchString = "")
+        {
+            return Ok(await _mediator.Send(new ExportReportsQuery() { Id= id, Prefix=""}));
+        }
+
+        /// <summary>
+        /// Search Products and Export to Excel
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="searchString"></param>
+        /// <returns>Status 200 OK</returns>
+        [Authorize(Policy = Permissions.Products.Export)]
+        [HttpGet("thankmoney/{id}/export")]
+        public async Task<IActionResult> ExportThankMoney(int id, string searchString = "")
+        {
+            return Ok(await _mediator.Send(new ExportReportsQuery() { Id=id, Prefix="thankmoney"}));
         }
     }
 }

@@ -62,7 +62,7 @@ namespace FlexMoney.Client.Pages.Catalog
             var response = await MemberManager.GetAllAsync();
             if (response.Succeeded)
             {
-                _memberList = response.Data.ToList();
+                _memberList = response.Data.Where(x=>x.IsDeleted == false).ToList();
             }
             else
             {

@@ -8,6 +8,7 @@ using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,8 +17,10 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
 {
     public class GetAllTransactionsQuery : IRequest<Result<List<GetAllTransactionsResponse>>>
     {
+        public bool latestOnly { get; set; }
         public GetAllTransactionsQuery()
         {
+            
         }
     }
     internal class GetAllTransactionsCachedQueryHandler : IRequestHandler<GetAllTransactionsQuery, Result<List<GetAllTransactionsResponse>>>
@@ -39,7 +42,7 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
         {
             Func<Task<List<Transaction>>> getAllTransactions = async () =>
             {
-                return await _transactionRepository.GetAllAsync(latestOnly:true);
+                return await _transactionRepository.GetAllAsync(request.latestOnly);
             };
             var transactionList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllTransactionsCacheKey, getAllTransactions);
             var mappedTransactions = new List<GetAllTransactionsResponse>();

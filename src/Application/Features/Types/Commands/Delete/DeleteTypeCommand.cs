@@ -19,25 +19,35 @@ namespace FlexMoney.Application.Features.Types.Commands.Delete
         {
             private readonly IStringLocalizer<DeleteTypeCommandHandler> _localizer;
             private readonly IUnitOfWork<int> _unitOfWork;
+            private readonly IMoneyLineRepository _moneyLineRepository;
 
-            public DeleteTypeCommandHandler(IUnitOfWork<int> unitOfWork, IStringLocalizer<DeleteTypeCommandHandler> localizer)
+            public DeleteTypeCommandHandler(IUnitOfWork<int> unitOfWork, IMoneyLineRepository moneyLineRepository, IStringLocalizer<DeleteTypeCommandHandler> localizer)
             {
                 _unitOfWork = unitOfWork;
                 _localizer = localizer;
+                _moneyLineRepository = moneyLineRepository;
             }
 
             public async Task<Result<int>> Handle(DeleteTypeCommand command, CancellationToken cancellationToken)
             {
-                var type = await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().GetByIdAsync(command.Id);
-                if (type != null)
+                var isTypeUsed = await _moneyLineRepository.IsTypeUsed(command.Id);
+                if (!isTypeUsed)
                 {
-                    await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().DeleteAsync(type);
-                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTypesCacheKey);
-                    return await Result<int>.SuccessAsync(type.Id, _localizer["Type Deleted"]);
+                    var type = await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().GetByIdAsync(command.Id);
+                    if (type != null)
+                    {
+                        await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().DeleteAsync(type);
+                        await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTypesCacheKey);
+                        return await Result<int>.SuccessAsync(type.Id, _localizer["Type Deleted"]);
+                    }
+                    else
+                    {
+                        return await Result<int>.FailAsync(_localizer["Type Not Found!"]);
+                    }
                 }
                 else
                 {
-                    return await Result<int>.FailAsync(_localizer["Type Not Found!"]);
+                    return await Result<int>.FailAsync(_localizer["Deletion Not Allowed. This Type Is In Use!"]);
                 }
             }
         }

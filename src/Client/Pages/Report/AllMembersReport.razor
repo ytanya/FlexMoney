@@ -17,10 +17,12 @@ else
     <MudTable Hover="true" Elevation="25" Items="_allMemberReportList" Dense="@_dense" Bordered="@_bordered" Striped="@_striped" Filter="new Func<GetAllMembersReportResponse, bool>(Search)" @bind-member="_allMemberReport">
         <ToolBarContent>
             <MudToolBarSpacer />
-            @*@if (_canSearchMembers)
+            <div class="justify-center mud-text-align-center">
+            @if (_canExportAllMembersReport)
             {
-                <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Members"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
-            }*@
+        <MudButton DisableElevation Variant="Variant.Filled" OnClick="ExportToExcel" StartIcon="@Icons.Custom.FileFormats.FileExcel" IconColor="Color.Secondary" Color="Color.Surface" Style="margin-left: 5px;">@_localizer["Export"]</MudButton>
+        }
+        </div>
         </ToolBarContent>
         <HeaderContent>
             <MudTh><MudTableSortLabel SortBy="new Func<GetAllMembersReportResponse, object>(x => x.MemberName)">@_localizer["MemberName"]</MudTableSortLabel></MudTh>

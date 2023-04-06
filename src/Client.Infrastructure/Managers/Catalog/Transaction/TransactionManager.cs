@@ -35,9 +35,9 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction
             return await response.ToResult<string>();
         }
 
-        public async Task<IResult<List<GetAllTransactionsResponse>>> GetAllAsync()
+        public async Task<IResult<List<GetAllTransactionsResponse>>> GetAllAsync(bool latestOnly)
         {
-            var response = await _httpClient.GetAsync(Routes.TransactionsEndpoints.GetAll);
+            var response = await _httpClient.GetAsync(Routes.TransactionsEndpoints.GetAll(latestOnly));
             return await response.ToResult<List<GetAllTransactionsResponse>>();
         }
 

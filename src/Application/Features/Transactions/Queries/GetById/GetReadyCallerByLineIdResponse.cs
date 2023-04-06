@@ -11,5 +11,6 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetById
         public int Id {  get; set; }
         public string MemberName { get; set; }
         public int Position { get; set; }
+        public int IsDead { get; set; }
     }
 }

@@ -1,23 +1,21 @@
+using Blazored.FluentValidation;
+using FlexMoney.Application.Features.MoneyLines.Commands.AddEdit;
+using FlexMoney.Application.Features.MoneyLines.Queries.GetAll;
+using FlexMoney.Application.Features.Transactions.Commands.AddEdit;
+using FlexMoney.Application.Features.Transactions.Queries.GetById;
 using FlexMoney.Client.Extensions;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.MemberLine;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.MoneyLine;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction;
 using FlexMoney.Shared.Constants.Application;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using MudBlazor;
-using System.Threading.Tasks;
-using Blazored.FluentValidation;
-using FlexMoney.Application.Features.Transactions.Commands.AddEdit;
-using FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction;
-using FlexMoney.Application.Features.MoneyLines.Queries.GetAll;
-using System.Collections.Generic;
-using FlexMoney.Client.Infrastructure.Managers.Catalog.MoneyLine;
-using System.Linq;
-using FlexMoney.Application.Features.Transactions.Queries.GetById;
-using System.Diagnostics;
 using System;
-using FlexMoney.Application.Features.MemberLines.Queries.GetById;
-using FlexMoney.Client.Infrastructure.Managers.Catalog.MemberLine;
-using Microsoft.AspNetCore.Components.Web;
-using FlexMoney.Application.Features.MoneyLines.Commands.AddEdit;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace FlexMoney.Client.Pages.Catalog
 {
@@ -34,7 +32,7 @@ namespace FlexMoney.Client.Pages.Catalog
         private GetAllMoneyLinesResponse _selectedLine = new();
         private GetTransactionInfoByLineIdQuery _lineQuery =new();
         private GetReadyCallerByLineIdResponse _selectCaller =new();
-        private List<GetTransactionByLineIdResponse> _transactionByLineIdList = new();
+        private GetTransactionInfoByLineIdResponse _transactionByLineId = new();
         private List<GetReadyCallerByLineIdResponse> _readyCallerList = new();
         private GetReadyCallerByLineIdQuery _readyCaller = new();
         private int _moneyLineCount = 0;
@@ -51,6 +49,7 @@ namespace FlexMoney.Client.Pages.Catalog
         private FluentValidationValidator _fluentValidationValidator;
         private HashSet<GetAllMoneyLinesResponse> _selectedLines = new HashSet<GetAllMoneyLinesResponse>();
         private HashSet<GetReadyCallerByLineIdResponse> _selectedCallers = new HashSet<GetReadyCallerByLineIdResponse>();
+        private GetReadyCallerByLineIdResponse _selectedCaller = new GetReadyCallerByLineIdResponse();
         private bool Validated => _fluentValidationValidator.Validate(options => { options.IncludeAllRuleSets(); });
 
         public void Cancel()
@@ -64,7 +63,13 @@ namespace FlexMoney.Client.Pages.Catalog
             if (response.Succeeded)
             {
                 _moneyLineList = response.Data.ToList();
-                //_selectedLine = _moneyLineList.Where(x => x.Id == AddEditTransactionModel.LineId).FirstOrDefault();
+                if(_moneyLineList != null)
+                {
+                    _selectedLine = _moneyLineList.Where(x => x.Id == AddEditTransactionModel.LineId).FirstOrDefault();
+                    
+                    if (_selectedLine != null) _selectedLines.Add(_selectedLine); 
+                    else _selectedLines.Add(_moneyLineList.FirstOrDefault());
+                }               
             }
             else
             {
@@ -80,9 +85,24 @@ namespace FlexMoney.Client.Pages.Catalog
             var response = await TransactionManager.GetTransactionInfoByLineIdAsync(lineQuery);
             if (response.Succeeded)
             {
-                _section = response.Data.CurrentSection;
-                _thankMoneyTotal = response.Data.TotalThankMoney;
-                _money = response.Data.Money;
+                _transactionByLineId = response.Data;
+                if (response.Data != null)
+                {
+                    if(AddEditTransactionModel.Id != 0)
+                    {
+                        _section = response.Data.CurrentSection;
+                    }
+                    else
+                    {
+                        _section = response.Data.CurrentSection + 1;
+                    }
+                    _thankMoneyTotal = response.Data.TotalThankMoney;
+                    _money = response.Data.Money;
+                }
+                else
+                {
+                    _section = 1;
+                }
 
                 _readyCaller.LineId = lineQuery.LineId;
                 await GetReadyCallerByLineId(_readyCaller);
@@ -99,13 +119,26 @@ namespace FlexMoney.Client.Pages.Catalog
 
         private async Task GetReadyCallerByLineId(GetReadyCallerByLineIdQuery query)
         {
+            _selectedCallers = new();
             var response = await TransactionManager.GetReadyCallerByLineIdAsync(query);
             if (response.Succeeded)
             {
-                _readyCallerList = response.Data.ToList();
-                foreach (var item in _readyCallerList)
+                foreach (var item in response.Data)
                 {
-                    string memberName = item.MemberName;
+                    int isDead = item.IsDead;
+                }
+                _readyCallerList = response.Data.Where(x=>x.IsDead == 0).ToList();
+                _selectedCaller = response.Data.Where(x => x.Id == AddEditTransactionModel.CallerId && x.Position == AddEditTransactionModel.Position && x.IsDead == 1).FirstOrDefault();
+                
+                if(_selectedCaller != null)
+                {
+                    _selectedCallers.Add(_selectedCaller);
+                    _readyCallerList.Add(_selectedCaller);
+                }
+                else
+                {
+                    _selectedCaller = _readyCallerList.FirstOrDefault();
+                    _selectedCallers.Add(_selectedCaller);
                 }
             }
             else
@@ -119,9 +152,9 @@ namespace FlexMoney.Client.Pages.Catalog
 
         private async Task SaveAsync()
         {
-            if(AddEditTransactionModel.Id == 0)
+            if(_transactionByLineId==null || AddEditTransactionModel.LineId != _selectedLine.Id)
             {
-                AddEditTransactionModel.Section = _selectedLine.CurrentSection;
+                AddEditTransactionModel.Section = _selectedLine.CurrentSection + 1;
                 AddEditTransactionModel.LineId = _selectedLine.Id;
                 AddEditTransactionModel.TypeId = _selectedLine.TypeId;
                 AddEditTransactionModel.CreatedDate = DateTime.Now;
@@ -129,7 +162,7 @@ namespace FlexMoney.Client.Pages.Catalog
                 AddEditTransactionModel.Position = _selectCaller.Position;
                 AddEditTransactionModel.Earn = _earn;
                 AddEditTransactionModel.RealEarn = _realearn;
-                AddEditTransactionModel.Dead = _money * (_selectedLine.Quantity - _section);
+                AddEditTransactionModel.Dead = _money * (_selectedLine.Quantity - AddEditTransactionModel.Section);
                 AddEditTransactionModel.ThankMoney = _thankmoney;
                 AddEditTransactionModel.Call = _call;
                 AddEditTransactionModel.Quantity = _quantity;
@@ -137,8 +170,18 @@ namespace FlexMoney.Client.Pages.Catalog
             }
             else
             {
-                AddEditTransactionModel.CreatedDate = DateTime.Now;
                 _currentSection = _selectedLine.CurrentSection;
+                AddEditTransactionModel.Section = _currentSection;
+                AddEditTransactionModel.LineId = _selectedLine.Id;
+                AddEditTransactionModel.TypeId = _selectedLine.TypeId;
+                AddEditTransactionModel.CallerId = _selectCaller.Id;
+                AddEditTransactionModel.Position = _selectCaller.Position;
+                AddEditTransactionModel.Earn = _earn;
+                AddEditTransactionModel.RealEarn = _realearn;
+                AddEditTransactionModel.Dead = _money * (_selectedLine.Quantity - _currentSection);
+                AddEditTransactionModel.ThankMoney = _thankmoney;
+                AddEditTransactionModel.Call = _call;
+                AddEditTransactionModel.Quantity = _quantity;
             }
             
             var response = await TransactionManager.SaveAsync(AddEditTransactionModel);
@@ -199,20 +242,35 @@ namespace FlexMoney.Client.Pages.Catalog
             _money = selectedLine.Money;
             _quantity=selectedLine.Quantity;
             _typeName = selectedLine.TypeName;
-            await GetTransactionByLineId(_lineQuery);
-            // Do other stuff
+            await GetTransactionByLineId(_lineQuery);           
         }
         protected void OnValueCallChangeHandler(string newValue)
         {
-            _call = decimal.Parse(newValue);
-            _earn = (_money - _call) * (_quantity - 1);
-            _realearn = _earn;
+            decimal result = 0;
+
+            // Remove any non-numeric characters from the input value
+            string cleanedValue = new string(newValue.Where(c => char.IsDigit(c) || c == '.' || c == '-').ToArray());
+            bool isDecimal = decimal.TryParse(cleanedValue, out result);
+             if(isDecimal)
+            {
+                _call = result;
+                _earn = (_money - _call) * (_quantity - 1);
+                _realearn = _earn;
+            }
+            
         }
         private void OnValueThankMoneyChangeHandler(string newValue)
         {
-            _thankmoney = decimal.Parse(newValue);
-            _realearn = _earn - _thankmoney;
+            decimal result = 0;
+            // Remove any non-numeric characters from the input value
+            string cleanedValue = new string(newValue.Where(c => char.IsDigit(c) || c == '.' || c == '-').ToArray());
 
+            bool isDecimal = decimal.TryParse(cleanedValue, out result);
+            if (isDecimal)
+            {
+                _thankmoney = result;
+                _realearn = _earn - _thankmoney;
+            }
         }
     }
 }

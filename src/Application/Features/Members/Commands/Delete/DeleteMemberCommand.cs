@@ -21,25 +21,37 @@ namespace FlexMoney.Application.Features.Members.Commands.Delete
     {
         private readonly IStringLocalizer<DeleteMemberCommandHandler> _localizer;
         private readonly IUnitOfWork<int> _unitOfWork;
+        private readonly IMemberRepository _memberRepository;
+        private readonly IMemberLineRepository _memberLineRepository;
 
-        public DeleteMemberCommandHandler(IUnitOfWork<int> unitOfWork,  IStringLocalizer<DeleteMemberCommandHandler> localizer)
+        public DeleteMemberCommandHandler(IUnitOfWork<int> unitOfWork, IMemberRepository memberRepository, IMemberLineRepository memberLineRepository, IStringLocalizer<DeleteMemberCommandHandler> localizer)
         {
             _unitOfWork = unitOfWork;
             _localizer = localizer;
+            _memberRepository = memberRepository;
+            _memberLineRepository = memberLineRepository;
         }
 
         public async Task<Result<int>> Handle(DeleteMemberCommand command, CancellationToken cancellationToken)
         {
-            var member = await _unitOfWork.Repository<Member>().GetByIdAsync(command.Id);
-            if (member != null)
+            var isMemberUsed = await _memberLineRepository.IsMemberUsed(command.Id);
+            if (!isMemberUsed)
             {
-                await _unitOfWork.Repository<Member>().DeleteAsync(member);
-                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMembersCacheKey);
-                return await Result<int>.SuccessAsync(member.Id, _localizer["Member Deleted"]);
+                var member = await _unitOfWork.Repository<Member>().GetByIdAsync(command.Id);
+                if (member != null)
+                {
+                    await _memberRepository.DeleteMemberAsync(command);
+                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMembersCacheKey);
+                    return await Result<int>.SuccessAsync(member.Id, _localizer["Member Deleted"]);
+                }
+                else
+                {
+                    return await Result<int>.FailAsync(_localizer["Member Not Found!"]);
+                }
             }
             else
             {
-                return await Result<int>.FailAsync(_localizer["Member Not Found!"]);
+                return await Result<int>.FailAsync(_localizer["Deletion Not Allowed. This Member Is In Use!"]);
             }
         }
     }

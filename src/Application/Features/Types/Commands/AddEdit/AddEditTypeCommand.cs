@@ -26,22 +26,32 @@ namespace FlexMoney.Application.Features.Types.Commands.AddEdit
         private readonly IMapper _mapper;
         private readonly IStringLocalizer<AddEditTypeCommandHandler> _localizer;
         private readonly IUnitOfWork<int> _unitOfWork;
+        private readonly ITypeRepository _typeRepository;
 
-        public AddEditTypeCommandHandler(IUnitOfWork<int> unitOfWork, IMapper mapper, IStringLocalizer<AddEditTypeCommandHandler> localizer)
+        public AddEditTypeCommandHandler(IUnitOfWork<int> unitOfWork, IMapper mapper, ITypeRepository typeRepository, IStringLocalizer<AddEditTypeCommandHandler> localizer)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _localizer = localizer;
+            _typeRepository = typeRepository;
         }
 
         public async Task<Result<int>> Handle(AddEditTypeCommand command, CancellationToken cancellationToken)
         {
             if (command.Id == 0)
             {
-                var type = _mapper.Map<Domain.Entities.Catalog.Type>(command);
-                await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().AddAsync(type);
-                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTypesCacheKey);
-                return await Result<int>.SuccessAsync(type.Id, _localizer["Type Saved"]);
+                var isNameUnique = await _typeRepository.IsNameUnique(command.Name);
+                if (!isNameUnique)
+                {
+                    var type = _mapper.Map<Domain.Entities.Catalog.Type>(command);
+                    await _unitOfWork.Repository<Domain.Entities.Catalog.Type>().AddAsync(type);
+                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTypesCacheKey);
+                    return await Result<int>.SuccessAsync(type.Id, _localizer["Type Saved"]);
+                }
+                else
+                {
+                    return await Result<int>.FailAsync(_localizer["Type Name Is Existed!"]);
+                }
             }
             else
             {
@@ -59,6 +69,7 @@ namespace FlexMoney.Application.Features.Types.Commands.AddEdit
                     return await Result<int>.FailAsync(_localizer["Type Not Found!"]);
                 }
             }
+
         }
     }
 }

@@ -12,7 +12,7 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Transaction
 {
     public interface ITransactionManager : IManager
     {
-        Task<IResult<List<GetAllTransactionsResponse>>> GetAllAsync();
+        Task<IResult<List<GetAllTransactionsResponse>>> GetAllAsync(bool latestOnly);
 
         Task<IResult<int>> SaveAsync(AddEditTransactionCommand request);
 

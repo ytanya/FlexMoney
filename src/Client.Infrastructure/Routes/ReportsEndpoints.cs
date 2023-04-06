@@ -17,5 +17,18 @@ namespace FlexMoney.Client.Infrastructure.Routes
         {
             return $"api/v1/reports/thankmoney/{id}";
         }
+        public static string ExportFiltered(string searchString)
+        {
+            return $"{Export}?searchString={searchString}";
+        }
+        public static string Export = "api/v1/reports/all/export";
+        public static string ExportById(int id)
+        {
+            return $"api/v1/reports/{id}/export";
+        }
+        public static string ExportThankMoney(int id)
+        {
+            return $"api/v1/reports/thankmoney/{id}/export";
+        }
     }
 }

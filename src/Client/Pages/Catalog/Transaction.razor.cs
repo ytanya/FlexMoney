@@ -28,7 +28,8 @@ namespace FlexMoney.Client.Pages.Catalog
 
         [CascadingParameter] private HubConnection HubConnection { get; set; }
 
-        private List<GetAllTransactionsResponse> _transactionList = new();
+        private List<GetAllTransactionsResponse> _latesttransactionList = new();
+        private List<GetAllTransactionsResponse> _allTransactionList = new();
         private GetAllTransactionsResponse _transaction = new();
         private string _searchString = "";
         private bool _dense = false;
@@ -64,10 +65,17 @@ namespace FlexMoney.Client.Pages.Catalog
 
         private async Task GetTransactionsAsync()
         {
-            var response = await TransactionManager.GetAllAsync();
+            var response = await TransactionManager.GetAllAsync(true);
+            
             if (response.Succeeded)
             {
-                _transactionList = response.Data.ToList();
+                _latesttransactionList = response.Data.ToList();
+                var allresponse = await TransactionManager.GetAllAsync(false);
+                if(allresponse.Succeeded)
+                {
+                    _allTransactionList = allresponse.Data.ToList();
+                }
+                
             }
             else
             {
@@ -112,7 +120,7 @@ namespace FlexMoney.Client.Pages.Catalog
             var parameters = new DialogParameters();
             if (id != 0)
             {
-                _transaction = _transactionList.FirstOrDefault(c => c.Id == id);
+                _transaction = _latesttransactionList.FirstOrDefault(c => c.Id == id);
                 lineQuery.Id = _transaction.LineId;
                 var response = await MoneyLineManager.GetByIdAsync(lineQuery);
                 if (_transaction != null)
@@ -152,7 +160,7 @@ namespace FlexMoney.Client.Pages.Catalog
             await GetTransactionsAsync();
         }
 
-        private bool Search(GetAllTransactionsResponse Transaction)
+        private bool Search(GetAllTransactionsResponse Transaction, List<GetAllTransactionsResponse> listToSearch)
         {
             if (string.IsNullOrWhiteSpace(_searchString)) return true;
             if (Transaction.LineName?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)

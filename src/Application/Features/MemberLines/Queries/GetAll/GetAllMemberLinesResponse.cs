@@ -10,6 +10,6 @@ namespace FlexMoney.Application.Features.MemberLines.Queries.GetAll
     {
         public int Id { get; set; }
         public int MemberId { get; set; }
-        public int MoneyLineId { get; set; }
+        public int LineId { get; set; }
     }
 }

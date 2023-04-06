@@ -12,12 +12,14 @@ using FlexMoney.Application.Features.Members.Queries.GetAll;
 using FlexMoney.Application.Features.Reports.Queries.GetAll;
 using FlexMoney.Client.Extensions;
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Member;
+using FlexMoney.Client.Infrastructure.Managers.Catalog.Product;
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Report;
 using FlexMoney.Shared.Constants.Application;
 using FlexMoney.Shared.Constants.Permission;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.JSInterop;
 using MudBlazor;
 
 namespace FlexMoney.Client.Pages.Report
@@ -35,7 +37,7 @@ namespace FlexMoney.Client.Pages.Report
         private bool _bordered = false;
 
         private ClaimsPrincipal _currentUser;
-        //private bool _canExportMembers;
+        private bool _canExportAllMembersReport;
         private bool _canSearchMembers;
         private bool _loaded;
         private List<string> data;
@@ -45,7 +47,7 @@ namespace FlexMoney.Client.Pages.Report
             //_canCreateMembers = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Members.Create)).Succeeded;
             //_canEditMembers = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Members.Edit)).Succeeded;
             //_canDeleteMembers = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Members.Delete)).Succeeded;
-            //_canExportBrands = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Brands.Export)).Succeeded;
+            _canExportAllMembersReport = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Reports.Export)).Succeeded;
             //_canSearchMembers = (await _authorizationService.AuthorizeAsync(_currentUser, Permissions.Members.Search)).Succeeded;
 
             await GetAllMembersReportAsync();
@@ -88,6 +90,29 @@ namespace FlexMoney.Client.Pages.Report
                 return true;
             }
             return false;
+        }
+        private async Task ExportToExcel()
+        {
+            var response = await ReportManager.ExportAllToExcelAsync(_searchString);
+            if (response.Succeeded)
+            {
+                await _jsRuntime.InvokeVoidAsync("Download", new
+                {
+                    ByteArray = response.Data,
+                    FileName = $"AllMembersReport_{DateTime.Now:ddMMyyyyHHmmss}.xlsx",
+                    MimeType = ApplicationConstants.MimeTypes.OpenXml
+                });
+                _snackBar.Add(string.IsNullOrWhiteSpace(_searchString)
+                    ? _localizer["All Members Report exported"]
+                    : _localizer["Filtered All Members Report exported"], Severity.Success);
+            }
+            else
+            {
+                foreach (var message in response.Messages)
+                {
+                    _snackBar.Add(message, Severity.Error);
+                }
+            }
         }
     }
 }

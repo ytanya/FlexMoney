@@ -26,10 +26,12 @@ else
     <MudTable Hover="true" Elevation="25" Items="_singleMemberReportList" Dense="@_dense" Bordered="@_bordered" Striped="@_striped" Filter="new Func<GetByOwnerIdReportResponse, bool>(Search)" @bind-member="_singleMemberReport">
         <ToolBarContent>
             <MudToolBarSpacer />
-            @*@if (_canSearchMembers)
-            {
-                <MudTextField @bind-Value="_searchString" Immediate="true" Placeholder="@_localizer["Search for Members"]" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0 mb-3"></MudTextField>
-            }*@
+            <div class="justify-center mud-text-align-center">
+                @if (_canExportThankMoney)
+                {
+                    <MudButton DisableElevation Variant="Variant.Filled" OnClick="ExportToExcel" StartIcon="@Icons.Custom.FileFormats.FileExcel" IconColor="Color.Secondary" Color="Color.Surface" Style="margin-left: 5px;">@_localizer["Export"]</MudButton>
+                }
+            </div>
         </ToolBarContent>
         <HeaderContent>
             <MudTh><MudTableSortLabel SortBy="new Func<GetByOwnerIdReportResponse, object>(x => x.CreatedDate)">@_localizer["Date"]</MudTableSortLabel></MudTh>

@@ -165,6 +165,7 @@ namespace FlexMoney.Shared.Constants.Permission
         public static class Reports
         {
             public const string View = "Permissions.Reports.View";
+            public const string Export = "Permissions.Reports.Export";
         }
         /// <summary>
         /// Returns a list of Permissions.

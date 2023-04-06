@@ -31,7 +31,7 @@
                         <MudTextField Disabled For="@(() => AddEditMoneyLineModel.Id)" @bind-Value="AddEditMoneyLineModel.Id" Label="@_localizer["Id"]" />
                     </MudItem>
                     <MudItem xs="12" md="6">
-                        <MudSelect T="GetAllTypesResponse" Label="Select a type" Variant="Variant.Filled" ValueChanged="HandleTypeChange" >
+                        <MudSelect T="GetAllTypesResponse" Label="Select a type" Variant="Variant.Filled" @bind-SelectedValues="@_selectedTypes" ValueChanged="HandleTypeChange">
                             @foreach (var type in _moneyTypeList)
                             {
                                 <MudSelectItem Value="@type">@type.Name</MudSelectItem>
@@ -42,7 +42,7 @@
                 else
                 {
                     <MudItem xs="12" md="6">
-                        <MudSelect T="GetAllTypesResponse" Label="Select a type" Variant="Variant.Filled" ValueChanged="HandleTypeChange" >
+                        <MudSelect T="GetAllTypesResponse" Label="Select a type" Variant="Variant.Filled" @bind-SelectedValues="@_selectedTypes" ValueChanged="HandleTypeChange">
                             @foreach (var type in _moneyTypeList)
                             {
                                 <MudSelectItem Value="@type">@type.Name</MudSelectItem>
@@ -63,7 +63,7 @@
                     </select>
                 </MudItem>
                 <MudItem xs="12" md="2">
-                    <MudButton @onclick="@(()=> AddFlexmoneyLineCart())"  Style="width: 100%;">@_localizer[">>"]</MudButton>
+                    <MudButton @onclick="@(()=> AddFlexmoneyLine())"  Style="width: 100%;">@_localizer[">>"]</MudButton>
                     <MudButton @onclick="@(()=> DeleMemberInList())" Style="width: 100%;">@_localizer["<<"]</MudButton>
                 </MudItem>
                 <MudItem xs="8" md="3">
@@ -78,9 +78,9 @@
 
                 <MudItem xs="15" md="4">
                     <MudTextField T="string" For="@(() => AddEditMoneyLineModel.Name)" @bind-Value="AddEditMoneyLineModel.Name" Label="@_localizer["Name"]" />
-                    <MudTextField For="@(() => AddEditMoneyLineModel.Money)" @bind-Value="AddEditMoneyLineModel.Money" Label="@_localizer["Money"]" />
-                    <MudTextField For="@(() => AddEditMoneyLineModel.Quantity)" @bind-Value="AddEditMoneyLineModel.Quantity" Label="@_localizer["Quantity"]" />
-                    <MudSelect T="GetAllMembersResponse" Label="Select an owner" Variant="Variant.Filled" ValueChanged="HandleMemberChange" >
+                    <MudTextField For="@(() => AddEditMoneyLineModel.Money)" @bind-Value="AddEditMoneyLineModel.Money" Label="@_localizer["Money"]" Format="C" />
+                    <MudTextField Disabled @bind-Value="@_quantity" Label="@_localizer["Quantity"]" />
+                    <MudSelect T="GetAllMembersResponse" Label="Select an owner" Variant="Variant.Filled" @bind-SelectedValues="@_selectedOwners" ValueChanged="HandleMemberChange">
                             @foreach (var type in _allMember)
                             {
                                 <MudSelectItem Value="@type">@type.Name</MudSelectItem>

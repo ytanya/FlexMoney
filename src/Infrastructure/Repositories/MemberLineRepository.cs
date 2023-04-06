@@ -1,7 +1,9 @@
-﻿using FlexMoney.Application.Features.MemberLines.Queries.GetById;
+﻿using FlexMoney.Application.Features.MemberLines.Commands.Delete;
+using FlexMoney.Application.Features.MemberLines.Queries.GetById;
 using FlexMoney.Application.Interfaces.Repositories;
 using FlexMoney.Domain.Entities.Catalog;
 using FlexMoney.Infrastructure.Contexts;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,26 @@ namespace FlexMoney.Infrastructure.Repositories
                 .ToListAsync();
 
             return memberLines;
+        }
+        public async Task<bool> IsMemberUsed(int memberId)
+        {
+            return await _repository.Entities.AnyAsync(b => b.MemberId == memberId);
+        }
+
+        public async Task<bool> IsLineUsed(int lineId)
+        {
+            return await _repository.Entities.AnyAsync(b => b.LineId == lineId);
+        }
+        public async Task<int> DeleteMemberLinesAsync(DeleteMemberLineCommand command)
+        {
+            var parameters = new[]
+        {
+            new SqlParameter("@Lineid", command.Id),
+        };
+
+            var result = await _dbContext.Database.ExecuteSqlRawAsync("EXEC DeleteMemberLines @Lineid", parameters);
+
+            return result;
         }
     }
 }

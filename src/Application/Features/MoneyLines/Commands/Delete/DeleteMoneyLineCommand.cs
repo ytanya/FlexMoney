@@ -21,25 +21,35 @@ namespace FlexMoney.Application.Features.MoneyLines.Commands.Delete
     {
         private readonly IStringLocalizer<DeleteMoneyLineCommandHandler> _localizer;
         private readonly IUnitOfWork<int> _unitOfWork;
+        private readonly IMemberLineRepository _memberLineRepository;
 
-        public DeleteMoneyLineCommandHandler(IUnitOfWork<int> unitOfWork, IStringLocalizer<DeleteMoneyLineCommandHandler> localizer)
+        public DeleteMoneyLineCommandHandler(IUnitOfWork<int> unitOfWork, IMemberLineRepository memberLineRepository, IStringLocalizer<DeleteMoneyLineCommandHandler> localizer)
         {
             _unitOfWork = unitOfWork;
             _localizer = localizer;
+            _memberLineRepository = memberLineRepository;
         }
 
         public async Task<Result<int>> Handle(DeleteMoneyLineCommand command, CancellationToken cancellationToken)
         {
-            var moneyLine = await _unitOfWork.Repository<MoneyLine>().GetByIdAsync(command.Id);
-            if (moneyLine != null)
+            var isLineUsed = await _memberLineRepository.IsLineUsed(command.Id);
+            if (!isLineUsed)
             {
-                await _unitOfWork.Repository<MoneyLine>().DeleteAsync(moneyLine);
-                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMoneyLinesCacheKey);
-                return await Result<int>.SuccessAsync(moneyLine.Id, _localizer["Money Line Deleted"]);
+                var moneyLine = await _unitOfWork.Repository<MoneyLine>().GetByIdAsync(command.Id);
+                if (moneyLine != null)
+                {
+                    await _unitOfWork.Repository<MoneyLine>().DeleteAsync(moneyLine);
+                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMoneyLinesCacheKey);
+                    return await Result<int>.SuccessAsync(moneyLine.Id, _localizer["Money Line Deleted"]);
+                }
+                else
+                {
+                    return await Result<int>.FailAsync(_localizer["Money Line Not Found!"]);
+                }
             }
             else
             {
-                return await Result<int>.FailAsync(_localizer["Money Line Not Found!"]);
+                return await Result<int>.FailAsync(_localizer["Deletion Not Allowed. This Line Is In Use!"]);
             }
         }
     }

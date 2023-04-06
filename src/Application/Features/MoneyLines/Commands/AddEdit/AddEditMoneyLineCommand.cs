@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FlexMoney.Application.Features.Members.Queries.GetAll;
+using FlexMoney.Application.Features.Types.Queries.GetAll;
 using FlexMoney.Application.Interfaces.Repositories;
 using FlexMoney.Domain.Entities.Catalog;
 using FlexMoney.Shared.Constants.Application;
@@ -23,11 +25,8 @@ namespace FlexMoney.Application.Features.MoneyLines.Commands.AddEdit
         public int TypeId { get; set; }
         [Required]
         public string Name { get; set; }
-        [Required]
         public Decimal Money { get; set; }
-        [Required]
         public int Quantity { get; set; }
-        [Required]
         public int OwnerId { get; set; }
         public int StatusId { get; set; }
         public int CurrentSection { get; set; }
@@ -44,17 +43,18 @@ namespace FlexMoney.Application.Features.MoneyLines.Commands.AddEdit
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _moneyLineRepository = moneyLineRepository;
-            _localizer = localizer;           
+            _localizer = localizer;
         }
 
         public async Task<Result<int>> Handle(AddEditMoneyLineCommand command, CancellationToken cancellationToken)
         {
             try
             {
-                var isNameUnique = await _moneyLineRepository.IsNameUnique(command.Name);
-                if (!isNameUnique)
+
+                if (command.Id == 0)
                 {
-                    if (command.Id == 0)
+                    var isNameUnique = await _moneyLineRepository.IsNameUnique(command.Name);
+                    if (!isNameUnique)
                     {
                         var moneyLine = _mapper.Map<MoneyLine>(command);
                         await _unitOfWork.Repository<MoneyLine>().AddAsync(moneyLine);
@@ -63,38 +63,39 @@ namespace FlexMoney.Application.Features.MoneyLines.Commands.AddEdit
                     }
                     else
                     {
-                        var moneyLine = await _unitOfWork.Repository<MoneyLine>().GetByIdAsync(command.Id);
-                        if (moneyLine != null)
-                        {
-                            moneyLine.Name = command.Name;
-                            moneyLine.CreatedDate = moneyLine.CreatedDate;
-                            moneyLine.TypeId = command.TypeId;
-                            moneyLine.Money = moneyLine.Money;
-                            moneyLine.Quantity = moneyLine.Quantity;
-                            moneyLine.OwnerId = moneyLine.OwnerId;
-                            moneyLine.StatusId = moneyLine.StatusId;
-                            moneyLine.CurrentSection = moneyLine.CurrentSection;
-                            await _unitOfWork.Repository<MoneyLine>().UpdateAsync(moneyLine);
-                            await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMoneyLinesCacheKey);
-                            return await Result<int>.SuccessAsync(moneyLine.Id, _localizer["Money Line Updated"]);
-                        }
-                        else
-                        {
-                            return await Result<int>.FailAsync(_localizer["Money Line Not Found!"]);
-                        }
+                        return await Result<int>.FailAsync(_localizer["Money Line Name Is Existed!"]);
                     }
                 }
                 else
                 {
-                    return await Result<int>.FailAsync(_localizer["Money Line Name in use!"]);
+                    var moneyLine = await _unitOfWork.Repository<MoneyLine>().GetByIdAsync(command.Id);
+                    if (moneyLine != null)
+                    {
+                        moneyLine.Name = command.Name;
+                        moneyLine.CreatedDate = moneyLine.CreatedDate;
+                        moneyLine.TypeId = command.TypeId;
+                        moneyLine.Money = moneyLine.Money;
+                        moneyLine.Quantity = moneyLine.Quantity;
+                        moneyLine.OwnerId = moneyLine.OwnerId;
+                        moneyLine.StatusId = moneyLine.StatusId;
+                        moneyLine.CurrentSection = moneyLine.CurrentSection;
+                        await _unitOfWork.Repository<MoneyLine>().UpdateAsync(moneyLine);
+                        await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllMoneyLinesCacheKey);
+                        return await Result<int>.SuccessAsync(moneyLine.Id, _localizer["Money Line Updated"]);
+                    }
+                    else
+                    {
+                        return await Result<int>.FailAsync(_localizer["Money Line Not Found!"]);
+                    }
                 }
+
             }
             catch (Exception ex)
             {
 
                 throw;
             }
-            
+
         }
     }
 }

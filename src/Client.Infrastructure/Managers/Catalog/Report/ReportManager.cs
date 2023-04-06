@@ -41,5 +41,26 @@ namespace FlexMoney.Client.Infrastructure.Managers.Catalog.Report
             var response = await _httpClient.GetAsync(Routes.ReportsEndpoints.GetByOwnerId(request.OwnerId));
             return await response.ToResult<List<GetByOwnerIdReportResponse>>();
         }
+        public async Task<IResult<string>> ExportAllToExcelAsync(string searchString = "")
+        {
+            var response = await _httpClient.GetAsync(string.IsNullOrWhiteSpace(searchString)
+                ? Routes.ReportsEndpoints.Export
+                : Routes.ReportsEndpoints.ExportFiltered(searchString));
+            return await response.ToResult<string>();
+        }
+        public async Task<IResult<string>> ExportByIdToExcelAsync(int id, string searchString = "")
+        {
+            var response = await _httpClient.GetAsync(string.IsNullOrWhiteSpace(searchString)
+                ? Routes.ReportsEndpoints.ExportById(id)
+                : Routes.ReportsEndpoints.ExportFiltered(searchString));
+            return await response.ToResult<string>();
+        }
+        public async Task<IResult<string>> ExportThankMoneyToExcelAsync(int id, string searchString = "")
+        {
+            var response = await _httpClient.GetAsync(string.IsNullOrWhiteSpace(searchString)
+                ? Routes.ReportsEndpoints.ExportThankMoney(id)
+                : Routes.ReportsEndpoints.ExportFiltered(searchString));
+            return await response.ToResult<string>();
+        }
     }
 }
