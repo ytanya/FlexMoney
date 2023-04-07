@@ -33,3 +33,13 @@ Routing Destination:adfbc19c822f.HS2.tr2367.southeastasia1-a.worker.database.win
 2023-04-06 09:28:03.244 +07:00 [INF] Application started. Press Ctrl+C to shut down.
 2023-04-06 09:28:03.250 +07:00 [INF] Hosting environment: Development
 2023-04-06 09:28:03.257 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-04-06 10:44:44.449 +07:00 [INF] Now listening on: https://localhost:5001
+2023-04-06 10:44:44.537 +07:00 [INF] Now listening on: http://localhost:5000
+2023-04-06 10:44:44.547 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-06 10:44:44.551 +07:00 [INF] Hosting environment: Development
+2023-04-06 10:44:44.555 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
+2023-04-06 16:52:07.979 +07:00 [INF] Now listening on: https://localhost:5001
+2023-04-06 16:52:08.050 +07:00 [INF] Now listening on: http://localhost:5000
+2023-04-06 16:52:08.056 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-06 16:52:08.059 +07:00 [INF] Hosting environment: Development
+2023-04-06 16:52:08.061 +07:00 [INF] Content root path: D:\FlexMoneyCSJ\FlexMoney\src\Server
