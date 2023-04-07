@@ -10,7 +10,7 @@ namespace FlexMoney.Application.Interfaces.Repositories
     public interface ITransactionRepository
     {
         Task<List<Transaction>> GetByLineIdAsync(int id);
-        Task<List<Transaction>> GetAllAsync(bool latestOnly = false);
+        Task<List<Transaction>> GetAllAsync(bool latestOnly);
         Task<GetTransactionInfoByLineIdResponse> GetTransactionInfoByLineIdAsync(int id);
         Task<List<GetReadyCallerByLineIdResponse>> GetReadyCallerByLineIdAsync(int id);
         Task<int> AddTransactionAsync(AddEditTransactionCommand command);

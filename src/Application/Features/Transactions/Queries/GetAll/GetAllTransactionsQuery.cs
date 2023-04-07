@@ -40,11 +40,19 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
 
         public async Task<Result<List<GetAllTransactionsResponse>>> Handle(GetAllTransactionsQuery request, CancellationToken cancellationToken)
         {
+            List<Transaction> transactionList = new List<Transaction>();
             Func<Task<List<Transaction>>> getAllTransactions = async () =>
             {
                 return await _transactionRepository.GetAllAsync(request.latestOnly);
             };
-            var transactionList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllTransactionsCacheKey, getAllTransactions);
+            if (request.latestOnly)
+            {
+                transactionList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllTransactionsTrueCacheKey, getAllTransactions);
+            }
+            else
+            {
+                transactionList = await _cache.GetOrAddAsync(ApplicationConstants.Cache.GetAllTransactionsFalseCacheKey, getAllTransactions);
+            }
             var mappedTransactions = new List<GetAllTransactionsResponse>();
             foreach (var transaction in transactionList)
             {
@@ -56,6 +64,7 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
                 mappedTransactionItem.TypeName = type.Name;
                 mappedTransactionItem.Caller = caller.Name;
                 mappedTransactionItem.LineName = moneyLine.Name;
+                mappedTransactionItem.CurrentSection = moneyLine.CurrentSection;
                 mappedTransactions.Add(mappedTransactionItem);
             }
 

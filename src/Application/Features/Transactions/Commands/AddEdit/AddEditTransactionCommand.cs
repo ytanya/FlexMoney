@@ -61,7 +61,7 @@ namespace FlexMoney.Application.Features.Transactions.Commands.AddEdit
             if (command.Id == 0)
             {
                 var transactionId = await _transactionRepository.AddTransactionAsync(command);
-                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsCacheKey);
+                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsFalseCacheKey);
                 return await Result<int>.SuccessAsync(transactionId, _localizer["Transaction Saved"]);
             }
             else
@@ -70,7 +70,7 @@ namespace FlexMoney.Application.Features.Transactions.Commands.AddEdit
                 if (transaction != null)
                 {
                     var transactionId = await _transactionRepository.UpdateTransactionAsync(command);
-                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsCacheKey);
+                    await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsFalseCacheKey);
                     return await Result<int>.SuccessAsync(transaction.Id, _localizer["Transaction Updated"]);
                 }
                 else

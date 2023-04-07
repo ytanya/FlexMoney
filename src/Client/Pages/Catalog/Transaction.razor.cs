@@ -148,6 +148,7 @@ namespace FlexMoney.Client.Pages.Catalog
             var options = new DialogOptions { CloseButton = true, MaxWidth = MaxWidth.Small, FullWidth = true, DisableBackdropClick = true };
             var dialog = _dialogService.Show<AddEditTransactionModal>(id == 0 ? _localizer["Create"] : _localizer["Edit"], parameters, options);
             var result = await dialog.Result;
+            _searchString = string.Empty;
             if (!result.Cancelled)
             {
                 await Reset();
@@ -159,15 +160,23 @@ namespace FlexMoney.Client.Pages.Catalog
             _transaction = new GetAllTransactionsResponse();
             await GetTransactionsAsync();
         }
-
-        private bool Search(GetAllTransactionsResponse Transaction, List<GetAllTransactionsResponse> listToSearch)
+        protected void OnValueSearchChangeHandler(string newValue)
         {
-            if (string.IsNullOrWhiteSpace(_searchString)) return true;
-            if (Transaction.LineName?.Contains(_searchString, StringComparison.OrdinalIgnoreCase) == true)
+            if (!string.IsNullOrWhiteSpace(newValue))
             {
-                return true;
+                _latesttransactionList = _allTransactionList.Where(x=>x.LineName.Contains(newValue)).ToList();
             }
-            return false;
+        }
+        private bool IsRowEnabled(GetAllTransactionsResponse context)
+        {
+            if (context.Section < context.CurrentSection)
+            {
+                return true; // enable the row
+            }
+            else
+            {
+                return false; // disable the row
+            }
         }
     }
 }

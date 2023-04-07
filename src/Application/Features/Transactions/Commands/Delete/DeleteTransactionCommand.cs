@@ -36,7 +36,7 @@ namespace FlexMoney.Application.Features.Transactions.Commands.Delete
             if (transaction != null)
             {
                 await _transactionRepository.DeleteTransactionAsync(command);
-                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsCacheKey);
+                await _unitOfWork.CommitAndRemoveCache(cancellationToken, ApplicationConstants.Cache.GetAllTransactionsFalseCacheKey);
                 return await Result<int>.SuccessAsync(transaction.Id, _localizer["Transaction Deleted"]);
             }
             else

@@ -25,5 +25,6 @@ namespace FlexMoney.Application.Features.Transactions.Queries.GetAll
         public Decimal Dead { get; set; }
         public Decimal Alive { get; set; }
         public int Position { get; set; }
+        public int CurrentSection { get; set; }
     }
 }

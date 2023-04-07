@@ -39,7 +39,7 @@ namespace FlexMoney.Infrastructure.Repositories
 
             return transactions;
         }
-        public async Task<List<Transaction>> GetAllAsync(bool latestOnly = false)
+        public async Task<List<Transaction>> GetAllAsync(bool latestOnly)
         {
             IQueryable<Transaction> query = _dbContext.Set<Transaction>();
 
