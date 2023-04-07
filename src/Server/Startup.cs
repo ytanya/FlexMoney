@@ -69,7 +69,12 @@ namespace FlexMoney.Server
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IStringLocalizer<Startup> localizer)
         {
-            app.UseCors();
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin();
+                builder.AllowAnyHeader();
+                builder.AllowAnyMethod();
+            });
             app.UseExceptionHandling(env);
             app.UseHttpsRedirection();
             app.UseMiddleware<ErrorHandlerMiddleware>();
