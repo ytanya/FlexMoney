@@ -1,0 +1,12 @@
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\bin\Release\net5.0\FlexMoney.Shared.deps.json
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\bin\Release\net5.0\FlexMoney.Shared.dll
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\bin\Release\net5.0\FlexMoney.Shared.pdb
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\Shared.csproj.AssemblyReference.cache
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\Shared.AssemblyInfoInputs.cache
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\Shared.AssemblyInfo.cs
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\Shared.csproj.CoreCompileInputs.cache
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\FlexMoney.Shared.dll
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\refint\FlexMoney.Shared.dll
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\FlexMoney.Shared.pdb
+D:\FlexMoneyCSJ\FlexMoney\src\Shared\obj\Release\net5.0\ref\FlexMoney.Shared.dll

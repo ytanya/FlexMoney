@@ -13,273 +13,273 @@ namespace FlexMoney.Client.Shared.Dialogs
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 2 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 2 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 3 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 4 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 5 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 6 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 7 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 8 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 9 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 10 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 11 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 12 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 12 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Microsoft.AspNetCore.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 13 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 13 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using MudBlazor;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 14 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 14 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Blazored.LocalStorage;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 15 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 15 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using Blazored.FluentValidation;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 18 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 18 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.Account;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 19 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 19 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 20 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 20 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.Roles;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 21 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 21 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.RoleClaims;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 22 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 22 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Identity.Users;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 23 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 23 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Preferences;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 24 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 24 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Interceptors;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 25 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 25 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Product;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 26 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 26 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Catalog.Brand;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 27 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 27 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Dashboard;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 28 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 28 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Communication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 29 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 29 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Audit;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 30 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 30 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Misc.Document;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 31 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 31 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Managers.Misc.DocumentType;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 34 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 34 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Shared.Constants.Permission;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 35 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 35 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Shared.Components;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 37 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 37 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 38 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 38 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 39 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 39 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Shared.Dialogs;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 40 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 40 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Settings;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 42 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 42 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Application.Requests.Identity;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 44 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 44 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Pages.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 46 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 46 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Infrastructure.Authentication;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 47 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 47 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 using FlexMoney.Client.Extensions;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 49 "D:\Build Myself\FlexMoney\src\Client\_Imports.razor"
+#line 49 "D:\FlexMoneyCSJ\FlexMoney\src\Client\_Imports.razor"
 [Authorize]
 
 #line default
@@ -293,7 +293,7 @@ using FlexMoney.Client.Extensions;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 18 "D:\Build Myself\FlexMoney\src\Client\Shared\Dialogs\DeleteConfirmation.razor"
+#line 18 "D:\FlexMoneyCSJ\FlexMoney\src\Client\Shared\Dialogs\DeleteConfirmation.razor"
        
     [CascadingParameter] MudDialogInstance MudDialog { get; set; }
 

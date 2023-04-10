@@ -1,0 +1,92 @@
+<linker>
+  <assembly fullname="Microsoft.AspNetCore.Authentication.Abstractions">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Authentication.Cookies">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Authentication.Core">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Authentication">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Authorization">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Components.Authorization">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Components.Forms">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Components.Web">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Components.WebAssembly">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Components">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Connections.Abstractions">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Cryptography.Internal">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Cryptography.KeyDerivation">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.DataProtection.Abstractions">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.DataProtection">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Hosting.Abstractions">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Hosting.Server.Abstractions">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Http.Abstractions">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Http.Connections.Client">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Http.Connections.Common">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Http.Extensions">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Http.Features">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Http">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Identity">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.Metadata">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.SignalR.Client.Core">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.SignalR.Client">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.SignalR.Common">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.SignalR.Protocols.Json">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+  <assembly fullname="Microsoft.AspNetCore.WebUtilities">
+    <type fullname="*" required="false" preserve="all" />
+  </assembly>
+</linker>

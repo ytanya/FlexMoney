@@ -15,6 +15,7 @@ using FlexMoney.Server.Filters;
 using FlexMoney.Server.Managers.Preferences;
 using Microsoft.Extensions.Localization;
 
+
 namespace FlexMoney.Server
 {
     public class Startup
@@ -69,12 +70,7 @@ namespace FlexMoney.Server
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IStringLocalizer<Startup> localizer)
         {
-            app.UseCors(builder =>
-            {
-                builder.AllowAnyOrigin();
-                builder.AllowAnyHeader();
-                builder.AllowAnyMethod();
-            });
+            //app.UseCors();
             app.UseExceptionHandling(env);
             app.UseHttpsRedirection();
             app.UseMiddleware<ErrorHandlerMiddleware>();
@@ -85,7 +81,7 @@ namespace FlexMoney.Server
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"Files")),
                 RequestPath = new PathString("/Files")
             });
-            app.UseRequestLocalizationByCulture();
+            //app.UseRequestLocalizationByCulture();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

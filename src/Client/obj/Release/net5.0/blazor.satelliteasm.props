@@ -1,0 +1,23 @@
+﻿<SatelliteAssembly>
+  <Assembly Name="obj\Release\net5.0\de\FlexMoney.Client.resources.dll" Culture="de" DestinationSubDirectory="de\" />
+  <Assembly Name="obj\Release\net5.0\en\FlexMoney.Client.resources.dll" Culture="en" DestinationSubDirectory="en\" />
+  <Assembly Name="obj\Release\net5.0\es\FlexMoney.Client.resources.dll" Culture="es" DestinationSubDirectory="es\" />
+  <Assembly Name="obj\Release\net5.0\id\FlexMoney.Client.resources.dll" Culture="id" DestinationSubDirectory="id\" />
+  <Assembly Name="obj\Release\net5.0\it\FlexMoney.Client.resources.dll" Culture="it" DestinationSubDirectory="it\" />
+  <Assembly Name="obj\Release\net5.0\km\FlexMoney.Client.resources.dll" Culture="km" DestinationSubDirectory="km\" />
+  <Assembly Name="obj\Release\net5.0\ru\FlexMoney.Client.resources.dll" Culture="ru" DestinationSubDirectory="ru\" />
+  <Assembly Name="obj\Release\net5.0\sv\FlexMoney.Client.resources.dll" Culture="sv" DestinationSubDirectory="sv\" />
+  <Assembly Name="obj\Release\net5.0\fr\FlexMoney.Client.resources.dll" Culture="fr" DestinationSubDirectory="fr\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Client.Infrastructure\bin\Release\net5.0\en\FlexMoney.Client.Infrastructure.resources.dll" Culture="en" DestinationSubDirectory="en\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\en\FlexMoney.Application.resources.dll" Culture="en" DestinationSubDirectory="en\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Client.Infrastructure\bin\Release\net5.0\km\FlexMoney.Client.Infrastructure.resources.dll" Culture="km" DestinationSubDirectory="km\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\km\FlexMoney.Application.resources.dll" Culture="km" DestinationSubDirectory="km\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Client.Infrastructure\bin\Release\net5.0\ru\FlexMoney.Client.Infrastructure.resources.dll" Culture="ru" DestinationSubDirectory="ru\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\ru\FlexMoney.Application.resources.dll" Culture="ru" DestinationSubDirectory="ru\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\de\FlexMoney.Application.resources.dll" Culture="de" DestinationSubDirectory="de\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\es\FlexMoney.Application.resources.dll" Culture="es" DestinationSubDirectory="es\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\fr\FlexMoney.Application.resources.dll" Culture="fr" DestinationSubDirectory="fr\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\id\FlexMoney.Application.resources.dll" Culture="id" DestinationSubDirectory="id\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\it\FlexMoney.Application.resources.dll" Culture="it" DestinationSubDirectory="it\" />
+  <Assembly Name="D:\FlexMoneyCSJ\FlexMoney\src\Application\bin\Release\net5.0\sv\FlexMoney.Application.resources.dll" Culture="sv" DestinationSubDirectory="sv\" />
+</SatelliteAssembly>
